@@ -1,0 +1,7 @@
+{
+    "name": "TechDawn",
+    "compress": true,
+    "plugins": [
+        "./src/TechDawn_main.js"
+    ]
+}
