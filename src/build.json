@@ -2,6 +2,8 @@
     "name": "TechDawn",
     "compress": true,
     "plugins": [
-        "./src/TechDawn_main.js"
+        "./src/TechDawn_translate.js",
+        "./src/TechDawn_main.js",
+        "./src/TechDawn_texture.js"
     ]
 }
