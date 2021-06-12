@@ -1,0 +1,24 @@
+name: bnpx build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch: null
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Build bnpx package
+        run: python3 ./build_script/build.py
+      
+      - name: Upload bnpx package file
+        uses: actions/upload-artifact@v2
+        with:
+          name: TechDawn
+          path: out/TechDawn.bnpx
