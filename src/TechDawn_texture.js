@@ -119,3 +119,26 @@ const textureList = [
     '青铜锭.png',
     '青铜齿轮.png'
 ]
+
+/**
+ * @description BN初始化完成事件
+ */
+function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNInitializedEvent}*/event){
+    //引入翻译模块
+    /** @description 翻译模块 @type {Object} */
+    var Translate = require("TechDawnTranslate");
+    /** @description 翻译函数 @type {(toTranslate: string) => string} */
+    var T = Translate.translate;
+    /** @description 翻译函数 @type {(toTranslate: string, format: string[]) => string} */
+    var TF = Translate.translateFormat;
+    /** @description 是否为中文 @type {boolean} */
+    const isChinese = (server.getLanguage().getLang()=="chs");
+    for(let each of textureList){
+        let path = "./plugins/TechDawn/textures/"+each;
+        if(!manager.isPathExists(path)){
+            let url = "https://"+(isChinese?"raw.fastgit.org":"raw.githubusercontent.com")+"/BlocklyNukkit/TectDawn/master/image/"+(java.net.URLEncoder).encode(each, "UTF-8");
+            logger.info(TF("download_texture", [each]));
+            (com.blocklynukkit.loader.utils.Utils).downLoadFromUrl(url, each, "./plugins/TechDawn/textures");
+        }
+    }
+}

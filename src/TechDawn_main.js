@@ -10,6 +10,8 @@
 var Translate;
 /** @description 翻译函数 @type {(toTranslate: string) => string} */
 var T;
+/** @description 翻译函数 @type {(toTranslate: string, format: string[]) => string} */
+var TF;
 
 /**
  * @description BN初始化完成事件
@@ -19,7 +21,8 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     Translate = require("TechDawnTranslate");
     //导出翻译函数
     T = Translate.translate;
-
+    TF = Translate.translateFormat;
+    
     //开始初始化
     logger.info(T("init"));
 }
