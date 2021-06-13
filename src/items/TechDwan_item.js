@@ -83,4 +83,5 @@ new ItemInfo(3510, "crushed_tin_ore", "Crushed Tin Ore", "粉碎的锡矿", "./p
 new ItemInfo(3511, "crushed_zinc_ore", "Crushed Zinc Ore", "粉碎的锌矿", "./plugins/TechDawn/textures/粉碎的锌矿.png", 64, "nature", false, false).register();
 new ItemInfo(3512, "crushed_silver_ore", "Crushed Silver Ore", "粉碎的银矿", "./plugins/TechDawn/textures/粉碎的银矿.png", 64, "nature", false, false).register();
 new ItemInfo(3513, "crushed_diamond_ore", "Crushed Diamond Ore", "粉碎的钻石矿", "./plugins/TechDawn/textures/粉碎的钻石矿.png", 64, "nature", false, false).register();
-//new ItemInfo(350, "crushed__ore", "Crushed  Ore", "粉碎的矿", "./plugins/TechDawn/textures/粉碎的矿.png", 64, "nature", false, false).register();
+new ItemInfo(3514, "crushed_redstone_ore", "Crushed Redstone Ore", "粉碎的红石矿", "./plugins/TechDawn/textures/粉碎的红石矿.png", 64, "nature", false, false).register();
+new ItemInfo(3515, "crushed_lapis_ore", "Crushed Lapis Ore", "粉碎的青金石矿", "./plugins/TechDawn/textures/粉碎的青金石矿.png", 64, "nature", false, false).register();
