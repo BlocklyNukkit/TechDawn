@@ -11,7 +11,6 @@
  * @description 获取淘金结果
  * @param {boolean} sandOrGravel
  * @returns {cn.nukkit.item.Item}
- * @todo
  */
 export function getPanningResult(sandOrGravel){
     return sandOrGravel ? getSandPanningResult() : getGravelPanningResult();
@@ -64,9 +63,9 @@ function getSelectResult(from){
 /**
  * @description 获取沙子淘金结果
  * @returns {cn.nukkit.item.Item}
- * @todo
  */
 function getSandPanningResult(){
+    if(Math.random() < 0.5) return blockitem.buildItem(0, 0, 0);
     let result = getSelectResult(root_sandPanning);
     if(result == null) return blockitem.buildItem(0, 0, 0);
     return (result instanceof require("cn.nukkit.item.Item")) ? result : blockitem.buildItem(0, 0, 0);
@@ -75,9 +74,9 @@ function getSandPanningResult(){
 /**
  * @description 获取沙砾淘金结果
  * @returns {cn.nukkit.item.Item}
- * @todo
  */
  function getGravelPanningResult(){
+    if(Math.random() < 0.5) return blockitem.buildItem(0, 0, 0);
     let result = getSelectResult(root_gravelPanning);
     if(result == null) return blockitem.buildItem(0, 0, 0);
     return (result instanceof require("cn.nukkit.item.Item")) ? result : blockitem.buildItem(0, 0, 0);
