@@ -68,6 +68,7 @@ function ToolInfo(id, name, eng, chn, texturePath, type, tier, durabillity, atta
         blockitem.addItemEnglishTranslation(this.id, this.eng);
         blockitem.addItemChineseTranslation(this.id, this.chn);
         blockitem.addItemTexture(this.id, this.texturePath);
+        blockitem.addToCreativeBar(blockitem.buildItem(this.id, 0, 1));
         return this;
     }
 }
