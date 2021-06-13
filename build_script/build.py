@@ -2,6 +2,8 @@
 import json
 import os
 import gzip
+import sys
+from shutil import copyfile
 
 buildFile = open("./src/build.json", "r",encoding="utf-8")
 buildConfig = json.load(buildFile)
@@ -28,3 +30,7 @@ else:
     outputFile = open("./out/"+buildConfig["name"]+".bnp","w",encoding="utf-8")
     outputFile.write(out)
     outputFile.close()
+
+if(len(sys.argv) >= 2):
+    if(sys.argv[1].startswith("--copy:")):
+        copyfile("./out/"+buildConfig["name"]+".bnpx", sys.argv[1].replace("--copy:","",1)+buildConfig["name"]+".bnpx")
