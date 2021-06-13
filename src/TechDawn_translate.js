@@ -2,8 +2,9 @@
 //pragma module TechDawnTranslate
 
 /**
- * @author Superice666(超神的冰凉) @TechDawn_Project
- * @description 科技黎明插件翻译模块
+ * @author Superice666(超神的冰凉) 
+ * @copyright TechDawn_Project
+ * @fileoverview 科技黎明插件翻译模块
  */
 
 /**

@@ -2,8 +2,9 @@
 //pragma module TechDawnTexture
 
 /**
- * @author Superice666(超神的冰凉) @TechDawn_Project
- * @description 科技黎明插件材质模块，启动时将所有贴图写入硬盘
+ * @author Superice666(超神的冰凉) 
+ * @copyright TechDawn_Project
+ * @fileoverview 科技黎明插件材质模块，启动时将所有贴图写入硬盘
  */
 
 const textureList = [
@@ -32,6 +33,7 @@ const textureList = [
     '方铅矿石.png',
     '木锤子.png',
     '木齿轮.png',
+    '淘金碗.png',
     '煤板.png',
     '煤粉.png',
     '煤粒.png',
@@ -46,8 +48,11 @@ const textureList = [
     '空木桶.png',
     '粉碎的孔雀石矿.png',
     '粉碎的方铅矿.png',
+    '粉碎的煤矿.png',
     '粉碎的磁铁矿.png',
+    '粉碎的绿宝石矿.png',
     '粉碎的金矿.png',
+    '粉碎的钻石矿.png',
     '粉碎的铁矿.png',
     '粉碎的铜矿.png',
     '粉碎的铝矿.png',
@@ -117,7 +122,7 @@ const textureList = [
     '青铜粉.png',
     '青铜粒.png',
     '青铜锭.png',
-    '青铜齿轮.png'
+    '青铜齿轮.png',
 ]
 
 /**

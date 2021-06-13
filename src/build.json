@@ -4,6 +4,7 @@
     "plugins": [
         "./src/TechDawn_translate.js",
         "./src/TechDawn_main.js",
-        "./src/TechDawn_texture.js"
+        "./src/TechDawn_texture.js",
+        "./src/items/TechDawn_tool.js"
     ]
 }
