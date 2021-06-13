@@ -5,6 +5,7 @@
         "./src/TechDawn_translate.js",
         "./src/TechDawn_main.js",
         "./src/TechDawn_texture.js",
+        "./src/loot/TechDawn_lootPanning.js",
         "./src/items/TechDawn_tool.js"
     ]
 }

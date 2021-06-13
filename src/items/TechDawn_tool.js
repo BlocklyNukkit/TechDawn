@@ -72,4 +72,21 @@ function ToolInfo(id, name, eng, chn, texturePath, type, tier, durabillity, atta
     }
 }
 
-new ToolInfo(3401, "panning_bowl", "Panning Bowl", "淘金碗", "./plugins/TechDawn/textures/淘金碗.png", "sword", 0, 64, 2, true);
+new ToolInfo(3401, "panning_bowl", "Panning Bowl", "淘金碗", "./plugins/TechDawn/textures/淘金碗.png", "shovel", 3, 64, 2, true).register();
+
+/** 
+ * @description 获取淘金结果模块 
+ * @description 因为我们在编译脚本中确定的顺序保证了TechDawnLoot_Panning模块一定优先加载，所以可以直接导入
+ */
+const lootPanning = require("TechDawnLoot_Panning");
+
+/**
+ * @description 破坏方块事件
+ */
+function BlockBreakEvent(/**@type {cn.nukkit.event.block.BlockBreakEvent}*/event){
+    //处理淘金碗
+    if(event.getItem().getId() == 3401 && (event.getBlock().getId() == 12 || event.getBlock().getId() == 13)){
+        let item = lootPanning.getPanningResult(event.getBlock().getId() == 12);
+        event.setDrops(Java.to([item], "cn.nukkit.item.Item[]"));
+    }
+}
