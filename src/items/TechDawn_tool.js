@@ -78,7 +78,7 @@ new ToolInfo(3401, "panning_bowl", "Panning Bowl", "淘金碗", "./plugins/TechD
  * @description 获取淘金结果模块 
  * @description 因为我们在编译脚本中确定的顺序保证了TechDawnLoot_Panning模块一定优先加载，所以可以直接导入
  */
-const lootPanning = require("TechDawnLoot_Panning");
+const lootPanning = require("TechDawnLootPanning");
 
 /**
  * @description 破坏方块事件

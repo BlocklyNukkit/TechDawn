@@ -50,6 +50,7 @@ const textureList = [
     '粉碎的方铅矿.png',
     '粉碎的煤矿.png',
     '粉碎的磁铁矿.png',
+    '粉碎的红石矿.png',
     '粉碎的绿宝石矿.png',
     '粉碎的金矿.png',
     '粉碎的钻石矿.png',
@@ -59,6 +60,7 @@ const textureList = [
     '粉碎的银矿.png',
     '粉碎的锌矿.png',
     '粉碎的锡矿.png',
+    '粉碎的青金石矿.png',
     '装水木桶.png',
     '金板.png',
     '金粉.png',
@@ -125,25 +127,20 @@ const textureList = [
     '青铜齿轮.png',
 ]
 
-/**
- * @description BN初始化完成事件
- */
-function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNInitializedEvent}*/event){
-    //引入翻译模块
-    /** @description 翻译模块 @type {Object} */
-    var Translate = require("TechDawnTranslate");
-    /** @description 翻译函数 @type {(toTranslate: string) => string} */
-    var T = Translate.translate;
-    /** @description 翻译函数 @type {(toTranslate: string, format: string[]) => string} */
-    var TF = Translate.translateFormat;
-    /** @description 是否为中文 @type {boolean} */
-    const isChinese = (server.getLanguage().getLang()=="chs");
-    for(let each of textureList){
-        let path = "./plugins/TechDawn/textures/"+each;
-        if(!manager.isPathExists(path)){
-            let url = "https://"+(isChinese?"raw.fastgit.org":"raw.githubusercontent.com")+"/BlocklyNukkit/TectDawn/master/image/"+(java.net.URLEncoder).encode(each, "UTF-8");
-            logger.info(TF("download_texture", [each]));
-            (com.blocklynukkit.loader.utils.Utils).downLoadFromUrl(url, each, "./plugins/TechDawn/textures");
-        }
+//引入翻译模块
+/** @description 翻译模块 @type {Object} */
+const Translate = require("TechDawnTranslate");
+/** @description 翻译函数 @type {(toTranslate: string) => string} */
+var T = Translate.translate;
+/** @description 翻译函数 @type {(toTranslate: string, format: string[]) => string} */
+var TF = Translate.translateFormat;
+/** @description 是否为中文 @type {boolean} */
+const isChinese = (server.getLanguage().getLang()=="chs");
+for(let each of textureList){
+    let path = "./plugins/TechDawn/textures/"+each;
+    if(!manager.isPathExists(path)){
+        let url = "https://"+(isChinese?"raw.fastgit.org":"raw.githubusercontent.com")+"/BlocklyNukkit/TectDawn/master/image/"+(java.net.URLEncoder).encode(each, "UTF-8");
+        logger.info(TF("download_texture", [each]));
+        (com.blocklynukkit.loader.utils.Utils).downLoadFromUrl(url, each, "./plugins/TechDawn/textures");
     }
 }

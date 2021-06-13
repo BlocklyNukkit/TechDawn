@@ -1,5 +1,5 @@
 //pragma js
-//pragma module TechDawnLoot_Panning
+//pragma module TechDawnLootPanning
 
 /**
  * @author Superice666(超神的冰凉) 
@@ -47,6 +47,19 @@ RandomItem.putSelector(new ConstantItemSelector(3512, root_gravelPanning), 0.005
 RandomItem.putSelector(new ConstantItemSelector(3513, root_gravelPanning), 0.002);//钻石
 RandomItem.putSelector(new ConstantItemSelector(3515, root_gravelPanning), 0.018);//青金石
 RandomItem.putSelector(new ConstantItemSelector(318, root_gravelPanning), 0.45);//燧石
+//通过反射api调用选择方法
+const Clazz = java.lang.Class;
+let Rclazz = Clazz.forName("cn.nukkit.item.randomitem.RandomItem");
+let Sclazz = Clazz.forName("cn.nukkit.item.randomitem.Selector");
+var method = Rclazz.getDeclaredMethod("selectFrom", Sclazz);
+method.setAccessible(true);
+/**
+ * @description 获取选择结果
+ * @param from 从哪里选择
+ */
+function getSelectResult(from){
+    return method.invoke(Rclazz, from);
+}
 
 /**
  * @description 获取沙子淘金结果
@@ -54,8 +67,9 @@ RandomItem.putSelector(new ConstantItemSelector(318, root_gravelPanning), 0.45);
  * @todo
  */
 function getSandPanningResult(){
-    let result = RandomItem.selectFrom(root_sandPanning);
-    return (result instanceof (cn.nukkit.item.Item)) ? result : blockitem.buildItem(0, 0, 1);
+    let result = getSelectResult(root_sandPanning);
+    if(result == null) return blockitem.buildItem(0, 0, 0);
+    return (result instanceof require("cn.nukkit.item.Item")) ? result : blockitem.buildItem(0, 0, 0);
 }
 
 /**
@@ -64,6 +78,7 @@ function getSandPanningResult(){
  * @todo
  */
  function getGravelPanningResult(){
-    let result = RandomItem.selectFrom(root_gravelPanning);
-    return (result instanceof (cn.nukkit.item.Item)) ? result : blockitem.buildItem(0, 0, 1);
+    let result = getSelectResult(root_gravelPanning);
+    if(result == null) return blockitem.buildItem(0, 0, 0);
+    return (result instanceof require("cn.nukkit.item.Item")) ? result : blockitem.buildItem(0, 0, 0);
 }
