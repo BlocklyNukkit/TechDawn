@@ -18,9 +18,9 @@ export function getPanningResult(sandOrGravel){
 }
 
 //概率定义
-const RandomItem = require("cn.nukkit.item.randomitem.RandomItem");
-const Selector = require("cn.nukkit.item.randomitem.Selector");
-const ConstantItemSelector = require("cn.nukkit.item.randomitem.ConstantItemSelector");
+const RandomItem = cn.nukkit.item.randomitem.RandomItem;
+const Selector = cn.nukkit.item.randomitem.Selector;
+const ConstantItemSelector = cn.nukkit.item.randomitem.ConstantItemSelector;
 const root_sandPanning = RandomItem.putSelector(new Selector(RandomItem.ROOT));
 const root_gravelPanning = RandomItem.putSelector(new Selector(RandomItem.ROOT));
 //添加沙子淘金概率
