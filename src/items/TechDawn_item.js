@@ -224,3 +224,15 @@ frunace(3512, 3728);
 frunace(3513, 264);
 frunace(3514, 331);
 frunace(3515, 351, 4);
+
+//金属粉冶炼为锭
+frunace(3521, 3721);
+frunace(3522, 3722);
+frunace(3523, 266);
+frunace(3526, 3723);
+frunace(3528, 3724);
+frunace(3530, 3725);
+frunace(3531, 265);
+frunace(3532, 3726);
+frunace(3533, 3727);
+frunace(3534, 3728);
