@@ -33,7 +33,7 @@ export function getItemInfo(name){
  * @param {string} texturePath 物品贴图路径
  * @param {string} stackSize 物品最大堆叠数量
  * @param {string} type 物品的种类：`construction` `nature` `equipment` `items`
- * @param {string} isDisplayAsTool 是否展示为工具
+ * @param {boolean} isDisplayAsTool 是否展示为工具
  * @param {boolean} canOnOffhand 副手装备
  */
 function ItemInfo(id, name, eng, chn, texturePath, stackSize, type, isDisplayAsTool, canOnOffhand){
@@ -185,6 +185,9 @@ new ItemInfo(3653, "copper_gear", "Copper Gear", "铜齿轮", "./plugins/TechDaw
 new ItemInfo(3654, "tin_gear", "Tin Gear", "锡齿轮", "./plugins/TechDawn/textures/锡齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3655, "silver_gear", "Silver Gear", "银齿轮", "./plugins/TechDawn/textures/银齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3656, "diamond_gear", "Diamond Gear", "钻石齿轮", "./plugins/TechDawn/textures/钻石齿轮.png", 64, "items", false, false).register();
+//木桶
+new ItemInfo(3402, "empty_wood_bucket", "Empty Wood Bucket", "空木桶", "./plugins/TechDawn/textures/空木桶.png", 64, "items", true, true);
+new ItemInfo(3403, "watered_wood_buckeet", "Watered Wood Bucket", "装水木桶", "./plugins/TechDawn/textures/装水木桶.png", 16, "items", true, true);
 
 /**
  * @description 注册冶炼合成表

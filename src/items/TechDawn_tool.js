@@ -74,6 +74,8 @@ function ToolInfo(id, name, eng, chn, texturePath, type, tier, durabillity, atta
 }
 
 new ToolInfo(3401, "panning_bowl", "Panning Bowl", "淘金碗", "./plugins/TechDawn/textures/淘金碗.png", "shovel", 3, 64, 2, true).register();
+//3402 空木桶
+//3404 装水木桶
 
 /** 
  * @description 获取淘金结果模块 
@@ -85,9 +87,26 @@ const lootPanning = require("TechDawnLootPanning");
  * @description 破坏方块事件
  */
 function BlockBreakEvent(/**@type {cn.nukkit.event.block.BlockBreakEvent}*/event){
+    const iid = event.getItem().getId();
+    const bid = event.getBlock().getId();
     //处理淘金碗
-    if(event.getItem().getId() == 3401 && (event.getBlock().getId() == 12 || event.getBlock().getId() == 13)){
+    if(iid == 3401 && (bid == 12 || iid == 13)){
         let item = lootPanning.getPanningResult(event.getBlock().getId() == 12);
         event.setDrops(Java.to([item], "cn.nukkit.item.Item[]"));
+    }
+}
+
+/**
+ * @description 玩家右键事件
+ */
+function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
+    const iid = event.getItem().getId();
+    if(iid == 3402){
+        let backWardBlock = event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock();
+        if(backWardBlock.getId() == 8 || backWardBlock.getId() == 9){
+            blockitem.setBlock(backWardBlock, blockitem.buildBlock(0, 0), false);
+            blockitem.removeItemToPlayer(event.getPlayer(), blockitem.buildItem(3402, 0 ,1));
+            blockitem.addItemToPlayer(event.getPlayer(), blockitem.buildItem(3403, 0, 1));
+        }
     }
 }
