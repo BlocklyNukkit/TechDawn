@@ -125,17 +125,18 @@ new ItemInfo(3534, "silver_dust", "Silver Dust", "银粉", "./plugins/TechDawn/t
 new ItemInfo(3535, "diamond_dust", "Diamond Dust", "钻石粉", "./plugins/TechDawn/textures/钻石粉.png", 64, "items", false, false).register();
 //小撮金属粉
 new ItemInfo(3581, "tiny_stainless_steel_dust", "Tiny Stainl Steel Dust", "小撮不锈钢粉", "./plugins/TechDawn/textures/小撮不锈钢粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_chromium_dust", "Tiny Chromium Dust", "小撮铬粉", "./plugins/TechDawn/textures/小撮铬粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_gold_dust", "Tiny Gold Dust", "小撮金粉", "./plugins/TechDawn/textures/小撮金粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_sulfur_dust", "Tiny Sulfur Dust", "小撮硫粉", "./plugins/TechDawn/textures/小撮硫粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_coal_dust", "Tiny Coal Dust", "小撮煤粉", "./plugins/TechDawn/textures/小撮煤粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_manganese_dust", "Tiny Manganese Dust", "小撮锰粉", "./plugins/TechDawn/textures/小撮锰粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_nickel_dust", "Tiny Nickel Dust", "小撮镍粉", "./plugins/TechDawn/textures/小撮镍粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_lead_dust", "Tiny Lead Dust", "小撮铅粉", "./plugins/TechDawn/textures/小撮铅粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_lapis_dust", "Tiny Lapis Dust", "小撮青金石粉", "./plugins/TechDawn/textures/小撮青金石粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_bronze_dust", "Tiny Bronze Dust", "小撮青铜粉", "./plugins/TechDawn/textures/小撮青铜粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_iron_dust", "Tiny Iron Dust", "小撮铁粉", "./plugins/TechDawn/textures/小撮铁粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_copper_dust", "Tiny Copper Dust", "小撮铜粉", "./plugins/TechDawn/textures/小撮铜粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_tin_dust", "Tiny Tin Dust", "小撮锡粉", "./plugins/TechDawn/textures/小撮锡粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_silver_dust", "Tiny Silver Dust", "小撮银粉", "./plugins/TechDawn/textures/小撮银粉.png", 64, "items", false, false).register();
-new ItemInfo(35, "tiny_diamond_dust", "Tiny Diamond Dust", "小撮钻石粉", "./plugins/TechDawn/textures/小撮钻石粉.png", 64, "items", false, false).register();
+new ItemInfo(3582, "tiny_chromium_dust", "Tiny Chromium Dust", "小撮铬粉", "./plugins/TechDawn/textures/小撮铬粉.png", 64, "items", false, false).register();
+new ItemInfo(3583, "tiny_gold_dust", "Tiny Gold Dust", "小撮金粉", "./plugins/TechDawn/textures/小撮金粉.png", 64, "items", false, false).register();
+new ItemInfo(3584, "tiny_sulfur_dust", "Tiny Sulfur Dust", "小撮硫粉", "./plugins/TechDawn/textures/小撮硫粉.png", 64, "items", false, false).register();
+new ItemInfo(3585, "tiny_coal_dust", "Tiny Coal Dust", "小撮煤粉", "./plugins/TechDawn/textures/小撮煤粉.png", 64, "items", false, false).register();
+new ItemInfo(3586, "tiny_manganese_dust", "Tiny Manganese Dust", "小撮锰粉", "./plugins/TechDawn/textures/小撮锰粉.png", 64, "items", false, false).register();
+new ItemInfo(3587, "tiny_nickel_dust", "Tiny Nickel Dust", "小撮镍粉", "./plugins/TechDawn/textures/小撮镍粉.png", 64, "items", false, false).register();
+new ItemInfo(3588, "tiny_lead_dust", "Tiny Lead Dust", "小撮铅粉", "./plugins/TechDawn/textures/小撮铅粉.png", 64, "items", false, false).register();
+new ItemInfo(3589, "tiny_lapis_dust", "Tiny Lapis Dust", "小撮青金石粉", "./plugins/TechDawn/textures/小撮青金石粉.png", 64, "items", false, false).register();
+new ItemInfo(3590, "tiny_bronze_dust", "Tiny Bronze Dust", "小撮青铜粉", "./plugins/TechDawn/textures/小撮青铜粉.png", 64, "items", false, false).register();
+new ItemInfo(3591, "tiny_iron_dust", "Tiny Iron Dust", "小撮铁粉", "./plugins/TechDawn/textures/小撮铁粉.png", 64, "items", false, false).register();
+new ItemInfo(3592, "tiny_copper_dust", "Tiny Copper Dust", "小撮铜粉", "./plugins/TechDawn/textures/小撮铜粉.png", 64, "items", false, false).register();
+new ItemInfo(3593, "tiny_tin_dust", "Tiny Tin Dust", "小撮锡粉", "./plugins/TechDawn/textures/小撮锡粉.png", 64, "items", false, false).register();
+new ItemInfo(3594, "tiny_silver_dust", "Tiny Silver Dust", "小撮银粉", "./plugins/TechDawn/textures/小撮银粉.png", 64, "items", false, false).register();
+new ItemInfo(3595, "tiny_diamond_dust", "Tiny Diamond Dust", "小撮钻石粉", "./plugins/TechDawn/textures/小撮钻石粉.png", 64, "items", false, false).register();
+
