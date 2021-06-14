@@ -224,6 +224,29 @@ function craft19(input, output, dataInput, dataOutput){
     blockitem.addShapelessCraft(Java.to([blockitem.buildItem(input, dataInput, 1)], "cn.nukkit.item.Item[]"), blockitem.buildItem(output, dataOutput, 9));
 }
 
+/**
+ * @description 注册9变1无序配方
+ * @param {int} input 原料id
+ * @param {int} output 产物id
+ * @param {int?} dataInput 原料特殊值
+ * @param {int?} dataOutput 产物特殊值
+ */
+ function craft91(input, output, dataInput, dataOutput){
+    if(!dataInput) dataInput = 0;
+    if(!dataOutput) dataOutput = 0;
+    blockitem.addShapelessCraft(Java.to([
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1),
+        blockitem.buildItem(input, dataInput, 1)
+    ], "cn.nukkit.item.Item[]"), blockitem.buildItem(output, dataOutput, 1));
+}
+
 //粉碎的矿石冶炼为锭
 frunace(3501, 265);
 frunace(3502, 3724);
@@ -298,3 +321,33 @@ craft19(3532, 3592);
 craft19(3533, 3593);
 craft19(3534, 3594);
 craft19(3535, 3595);
+
+//金属粒变成金属锭
+craft91(3771, 3721);
+craft91(3772, 3722);
+craft91(3775, 3723);
+craft91(3777, 3724);
+craft91(3779, 3725);
+craft91(3780, 3726);
+craft91(3781, 3727);
+craft91(3782, 3728);
+craft91(3783, 264);
+craft91(3774, 263);
+craft91(3778, 351,0 , 4);
+
+//小撮金属粉合成金属粉
+craft91(3581, 3521);
+craft91(3582, 3522);
+craft91(3583, 3523);
+craft91(3584, 3524);
+craft91(3585, 3525);
+craft91(3586, 3526);
+craft91(3587, 3527);
+craft91(3588, 3528);
+craft91(3589, 3529);
+craft91(3580, 3530);
+craft91(3591, 3531);
+craft91(3592, 3532);
+craft91(3593, 3533);
+craft91(3594, 3534);
+craft91(3595, 3535);
