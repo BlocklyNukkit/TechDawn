@@ -122,4 +122,4 @@ new ItemInfo(3531, "iron_dust", "Iron Dust", "铁粉", "./plugins/TechDawn/textu
 new ItemInfo(3532, "copper_dust", "Copper Dust", "铜粉", "./plugins/TechDawn/textures/铜粉.png", 64, "items", false, false).register();
 new ItemInfo(3533, "tin_dust", "Tin Dust", "锡粉", "./plugins/TechDawn/textures/锡粉.png", 64, "items", false, false).register();
 new ItemInfo(3534, "silver_dust", "Silver Dust", "银粉", "./plugins/TechDawn/textures/银粉.png", 64, "items", false, false).register();
-new ItemInfo(3535, "diamond_dust", "Diamond Dust", "钻石粉", "./plugins/TechDawn/textures/粉.png", 64, "items", false, false).register();
+new ItemInfo(3535, "diamond_dust", "Diamond Dust", "钻石粉", "./plugins/TechDawn/textures/钻石粉.png", 64, "items", false, false).register();
