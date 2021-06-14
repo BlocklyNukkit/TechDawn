@@ -81,7 +81,7 @@ function ItemInfo(id, name, eng, chn, texturePath, stackSize, type, isDisplayAsT
  * @summary 3721-3770 金属锭
  * @summary 3771-3830 金属粒
  */
-//new ItemInfo(35, "tiny__nugget", "Tiny  Nugget", "粒", "./plugins/TechDawn/textures/粒.png", 64, "items", false, false).register();
+//new ItemInfo(35, "_plate", "  Plate", "板", "./plugins/TechDawn/textures/板.png", 64, "items", false, false).register();
 //粉碎矿石
 new ItemInfo(3501, "crushed_magnetite_ore", "Crushed Magnetite Ore", "粉碎的磁铁矿", "./plugins/TechDawn/textures/粉碎的磁铁矿.png", 64, "nature", false, false).register();
 new ItemInfo(3502, "crushed_gelenite_ore", "Crushed Gelenite Ore", "粉碎的方铅矿", "./plugins/TechDawn/textures/粉碎的方铅矿.png", 64, "nature", false, false).register();
@@ -153,3 +153,19 @@ new ItemInfo(3780, "copper_nugget", "Copper Nugget", "铜粒", "./plugins/TechDa
 new ItemInfo(3781, "tin_nugget", "Tin Nugget", "锡粒", "./plugins/TechDawn/textures/锡粒.png", 64, "items", false, false).register();
 new ItemInfo(3782, "silver_nugget", "Silver Nugget", "银粒", "./plugins/TechDawn/textures/银粒.png", 64, "items", false, false).register();
 new ItemInfo(3783, "diamond_nugget", "Diamond Nugget", "钻石粒", "./plugins/TechDawn/textures/钻石粒.png", 64, "items", false, false).register();
+//金属板
+new ItemInfo(3681, "stainless_steel_plate", "Stainless Steel Plate", "不锈钢板", "./plugins/TechDawn/textures/不锈钢板.png", 64, "items", false, false).register();
+new ItemInfo(3682, "chromium_plate", "Chromium Plate", "铬板", "./plugins/TechDawn/textures/铬板.png", 64, "items", false, false).register();
+new ItemInfo(3683, "gold_plate", "Gold Plate", "金板", "./plugins/TechDawn/textures/金板.png", 64, "items", false, false).register();
+new ItemInfo(3684, "sulfur_plate", "Sulfur Plate", "硫板", "./plugins/TechDawn/textures/硫板.png", 64, "items", false, false).register();
+new ItemInfo(3685, "coal_plate", "Coal Plate", "煤板", "./plugins/TechDawn/textures/煤板.png", 64, "items", false, false).register();
+new ItemInfo(3686, "manganese_plate", "Manganese Plate", "锰板", "./plugins/TechDawn/textures/锰板.png", 64, "items", false, false).register();
+new ItemInfo(3687, "nickel_plate", "Nickel Plate", "镍板", "./plugins/TechDawn/textures/镍板.png", 64, "items", false, false).register();
+new ItemInfo(3688, "lead_plate", "Lead Plate", "铅板", "./plugins/TechDawn/textures/铅板.png", 64, "items", false, false).register();
+new ItemInfo(3689, "lapis_plate", "Lapis Plate", "青金石板", "./plugins/TechDawn/textures/青金石板.png", 64, "items", false, false).register();
+new ItemInfo(3690, "bronze_plate", "Bronze Plate", "青铜板", "./plugins/TechDawn/textures/青铜板.png", 64, "items", false, false).register();
+new ItemInfo(3691, "iron_plate", "Iron Plate", "铁板", "./plugins/TechDawn/textures/铁板.png", 64, "items", false, false).register();
+new ItemInfo(3692, "copper_plate", "Copper Plate", "铜板", "./plugins/TechDawn/textures/铜板.png", 64, "items", false, false).register();
+new ItemInfo(3693, "tin_plate", "Tin Plate", "锡板", "./plugins/TechDawn/textures/锡板.png", 64, "items", false, false).register();
+new ItemInfo(3694, "silver_plate", "Silver Plate", "银板", "./plugins/TechDawn/textures/银板.png", 64, "items", false, false).register();
+new ItemInfo(3695, "diamond_plate", "Diamond Plate", "钻石板", "./plugins/TechDawn/textures/钻石板.png", 64, "items", false, false).register();
