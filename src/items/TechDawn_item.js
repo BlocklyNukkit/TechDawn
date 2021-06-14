@@ -81,7 +81,7 @@ function ItemInfo(id, name, eng, chn, texturePath, stackSize, type, isDisplayAsT
  * @summary 3721-3770 金属锭
  * @summary 3771-3830 金属粒
  */
-//new ItemInfo(35, "tiny__dust", "Tiny  Dust", "小撮粉", "./plugins/TechDawn/textures/小撮粉.png", 64, "items", false, false).register();
+//new ItemInfo(35, "tiny__nugget", "Tiny  Nugget", "粒", "./plugins/TechDawn/textures/粒.png", 64, "items", false, false).register();
 //粉碎矿石
 new ItemInfo(3501, "crushed_magnetite_ore", "Crushed Magnetite Ore", "粉碎的磁铁矿", "./plugins/TechDawn/textures/粉碎的磁铁矿.png", 64, "nature", false, false).register();
 new ItemInfo(3502, "crushed_gelenite_ore", "Crushed Gelenite Ore", "粉碎的方铅矿", "./plugins/TechDawn/textures/粉碎的方铅矿.png", 64, "nature", false, false).register();
@@ -139,4 +139,17 @@ new ItemInfo(3592, "tiny_copper_dust", "Tiny Copper Dust", "小撮铜粉", "./pl
 new ItemInfo(3593, "tiny_tin_dust", "Tiny Tin Dust", "小撮锡粉", "./plugins/TechDawn/textures/小撮锡粉.png", 64, "items", false, false).register();
 new ItemInfo(3594, "tiny_silver_dust", "Tiny Silver Dust", "小撮银粉", "./plugins/TechDawn/textures/小撮银粉.png", 64, "items", false, false).register();
 new ItemInfo(3595, "tiny_diamond_dust", "Tiny Diamond Dust", "小撮钻石粉", "./plugins/TechDawn/textures/小撮钻石粉.png", 64, "items", false, false).register();
-
+//金属粒
+new ItemInfo(3771, "stainless_steel_nugget", "Stainless Steel Nugget", "不锈钢粒", "./plugins/TechDawn/textures/不锈钢粒.png", 64, "items", false, false).register();
+new ItemInfo(3772, "chromium_nugget", "Chromium Nugget", "铬粒", "./plugins/TechDawn/textures/铬粒.png", 64, "items", false, false).register();
+new ItemInfo(3773, "sulfur_nugget", "Sulfur Nugget", "硫粒", "./plugins/TechDawn/textures/硫粒.png", 64, "items", false, false).register();
+new ItemInfo(3774, "coal_nugget", "Coal Nugget", "煤粒", "./plugins/TechDawn/textures/煤粒.png", 64, "items", false, false).register();
+new ItemInfo(3775, "manganese_nugget", "Manganese Nugget", "锰粒", "./plugins/TechDawn/textures/锰粒.png", 64, "items", false, false).register();
+new ItemInfo(3776, "nickel_nugget", "Nickel Nugget", "镍粒", "./plugins/TechDawn/textures/镍粒.png", 64, "items", false, false).register();
+new ItemInfo(3777, "lead_nugget", "Lead Nugget", "铅粒", "./plugins/TechDawn/textures/铅粒.png", 64, "items", false, false).register();
+new ItemInfo(3778, "lapis_nugget", "Lapis Nugget", "青金石粒", "./plugins/TechDawn/textures/青金石粒.png", 64, "items", false, false).register();
+new ItemInfo(3779, "bronze_nugget", "Bronze Nugget", "青铜粒", "./plugins/TechDawn/textures/青铜粒.png", 64, "items", false, false).register();
+new ItemInfo(3780, "copper_nugget", "Copper Nugget", "铜粒", "./plugins/TechDawn/textures/铜粒.png", 64, "items", false, false).register();
+new ItemInfo(3781, "tin_nugget", "Tin Nugget", "锡粒", "./plugins/TechDawn/textures/锡粒.png", 64, "items", false, false).register();
+new ItemInfo(3782, "silver_nugget", "Silver Nugget", "银粒", "./plugins/TechDawn/textures/银粒.png", 64, "items", false, false).register();
+new ItemInfo(3783, "diamond_nugget", "Diamond Nugget", "钻石粒", "./plugins/TechDawn/textures/钻石粒.png", 64, "items", false, false).register();
