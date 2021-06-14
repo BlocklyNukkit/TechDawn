@@ -185,3 +185,42 @@ new ItemInfo(3653, "copper_gear", "Copper Gear", "铜齿轮", "./plugins/TechDaw
 new ItemInfo(3654, "tin_gear", "Tin Gear", "锡齿轮", "./plugins/TechDawn/textures/锡齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3655, "silver_gear", "Silver Gear", "银齿轮", "./plugins/TechDawn/textures/银齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3656, "diamond_gear", "Diamond Gear", "钻石齿轮", "./plugins/TechDawn/textures/钻石齿轮.png", 64, "items", false, false).register();
+
+/**
+ * @description 注册合成表
+ * @param {int} input 原料
+ * @param {int} output 产物
+ * @param {int?} data 数据值
+ */
+function frunace(input, output, data){
+    if(data){
+        blockitem.addFurnaceCraft(blockitem.buildItem(input, 0, 1), blockitem.buildItem(output, data, 1));
+    }else{
+        blockitem.addFurnaceCraft(blockitem.buildItem(input, 0, 1), blockitem.buildItem(output, 0, 1));
+    }
+    let BlastFurnaceRecipe = require("cn.nukkit.inventory.BlastFurnaceRecipe");
+    if(manager.isPowerNukkit()){
+        if(data){
+            server.addRecipe(new BlastFurnaceRecipe(blockitem.buildItem(output, data, 1), blockitem.buildItem(input, 0, 1)));
+        }else{
+            server.addRecipe(new BlastFurnaceRecipe(blockitem.buildItem(output, 0, 1), blockitem.buildItem(input, 0, 1)));
+        }
+    }
+}
+
+//粉碎的矿石冶炼为锭
+frunace(3501, 265);
+frunace(3502, 3724);
+frunace(3503, 266);
+frunace(3504, 3726);
+//frunace(3505, null); 铝锭不能熔炉冶炼
+frunace(3506, 388);
+frunace(3507, 263);
+frunace(3508, 265);
+frunace(3509, 3724);
+frunace(3510, 3727);
+//frunace(3511, null) 锌锭不能熔炉冶炼
+frunace(3512, 3728);
+frunace(3513, 264);
+frunace(3514, 331);
+frunace(3515, 351, 4);
