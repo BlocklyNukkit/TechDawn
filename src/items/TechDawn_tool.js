@@ -101,12 +101,24 @@ function BlockBreakEvent(/**@type {cn.nukkit.event.block.BlockBreakEvent}*/event
  */
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
     const iid = event.getItem().getId();
+    //玩家使用空木桶装水
     if(iid == 3402){
         let backWardBlock = event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock();
         if(backWardBlock.getId() == 8 || backWardBlock.getId() == 9){
             blockitem.setBlock(backWardBlock, blockitem.buildBlock(0, 0), false);
+            blockitem.blockUpdate(backWardBlock);
             blockitem.removeItemToPlayer(event.getPlayer(), blockitem.buildItem(3402, 0 ,1));
             blockitem.addItemToPlayer(event.getPlayer(), blockitem.buildItem(3403, 0, 1));
+        }
+    }
+    //玩家使用装水木桶放水
+    else if(iid == 3403){
+        let backWardBlock = event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock();
+        if(backWardBlock.getId() == 0 || backWardBlock.getId() == 8){
+            blockitem.setBlock(backWardBlock, blockitem.buildBlock(8, 0), false);
+            blockitem.blockUpdate(backWardBlock);
+            blockitem.removeItemToPlayer(event.getPlayer(), blockitem.buildItem(3403, 0 ,1));
+            blockitem.addItemToPlayer(event.getPlayer(), blockitem.buildItem(3402, 0, 1));
         }
     }
 }
