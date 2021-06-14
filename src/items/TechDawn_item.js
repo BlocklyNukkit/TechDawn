@@ -236,3 +236,19 @@ frunace(3531, 265);
 frunace(3532, 3726);
 frunace(3533, 3727);
 frunace(3534, 3728);
+
+//小撮金属粉冶炼为粒
+frunace(3581, 3771);
+frunace(3582, 3772);
+frunace(3583, 371);
+frunace(3585, 3774);
+frunace(3586, 3775);
+frunace(3587, 3776);
+frunace(3588, 3777);
+frunace(3589, 3778);
+frunace(3590, 3779);
+frunace(3591, 452);
+frunace(3592, 3780);
+frunace(3593, 3781);
+frunace(3594, 3782);
+frunace(3595, 3783);
