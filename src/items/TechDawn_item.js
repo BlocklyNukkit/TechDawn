@@ -187,7 +187,7 @@ new ItemInfo(3655, "silver_gear", "Silver Gear", "银齿轮", "./plugins/TechDaw
 new ItemInfo(3656, "diamond_gear", "Diamond Gear", "钻石齿轮", "./plugins/TechDawn/textures/钻石齿轮.png", 64, "items", false, false).register();
 
 /**
- * @description 注册合成表
+ * @description 注册冶炼合成表
  * @param {int} input 原料
  * @param {int} output 产物
  * @param {int?} data 数据值
@@ -206,6 +206,19 @@ function frunace(input, output, data){
             server.addRecipe(new BlastFurnaceRecipe(blockitem.buildItem(output, 0, 1), blockitem.buildItem(input, 0, 1)));
         }
     }
+}
+
+/**
+ * @description 注册1变9无序配方
+ * @param {int} input 原料id
+ * @param {int} output 产物id
+ * @param {int?} dataInput 原料特殊值
+ * @param {int?} dataOutput 产物特殊值
+ */
+function craft19(input, output, dataInput, dataOutput){
+    if(!dataInput) dataInput = 0;
+    if(!dataOutput) dataOutput = 0;
+    blockitem.addShapelessCraft(Java.to([blockitem.buildItem(input, dataInput, 1)], "cn.nukkit.item.Item[]"), blockitem.buildItem(output, dataOutput, 9));
 }
 
 //粉碎的矿石冶炼为锭
@@ -252,3 +265,16 @@ frunace(3592, 3780);
 frunace(3593, 3781);
 frunace(3594, 3782);
 frunace(3595, 3783);
+
+//金属锭变成金属粒
+craft19(3721, 3771);
+craft19(3722, 3772);
+craft19(3723, 3775);
+craft19(3724, 3777);
+craft19(3725, 3779);
+craft19(3726, 3780);
+craft19(3727, 3781);
+craft19(3728, 3782);
+craft19(264, 3783);
+craft19(263, 3774);
+craft19(351, 3778, 4);
