@@ -73,9 +73,25 @@ function ToolInfo(id, name, eng, chn, texturePath, type, tier, durabillity, atta
     }
 }
 
+/**
+ * @description 注册工具
+ */
 new ToolInfo(3401, "panning_bowl", "Panning Bowl", "淘金碗", "./plugins/TechDawn/textures/淘金碗.png", "shovel", 3, 64, 2, true).register();
 //3402 空木桶
-//3404 装水木桶
+//3403 装水木桶
+
+/**
+ * @description 添加工具合成表
+ */
+//淘金碗
+blockitem.addShapedCraft("A A|AAA", blockitem.buildItem(3401, 0, 1), "A", blockitem.buildItem(1, 0, 1));
+//木桶
+blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 0, 1));
+blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 1, 1));
+blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 2, 1));
+blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 3, 1));
+blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 4, 1));
+blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 5, 1));
 
 /** 
  * @description 获取淘金结果模块 
