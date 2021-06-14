@@ -177,7 +177,6 @@ new ItemInfo(3644, "coal_gear", "Coal Gear", "煤齿轮", "./plugins/TechDawn/te
 new ItemInfo(3645, "manganese_gear", "Manganese Gear", "锰齿轮", "./plugins/TechDawn/textures/锰齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3646, "wood_gear", "Wood Gear", "木齿轮", "./plugins/TechDawn/textures/木齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3647, "nickel_gear", "Nickel Gear", "镍齿轮", "./plugins/TechDawn/textures/镍齿轮.png", 64, "items", false, false).register();
-new ItemInfo(3648, "lead_gear", "Lead Gear", "铅齿轮", "./plugins/TechDawn/textures/铅齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3649, "lapis_gear", "Lapis Gear", "青金石齿轮", "./plugins/TechDawn/textures/青金石齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3650, "bronze_gear", "Bronze Gear", "青铜齿轮", "./plugins/TechDawn/textures/青铜齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3651, "stone_gear", "Stone Gear", "石齿轮", "./plugins/TechDawn/textures/石齿轮.png", 64, "items", false, false).register();
