@@ -81,7 +81,7 @@ function ItemInfo(id, name, eng, chn, texturePath, stackSize, type, isDisplayAsT
  * @summary 3721-3770 金属锭
  * @summary 3771-3830 金属粒
  */
-//new ItemInfo(35, "_plate", "  Plate", "板", "./plugins/TechDawn/textures/板.png", 64, "items", false, false).register();
+//new ItemInfo(36, "_gear", "  Gear", "齿轮", "./plugins/TechDawn/textures/齿轮.png", 64, "items", false, false).register();
 //粉碎矿石
 new ItemInfo(3501, "crushed_magnetite_ore", "Crushed Magnetite Ore", "粉碎的磁铁矿", "./plugins/TechDawn/textures/粉碎的磁铁矿.png", 64, "nature", false, false).register();
 new ItemInfo(3502, "crushed_gelenite_ore", "Crushed Gelenite Ore", "粉碎的方铅矿", "./plugins/TechDawn/textures/粉碎的方铅矿.png", 64, "nature", false, false).register();
@@ -169,3 +169,20 @@ new ItemInfo(3692, "copper_plate", "Copper Plate", "铜板", "./plugins/TechDawn
 new ItemInfo(3693, "tin_plate", "Tin Plate", "锡板", "./plugins/TechDawn/textures/锡板.png", 64, "items", false, false).register();
 new ItemInfo(3694, "silver_plate", "Silver Plate", "银板", "./plugins/TechDawn/textures/银板.png", 64, "items", false, false).register();
 new ItemInfo(3695, "diamond_plate", "Diamond Plate", "钻石板", "./plugins/TechDawn/textures/钻石板.png", 64, "items", false, false).register();
+//齿轮
+new ItemInfo(3641, "stainless_steel_gear", "Stainless Steel Gear", "不锈钢齿轮", "./plugins/TechDawn/textures/不锈钢齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3642, "chromium_gear", "Chromium Gear", "铬齿轮", "./plugins/TechDawn/textures/铬齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3643, "gold_gear", "Gold Gear", "金齿轮", "./plugins/TechDawn/textures/金齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3644, "coal_gear", "Coal Gear", "煤齿轮", "./plugins/TechDawn/textures/煤齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3645, "manganese_gear", "Manganese Gear", "锰齿轮", "./plugins/TechDawn/textures/锰齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3646, "wood_gear", "Wood Gear", "木齿轮", "./plugins/TechDawn/textures/木齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3647, "nickel_gear", "Nickel Gear", "镍齿轮", "./plugins/TechDawn/textures/镍齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3648, "lead_gear", "Lead Gear", "铅齿轮", "./plugins/TechDawn/textures/铅齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3649, "lapis_gear", "Lapis Gear", "青金石齿轮", "./plugins/TechDawn/textures/青金石齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3650, "bronze_gear", "Bronze Gear", "青铜齿轮", "./plugins/TechDawn/textures/青铜齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3651, "stone_gear", "Stone Gear", "石齿轮", "./plugins/TechDawn/textures/石齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3652, "iron_gear", "Iron Gear", "铁齿轮", "./plugins/TechDawn/textures/铁齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3653, "copper_gear", "Copper Gear", "铜齿轮", "./plugins/TechDawn/textures/铜齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3654, "tin_gear", "Tin Gear", "锡齿轮", "./plugins/TechDawn/textures/锡齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3655, "silver_gear", "Silver Gear", "银齿轮", "./plugins/TechDawn/textures/银齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3656, "diamond_gear", "Diamond Gear", "钻石齿轮", "./plugins/TechDawn/textures/钻石齿轮.png", 64, "items", false, false).register();
