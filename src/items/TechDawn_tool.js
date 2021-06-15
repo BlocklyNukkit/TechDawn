@@ -97,20 +97,20 @@ blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blocki
 blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 4, 1));
 blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 5, 1));
 //木锤子
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 0, 1), "B", blockitem.buildItem(280, 0, 1));
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 1, 1), "B", blockitem.buildItem(280, 0, 1));
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 2, 1), "B", blockitem.buildItem(280, 0, 1));
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 3, 1), "B", blockitem.buildItem(280, 0, 1));
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 4, 1), "B", blockitem.buildItem(280, 0, 1));
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 5, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 1, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 2, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 3, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 4, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 5, 1), "B", blockitem.buildItem(280, 0, 1));
 //石锤子
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3407, 0, 1), "A", blockitem.buildItem(4, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3407, 0, 1), "A", blockitem.buildItem(4, 0, 1), "B", blockitem.buildItem(280, 0, 1));
 //铁锤子
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3406, 0, 1), "A", blockitem.buildItem(265, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3406, 0, 1), "A", blockitem.buildItem(265, 0, 1), "B", blockitem.buildItem(280, 0, 1));
 //钻石锤子
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3405, 0, 1), "A", blockitem.buildItem(264, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3405, 0, 1), "A", blockitem.buildItem(264, 0, 1), "B", blockitem.buildItem(280, 0, 1));
 //不锈钢锤子
-blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(3721, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(3721, 0, 1), "B", blockitem.buildItem(280, 0, 1));
 
 /** 
  * @description 获取淘金结果模块 
