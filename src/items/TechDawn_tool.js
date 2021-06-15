@@ -79,7 +79,11 @@ function ToolInfo(id, name, eng, chn, texturePath, type, tier, durabillity, atta
 new ToolInfo(3401, "panning_bowl", "Panning Bowl", "淘金碗", "./plugins/TechDawn/textures/淘金碗.png", "shovel", 3, 64, 2, true).register();
 //3402 空木桶
 //3403 装水木桶
-
+new ToolInfo(3404, "stainless_steel_hammer", "Stainless Steel Hammer", "不锈钢锤子", "./plugins/TechDawn/textures/不锈钢锤子.png", "pickaxe", 5, 3800, 8, false);
+new ToolInfo(3405, "diamond_hammer", "Diamond Hammer", "钻石锤子", "./plugins/TechDawn/textures/钻石锤子.png", "pickaxe", 5, 2780, 7, false);
+new ToolInfo(3406, "iron_hammer", "Iron Hammer", "铁锤子", "./plugins/TechDawn/textures/铁锤子.png", "pickaxe", 4, 500, 6, false);
+new ToolInfo(3405, "stone_hammer", "Stone Hammer", "石锤子", "./plugins/TechDawn/textures/石锤子.png", "pickaxe", 3, 120, 5, false);
+new ToolInfo(3407, "wood_hammer", "Wood Hammer", "木锤子", "./plugins/TechDawn/textures/木锤子.png", "pickaxe", 1, 40, 4, false);
 /**
  * @description 添加工具合成表
  */
