@@ -82,8 +82,8 @@ new ToolInfo(3401, "panning_bowl", "Panning Bowl", "淘金碗", "./plugins/TechD
 new ToolInfo(3404, "stainless_steel_hammer", "Stainless Steel Hammer", "不锈钢锤子", "./plugins/TechDawn/textures/不锈钢锤子.png", "pickaxe", 5, 3800, 8, false).register();
 new ToolInfo(3405, "diamond_hammer", "Diamond Hammer", "钻石锤子", "./plugins/TechDawn/textures/钻石锤子.png", "pickaxe", 5, 2780, 7, false).register();
 new ToolInfo(3406, "iron_hammer", "Iron Hammer", "铁锤子", "./plugins/TechDawn/textures/铁锤子.png", "pickaxe", 4, 500, 6, false).register();
-new ToolInfo(3405, "stone_hammer", "Stone Hammer", "石锤子", "./plugins/TechDawn/textures/石锤子.png", "pickaxe", 3, 120, 5, false).register();
-new ToolInfo(3407, "wood_hammer", "Wood Hammer", "木锤子", "./plugins/TechDawn/textures/木锤子.png", "pickaxe", 1, 40, 4, false).register();
+new ToolInfo(3407, "stone_hammer", "Stone Hammer", "石锤子", "./plugins/TechDawn/textures/石锤子.png", "pickaxe", 3, 120, 5, false).register();
+new ToolInfo(3408, "wood_hammer", "Wood Hammer", "木锤子", "./plugins/TechDawn/textures/木锤子.png", "pickaxe", 1, 40, 4, false).register();
 /**
  * @description 添加工具合成表
  */
@@ -96,6 +96,21 @@ blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blocki
 blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 3, 1));
 blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 4, 1));
 blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 5, 1));
+//木锤子
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 1, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 2, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 3, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 4, 1), "B", blockitem.buildItem(280, 0, 1));
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 5, 1), "B", blockitem.buildItem(280, 0, 1));
+//石锤子
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3407, 0, 1), "A", blockitem.buildItem(4, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+//铁锤子
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3406, 0, 1), "A", blockitem.buildItem(265, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+//钻石锤子
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3405, 0, 1), "A", blockitem.buildItem(264, 0, 1), "B", blockitem.buildItem(280, 0, 1));
+//不锈钢锤子
+blockitem.addShapedCraft("AAA|AAA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(3721, 0, 1), "B", blockitem.buildItem(280, 0, 1));
 
 /** 
  * @description 获取淘金结果模块 
