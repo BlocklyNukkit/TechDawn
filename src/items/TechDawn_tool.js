@@ -90,12 +90,12 @@ new ToolInfo(3408, "wood_hammer", "Wood Hammer", "木锤子", "./plugins/TechDaw
 //淘金碗
 blockitem.addShapedCraft("A A|AAA", blockitem.buildItem(3401, 0, 1), "A", blockitem.buildItem(1, 0, 1));
 //木桶
-blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 0, 1));
-blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 1, 1));
-blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 2, 1));
-blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 3, 1));
-blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 4, 1));
-blockitem.addShapedCraft("A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 5, 1));
+blockitem.addShapedCraft("A A|A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 0, 1));
+blockitem.addShapedCraft("A A|A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 1, 1));
+blockitem.addShapedCraft("A A|A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 2, 1));
+blockitem.addShapedCraft("A A|A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 3, 1));
+blockitem.addShapedCraft("A A|A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 4, 1));
+blockitem.addShapedCraft("A A|A A| A ", blockitem.buildItem(3402, 0, 1), "A", blockitem.buildItem(5, 5, 1));
 //木锤子
 blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 0, 1), "B", blockitem.buildItem(280, 0, 1));
 blockitem.addShapedCraft("AAA|ABA| B ", blockitem.buildItem(3408, 0, 1), "A", blockitem.buildItem(5, 1, 1), "B", blockitem.buildItem(280, 0, 1));
