@@ -73,7 +73,7 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
                     entity.showFloatingItem(upPos, resultItem);
                     //显示粒子效果
                     for(let _i=0;_i<5;_i++){
-                        particle.drawEmitter(upPos.add(Math.random()*0.3 , 0.5 + Math.random()*0.3, Math.random()*0.3), "minecraft:basic_flame_particle");
+                        particle.drawDot(upPos.add(Math.random()*0.3 , 0.5 + Math.random()*0.3, Math.random()*0.3), 9);
                     }
                     //播放使用声音
                     blockitem.makeSound(upPos, "RANDOM_ANVIL_USE");
