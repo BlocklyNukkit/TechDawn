@@ -351,3 +351,28 @@ craft91(3592, 3532);
 craft91(3593, 3533);
 craft91(3594, 3534);
 craft91(3595, 3535);
+
+/**
+ * @description BN加载完成事件
+ * @description 用于定义机器相关合成
+ */
+function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNInitializedEvent}*/event){
+    /**
+     * @description 添加科技黎明铁砧合成
+     * @type {(input:int, output:int, damage:int) => void}
+     */
+    const anvil = require("TechDawnMachineAnvil").addAnvilCraft;
+    //金属锭砸板
+    anvil(3271, 3681, 15);
+    anvil(3272, 3682, 15);
+    anvil(266, 3683, 15);
+    anvil(3723, 3686, 15);
+    anvil(263, 3685, 15);
+    anvil(3724, 3688, 15);
+    anvil(3725, 3690, 15);
+    anvil(3726, 3692, 15);
+    anvil(265, 3691, 15);
+    anvil(3727, 3693, 15);
+    anvil(3728, 3694, 15);
+    anvil(264, 3695, 15);
+}
