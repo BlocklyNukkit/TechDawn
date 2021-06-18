@@ -375,4 +375,20 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     anvil(3727, 3693, 15);
     anvil(3728, 3694, 15);
     anvil(264, 3695, 15);
+    //金属粒砸粉
+    anvil(3771, 3581, 1);
+    anvil(3772, 3582, 1);
+    anvil(3773, 3584, 1);
+    anvil(371, 3583, 1);
+    anvil(3774, 3585, 1);
+    anvil(3775, 3586, 1);
+    anvil(3776, 3587 , 1);
+    anvil(3777 ,3588 , 1);
+    anvil(3778 ,3589 , 1);
+    anvil(3779 ,3590 , 1);
+    anvil(3780 ,3592 , 1);
+    anvil(452 ,3591 , 1);
+    anvil(3781 ,3593 , 1);
+    anvil(3782 ,3594 , 1);
+    anvil(3783 ,3595 , 1);
 }
