@@ -114,6 +114,7 @@ new ItemInfo(3725, "bronze_ingot", "Bronze Ingot", "青铜锭", "./plugins/TechD
 new ItemInfo(3726, "copper_ingot", "Copper Ingot", "铜锭", "./plugins/TechDawn/textures/铜锭.png", 64, "items", false, false).register();
 new ItemInfo(3727, "tin_ingot", "Tin Ingot", "锡锭", "./plugins/TechDawn/textures/锡锭.png", 64, "items", false, false).register();
 new ItemInfo(3728, "silver_ingot", "Silver Ingot", "银锭", "./plugins/TechDawn/textures/银锭.png", 64, "items", false, false).register();
+new ItemInfo(3729, "clean_coal", "Clean Coal", "精煤", "./plugins/TechDawn/textures/精煤.png", 64, "items", false, false).register();
 //金属粉
 new ItemInfo(3521, "stainless_steel_dust", "Stainless Steel Dust", "不锈钢粉", "./plugins/TechDawn/textures/不锈钢粉.png", 64, "items", false, false).register();
 new ItemInfo(3522, "chromium_dust", "Chromi Dust", "铬粉", "./plugins/TechDawn/textures/铬粉.png", 64, "items", false, false).register();
@@ -160,6 +161,7 @@ new ItemInfo(3780, "copper_nugget", "Copper Nugget", "铜粒", "./plugins/TechDa
 new ItemInfo(3781, "tin_nugget", "Tin Nugget", "锡粒", "./plugins/TechDawn/textures/锡粒.png", 64, "items", false, false).register();
 new ItemInfo(3782, "silver_nugget", "Silver Nugget", "银粒", "./plugins/TechDawn/textures/银粒.png", 64, "items", false, false).register();
 new ItemInfo(3783, "diamond_nugget", "Diamond Nugget", "钻石粒", "./plugins/TechDawn/textures/钻石粒.png", 64, "items", false, false).register();
+new ItemInfo(3784, "clean_coal_nugget", "Clean Coal Nugget", "精煤粒", "./plugins/TechDawn/textures/精煤粒.png", 64, "items", false, false).register();
 //金属板
 new ItemInfo(3681, "stainless_steel_plate", "Stainless Steel Plate", "不锈钢板", "./plugins/TechDawn/textures/不锈钢板.png", 64, "items", false, false).register();
 new ItemInfo(3682, "chromium_plate", "Chromium Plate", "铬板", "./plugins/TechDawn/textures/铬板.png", 64, "items", false, false).register();
@@ -314,6 +316,7 @@ craft19(3728, 3782);
 craft19(264, 3783);
 craft19(263, 3774);
 craft19(351, 3778, 4);
+craft19(3729, 3784);
 
 //金属粉合成小撮金属粉
 craft19(3521, 3581);
@@ -344,6 +347,7 @@ craft91(3782, 3728);
 craft91(3783, 264);
 craft91(3774, 263);
 craft91(3778, 351, 0, 4);
+craft91(3729, 3784);
 
 //小撮金属粉合成金属粉
 craft91(3581, 3521);
