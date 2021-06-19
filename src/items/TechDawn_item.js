@@ -347,7 +347,7 @@ craft91(3782, 3728);
 craft91(3783, 264);
 craft91(3774, 263);
 craft91(3778, 351, 0, 4);
-craft91(3729, 3784);
+craft91(3784, 3729);
 
 //小撮金属粉合成金属粉
 craft91(3581, 3521);
@@ -442,4 +442,16 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     anvilGear(3693, 3654, 15);
     anvilGear(3694, 3655, 15);
     anvilGear(3695, 3656, 15);
+
+    /**
+     * @description 炼药锅洗练合成模块
+     */
+    const TechDawnMachineCauldron = require("TechDawnMachineCauldron");
+    /**
+     * @description 添加炼药锅洗练合成
+     * @type {(input:int, output:int)=>void}
+     */
+    const cauldron = TechDawnMachineCauldron.addCauldronCraft;
+    //煤粒洗练为精煤粒
+    cauldron(3774, 3784);
 }

@@ -8,6 +8,7 @@
         "./src/items/TechDawn_item.js",
         "./src/loot/TechDawn_lootPanning.js",
         "./src/items/TechDawn_tool.js",
-        "./src/machine/TechDawn_anvil.js"
+        "./src/machine/TechDawn_anvil.js",
+        "./src/machine/TechDawn_cauldron.js"
     ]
 }

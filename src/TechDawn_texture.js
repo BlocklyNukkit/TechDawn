@@ -127,6 +127,8 @@ const textureList = [
     '青铜齿轮.png',
     '锻造模板.png',
     '锻造模板_齿轮.png',
+    '精煤.png',
+    '精煤粒.png',
 ]
 
 //引入翻译模块
