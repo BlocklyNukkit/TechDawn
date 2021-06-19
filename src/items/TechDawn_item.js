@@ -353,6 +353,12 @@ craft91(3594, 3534);
 craft91(3595, 3535);
 
 /**
+ * @description 注册齿轮合成
+ */
+blockitem.addShapedCraft("ABA|B B|ABA", blockitem.buildItem(3646, 0, 1), "A", blockitem.buildItem(143, 0, 1), "B", blockitem.buildItem(5, 0, 1));
+blockitem.addShapedCraft("ABA|B B|ABA", blockitem.buildItem(3651, 0, 1), "A", blockitem.buildItem(77, 0, 1), "B", blockitem.buildItem(1, 0, 1));
+
+/**
  * @description BN加载完成事件
  * @description 用于定义机器相关合成
  */
