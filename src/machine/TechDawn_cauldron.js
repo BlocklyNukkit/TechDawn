@@ -19,7 +19,7 @@ const cauldronCraft = {};
  * @param {int} output
  */
 export function addCauldronCraft(input, output){
-    cauldronCraft[String(input)] = output;
+    cauldronCraft[String(input)] = {output: output, needWater: true};
 }
 
 /**
@@ -56,5 +56,6 @@ function cauldronHasWater(block){
 function cauldronLessWater(block){
     if(cauldronHasWater(block)){
         block.setDamage(block.getDamage() - 1);
+        blockitem.setBlock(block, block, false);
     }
 }
