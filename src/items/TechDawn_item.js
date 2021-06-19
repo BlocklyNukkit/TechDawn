@@ -188,6 +188,9 @@ new ItemInfo(3656, "diamond_gear", "Diamond Gear", "钻石齿轮", "./plugins/Te
 //木桶
 new ItemInfo(3402, "empty_wood_bucket", "Empty Wood Bucket", "空木桶", "./plugins/TechDawn/textures/空木桶.png", 64, "items", true, true).register();
 new ItemInfo(3403, "watered_wood_buckeet", "Watered Wood Bucket", "装水木桶", "./plugins/TechDawn/textures/装水木桶.png", 16, "items", true, true).register();
+//锻造模板
+new ItemInfo(3404, "forging_template", "Forging Template", "锻造模板", "./plugins/TechDawn/textures/锻造模板.png", 1, "items", false, true).register();
+new ItemInfo(3405, "forging_template_gear", "Forging Template Gear", "齿轮锻造模板", "./plugins/TechDawn/textures/锻造模板_齿轮.png", 1, "items", false, true).register();
 
 /**
  * @description 注册冶炼合成表
