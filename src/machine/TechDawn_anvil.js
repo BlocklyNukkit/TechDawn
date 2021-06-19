@@ -25,7 +25,7 @@ const anvilItem = new com.blocklynukkit.loader.other.data.MemoryStorage();
 
 /**
  * @description 记录科技黎明铁砧合成
- * @type {{[key: string]: {outputId: int, toolDamage: int}}}
+ * @type {{[key: string]: {outputId: int, toolDamage: int, gear: boolean}}}
  */
 const anvilCraft = {};
 
@@ -36,10 +36,18 @@ const anvilCraft = {};
  * @param {int} damage 此次合成消耗锤子的耐久
  */
 export function addAnvilCraft(input, output, damage){
-    anvilCraft[String(input)] = {outputId: output, toolDamage: damage};
+    anvilCraft[String(input)] = {outputId: output, toolDamage: damage, gear: false};
 }
 
-addAnvilCraft(3721, 3681, 6);
+/**
+ * @description 添加科技黎明需要齿轮锻造模板的铁砧合成
+ * @param {int} input
+ * @param {int} output
+ * @param {int} damage 此次合成消耗锤子的耐久
+ */
+export function addAnvilGearCraft(input, output, damage){
+    anvilCraft[String(input)] = {outputId: output, toolDamage: damage, gear: true};
+}
 
 /**
  * @description 处理铁砧潜行合成
@@ -67,6 +75,20 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
                 let currentCraft = anvilCraft[String(previousStore.getId())];
                 //找到了对应的合成
                 if(currentCraft != null){
+                    //如果需要齿轮锻造模板
+                    if(currentCraft.gear == true){
+                        //玩家副手里没有齿轮锻造模板
+                        if(inventory.getEntityItemInOffHand(event.getPlayer()).getId() != 3410){
+                            //掉落上面的物品
+                            blockitem.makeDropItem(upPos, previousStore);
+                            //把锤子放到上面去
+                            anvilItem[event.getBlock()] = tmpItem;
+                            entity.showFloatingItem(upPos, tmpItem);
+                            //记录玩家上次操作时间
+                            playerTouchedTime[event.getPlayer().getName()] = mills();
+                            return;
+                        }
+                    }
                     //执行响应合成操作
                     let resultItem = blockitem.buildItem(currentCraft.outputId, 0, 1);
                     anvilItem[event.getBlock()] = resultItem;

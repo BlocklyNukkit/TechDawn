@@ -189,8 +189,8 @@ new ItemInfo(3656, "diamond_gear", "Diamond Gear", "钻石齿轮", "./plugins/Te
 new ItemInfo(3402, "empty_wood_bucket", "Empty Wood Bucket", "空木桶", "./plugins/TechDawn/textures/空木桶.png", 64, "items", true, true).register();
 new ItemInfo(3403, "watered_wood_buckeet", "Watered Wood Bucket", "装水木桶", "./plugins/TechDawn/textures/装水木桶.png", 16, "items", true, true).register();
 //锻造模板
-new ItemInfo(3404, "forging_template", "Forging Template", "锻造模板", "./plugins/TechDawn/textures/锻造模板.png", 1, "items", false, true).register();
-new ItemInfo(3405, "forging_template_gear", "Forging Template Gear", "齿轮锻造模板", "./plugins/TechDawn/textures/锻造模板_齿轮.png", 1, "items", false, true).register();
+new ItemInfo(3409, "forging_template", "Forging Template", "锻造模板", "./plugins/TechDawn/textures/锻造模板.png", 1, "items", false, true).register();
+new ItemInfo(3410, "forging_template_gear", "Forging Template Gear", "齿轮锻造模板", "./plugins/TechDawn/textures/锻造模板_齿轮.png", 1, "items", false, true).register();
 
 /**
  * @description 注册冶炼合成表
@@ -362,15 +362,29 @@ blockitem.addShapedCraft("ABA|B B|ABA", blockitem.buildItem(3646, 0, 1), "A", bl
 blockitem.addShapedCraft("ABA|B B|ABA", blockitem.buildItem(3651, 0, 1), "A", blockitem.buildItem(77, 0, 1), "B", blockitem.buildItem(1, 0, 1));
 
 /**
+ * @description 注册锻造模板合成
+ */
+craft91(3691, 3409);
+
+/**
  * @description BN加载完成事件
  * @description 用于定义机器相关合成
  */
 function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNInitializedEvent}*/event){
     /**
+     * @description 科技黎明铁砧合成模块
+     */
+    const TechDawnMachineAnvil = require("TechDawnMachineAnvil");
+    /**
      * @description 添加科技黎明铁砧合成
      * @type {(input:int, output:int, damage:int) => void}
      */
-    const anvil = require("TechDawnMachineAnvil").addAnvilCraft;
+    const anvil = TechDawnMachineAnvil.addAnvilCraft;
+    /**
+     * @description 添加科技黎明需要齿轮锻造模板的铁砧合成
+     * @type {(input:int, output:int, damage:int) => void}
+     */
+    const anvilGear = TechDawnMachineAnvil.addAnvilGearCraft;
     //金属锭砸板
     anvil(3271, 3681, 15);
     anvil(3272, 3682, 15);
@@ -400,4 +414,21 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     anvil(3781 ,3593 , 1);
     anvil(3782 ,3594 , 1);
     anvil(3783 ,3595 , 1);
+    //锻造模板转化
+    anvil(3409, 3410, 24);
+    anvil(3410, 3409, 24);
+    //金属板砸齿轮
+    anvilGear(3681, 3641, 15);
+    anvilGear(3682, 3642, 15);
+    anvilGear(3683, 3643, 15);
+    anvilGear(3685, 3644, 15);
+    anvilGear(3686, 3645, 15);
+    anvilGear(3687, 3647, 15);
+    anvilGear(3689, 3649, 15);
+    anvilGear(3690, 3650, 15);
+    anvilGear(3691, 3652, 15);
+    anvilGear(3692, 3653, 15);
+    anvilGear(3693, 3654, 15);
+    anvilGear(3694, 3655, 15);
+    anvilGear(3695, 3656, 15);
 }
