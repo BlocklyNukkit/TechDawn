@@ -155,13 +155,25 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     }
     //玩家使用装水木桶放水
     else if(iid == 3403){
-        let backWardBlock = event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock();
-        if(backWardBlock.getId() == 0 || backWardBlock.getId() == 8){
-            blockitem.setBlock(backWardBlock, blockitem.buildBlock(8, 0), false);
-            blockitem.blockUpdate(backWardBlock);
-            blockitem.makeSound(backWardBlock, "BUCKET_EMPTY_WATER");
-            blockitem.removeItemToPlayer(event.getPlayer(), blockitem.buildItem(3403, 0 ,1));
-            blockitem.addItemToPlayer(event.getPlayer(), blockitem.buildItem(3402, 0, 1));
+        //玩家给炼药锅装水
+        if(event.getBlock().getId() == 118){
+            if(event.getBlock().getDamage() != 6){
+                event.getBlock().setDamage(6);
+                blockitem.setBlock(event.getBlock(), event.getBlock(), false);
+                blockitem.makeSound(event.getBlock(), "CAULDRON_FILLWATER");
+                blockitem.removeItemToPlayer(event.getPlayer(), blockitem.buildItem(3403, 0 ,1));
+                blockitem.addItemToPlayer(event.getPlayer(), blockitem.buildItem(3402, 0, 1));
+            }
+        }else{
+            //把水倒在地上
+            let backWardBlock = event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock();
+            if(backWardBlock.getId() == 0 || backWardBlock.getId() == 8){
+                blockitem.setBlock(backWardBlock, blockitem.buildBlock(8, 0), false);
+                blockitem.blockUpdate(backWardBlock);
+                blockitem.makeSound(backWardBlock, "BUCKET_EMPTY_WATER");
+                blockitem.removeItemToPlayer(event.getPlayer(), blockitem.buildItem(3403, 0 ,1));
+                blockitem.addItemToPlayer(event.getPlayer(), blockitem.buildItem(3402, 0, 1));
+            }
         }
     }
 }

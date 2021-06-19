@@ -37,6 +37,7 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             blockitem.removeItemToPlayer(event.getPlayer(), tmpItem);
             blockitem.makeDropItem(event.getBlock().add(0.5, 0.5, 0.5), blockitem.buildItem(currentCraft.output, 0, 1));
             cauldronLessWater(event.getBlock());
+            blockitem.makeSound(event.getBlock(), "LIQUID_WATER");
         }
     }
 }
