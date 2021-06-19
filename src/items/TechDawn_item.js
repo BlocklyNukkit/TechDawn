@@ -81,7 +81,14 @@ function ItemInfo(id, name, eng, chn, texturePath, stackSize, type, isDisplayAsT
  * @summary 3721-3770 金属锭
  * @summary 3771-3830 金属粒
  */
-//new ItemInfo(36, "_gear", "  Gear", "齿轮", "./plugins/TechDawn/textures/齿轮.png", 64, "items", false, false).register();
+
+//引入翻译模块
+const Translate = require("TechDawnTranslate");
+//导出翻译函数
+const T = Translate.translate;
+const TF = Translate.translateFormat;
+//发出提示
+logger.info(T("register_items"));
 //粉碎矿石
 new ItemInfo(3501, "crushed_magnetite_ore", "Crushed Magnetite Ore", "粉碎的磁铁矿", "./plugins/TechDawn/textures/粉碎的磁铁矿.png", 64, "nature", false, false).register();
 new ItemInfo(3502, "crushed_gelenite_ore", "Crushed Gelenite Ore", "粉碎的方铅矿", "./plugins/TechDawn/textures/粉碎的方铅矿.png", 64, "nature", false, false).register();

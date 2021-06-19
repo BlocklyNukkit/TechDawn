@@ -13,10 +13,12 @@
 const chinese = {
     "init": "§e科技黎明插件正在加载中...",
     "download_texture": "§b正在下载材质 §e{} §b中...",
+    "register_items": "§e正在注册物品中...",
 }
 const english = {
     "init": "§eTechDawn plugin loading...",
     "download_texture": "§bDownloading texture §e{} §b...",
+    "register_items": "§eRegistering items..."
 }
 const isChinese = (server.getLanguage().getLang() == "chs");
 
