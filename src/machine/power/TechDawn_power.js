@@ -12,6 +12,11 @@
  */
  const mills = java.lang.System.currentTimeMillis;
 
+ /**
+  * @description 能源最大传输距离
+  */
+ const maxConductLength = 256;
+
 /**
  * @description 能源输出处理对象
  * @class
@@ -38,7 +43,7 @@ function PowerOutputProcess(startPos, totalTransfer){
             return;
         }else{
             this.time++;
-            if(this.time > 200){
+            if(this.time > maxConductLength){
                 return;
             }
             this.closed.push(pos2string(currentPos));
@@ -79,6 +84,16 @@ function PowerOutputProcess(startPos, totalTransfer){
         }
         logger.info(mills()-start);
     }
+}
+
+/**
+ * @description 构建能源传输对象
+ * @param {cn.nukkit.level.Position} startPos 能源输出开始的地方
+ * @param {int} totalTransfer 一共传输多少能源
+ * @returns {PowerOutputProcess}
+ */
+export function newPowerOutputProcess(startPos, totalTransfer){
+    return new PowerOutputProcess(startPos, totalTransfer);
 }
 
 /**

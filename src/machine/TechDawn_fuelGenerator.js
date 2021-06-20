@@ -13,6 +13,11 @@
 const mills = java.lang.System.currentTimeMillis;
 
 /**
+ * @description 能源模块
+ */
+const TechDawnMachinePower = require("TechDawnMachinePower");
+
+/**
  * @description 记录玩家触摸时间，防止刷物品
  * @type {{[key: string]: long}}
  */
@@ -26,13 +31,15 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     if(event.getItem().getId() != 3351){
         return;
     }
-    let model = entity.buildModel((cn.nukkit.level.Position).fromObject(event.getTouchVector(), event.getPlayer().getLevel()), "fuelgenerator", 1, 1, 1, 1, F(self => {
+    let model = entity.buildModel(event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock(), "fuelgenerator", 1, 1, 1, 1, F(self => {
         let workingTime = self.dataStorage.getItem("workingTime")
         if(workingTime > 0){
             self.dataStorage.setItem("workingTime", workingTime - 1);
             //播放工作声音，每16刻播放一次
+            //计算能源输出，每16刻输出一次能源，输出20RF
             if(!(workingTime & 15)){
                 blockitem.makeSound(self, "FIRE_FIRE");
+                TechDawnMachinePower.newPowerOutputProcess(self.getPosition().ceil(), 20).startTransfer(false);
             }
             //显示工作粒子，每32刻显示一次
             if(!(workingTime & 31)){
