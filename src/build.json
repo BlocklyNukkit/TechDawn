@@ -6,10 +6,12 @@
         "./src/TechDawn_main.js",
         "./src/TechDawn_texture.js",
         "./src/items/TechDawn_item.js",
+        "./src/items/TechDawn_machine.js",
         "./src/loot/TechDawn_lootPanning.js",
         "./src/items/TechDawn_tool.js",
         "./src/machine/TechDawn_anvil.js",
         "./src/machine/TechDawn_cauldron.js",
-        "./src/machine/mutiBlock/TechDawn_coalStack.js"
+        "./src/machine/mutiBlock/TechDawn_coalStack.js",
+        "./src/machine/TechDawn_fuelGenerator.js"
     ]
 }

@@ -72,6 +72,7 @@ function ItemInfo(id, name, eng, chn, texturePath, stackSize, type, isDisplayAsT
 
 /**
  * @description 注册物品
+ * @summary 3351-3400 机械
  * @summary 3401-3500 工具
  * @summary 3501-3520 粉碎矿石
  * @summary 3521-3580 矿物粉

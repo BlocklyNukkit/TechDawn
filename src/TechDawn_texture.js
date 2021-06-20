@@ -129,6 +129,14 @@ const textureList = [
     '锻造模板_齿轮.png',
     '精煤.png',
     '精煤粒.png',
+    '火力发电机.png'
+]
+
+const modelList = [
+    {path: "fuelGenerator/fuelGenerator.json", name: "fuelGenerator.json"},
+    {path: "fuelGenerator/fuelGenerator.png", name: "fuelGenerator.png"},
+    {path: "fuelGenerator/fuelGenerator_working.json", name: "fuelGenerator_working.json"},
+    {path: "fuelGenerator/fuelGenerator_working.png", name: "fuelGenerator_working.png"},
 ]
 
 //引入翻译模块
@@ -140,11 +148,21 @@ var T = Translate.translate;
 var TF = Translate.translateFormat;
 /** @description 是否为中文 @type {boolean} */
 const isChinese = (server.getLanguage().getLang()=="chs");
+//下载物品材质
 for(let each of textureList){
     let path = "./plugins/TechDawn/textures/"+each;
     if(!manager.isPathExists(path)){
         let url = "https://"+(isChinese?"raw.fastgit.org":"raw.githubusercontent.com")+"/BlocklyNukkit/TectDawn/master/image/"+(java.net.URLEncoder).encode(each, "UTF-8");
         logger.info(TF("download_texture", [each]));
         (com.blocklynukkit.loader.utils.Utils).downLoadFromUrl(url, each, "./plugins/TechDawn/textures");
+    }
+}
+//下载模型材质
+for(let each of modelList){
+    let path = "./plugins/BlocklyNukkit/skin/"+each.name;
+    if(!manager.isPathExists(path)){
+        let url = "https://"+(isChinese?"raw.fastgit.org":"raw.githubusercontent.com")+"/BlocklyNukkit/TectDawn/model/"+each.path;
+        logger.info(TF("download_texture", [each.path]));
+        (com.blocklynukkit.loader.utils.Utils).downLoadFromUrl(url, each.name, "./plugins/BlocklyNukkit/skin");
     }
 }
