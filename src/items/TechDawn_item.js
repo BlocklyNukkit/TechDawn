@@ -376,6 +376,27 @@ craft91(3593, 3533);
 craft91(3594, 3534);
 craft91(3595, 3535);
 
+//合金制造
+//3*铜粉 + 1*锡粉 = 4*铜粉
+blockitem.addShapelessCraft(Java.from([
+    blockitem.buildItem(3532, 0, 1),
+    blockitem.buildItem(3532, 0, 1),
+    blockitem.buildItem(3532, 0, 1),
+    blockitem.buildItem(3533, 0, 1)
+]), blockitem.buildItem(3530, 0, 4));
+//1*铬粉 + 1*锰粉 + 1*镍粉 + 6*铁粉 = 6*不锈钢粉
+blockitem.addShapelessCraft(Java.from([
+    blockitem.buildItem(3522, 0, 1),
+    blockitem.buildItem(3526, 0, 1),
+    blockitem.buildItem(3527, 0, 1),
+    blockitem.buildItem(3531, 0, 1),
+    blockitem.buildItem(3531, 0, 1),
+    blockitem.buildItem(3531, 0, 1),
+    blockitem.buildItem(3531, 0, 1),
+    blockitem.buildItem(3531, 0, 1),
+    blockitem.buildItem(3531, 0, 1),
+]),blockitem.buildItem(3521, 0, 6));
+
 /**
  * @description 注册齿轮合成
  */
