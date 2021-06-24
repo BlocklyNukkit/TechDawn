@@ -47,7 +47,7 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
                 particle.drawDot(self.add(0, 1, 0), 66);
             }
         }else if(workingTime == 0 && self.dataStorage.getItem("working") == true){
-            self.dataStorage.setItem("working", false);
+            self.dataStorage.setItem("working", true);
             self.resetModelSkin("fuelgenerator");
         }
     }), 1, F((self, damageEvent) => {
