@@ -40,14 +40,14 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             //计算能源输出，每16刻输出一次能源，输出20RF
             if(!(workingTime & 15)){
                 blockitem.makeSound(self, "FIRE_FIRE");
-                TechDawnMachinePower.newPowerOutputProcess(self.getPosition().ceil(), 20).startTransfer(false);
+                TechDawnMachinePower.newPowerOutputProcess(self.getPosition().ceil(), 20).startTransfer(true);
             }
             //显示工作粒子，每32刻显示一次
             if(!(workingTime & 31)){
                 particle.drawDot(self.add(0, 1, 0), 66);
             }
         }else if(workingTime == 0 && self.dataStorage.getItem("working") == true){
-            self.dataStorage.setItem("working", true);
+            self.dataStorage.setItem("working", false);
             self.resetModelSkin("fuelgenerator");
         }
     }), 1, F((self, damageEvent) => {
