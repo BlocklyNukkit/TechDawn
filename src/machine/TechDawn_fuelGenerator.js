@@ -36,10 +36,12 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
         let workingTime = self.dataStorage.getItem("workingTime")
         if(workingTime > 0){
             self.dataStorage.setItem("workingTime", workingTime - 1);
-            //播放工作声音，每16刻播放一次
+            //播放工作声音，每64刻播放一次
+            if(!(workingTime & 63)){
+                blockitem.makeSound(self, "FIRE_FIRE");
+            }
             //计算能源输出，每16刻输出一次能源，输出20RF
             if(!(workingTime & 15)){
-                blockitem.makeSound(self, "FIRE_FIRE");
                 TechDawnMachinePower.newPowerOutputProcess(self.getPosition().ceil(), 20).startTransfer(true);
             }
             //显示工作粒子，每32刻显示一次
