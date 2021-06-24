@@ -1,5 +1,5 @@
 {
-    "geometry.fuelgenerator": {
+    "geometry.fuelgenerator_working": {
         "bones": [
             {
                 "name": "head",
