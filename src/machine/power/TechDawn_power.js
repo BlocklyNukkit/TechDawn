@@ -10,12 +10,19 @@
 /**
  * @description 获取时间函数
  */
- const mills = java.lang.System.currentTimeMillis;
+const mills = java.lang.System.currentTimeMillis;
 
- /**
-  * @description 能源最大传输距离
-  */
- const maxConductLength = 256;
+/**
+ * @description 能源最大传输距离
+ */
+const maxConductLength = 256;
+
+/**
+ * @description 字符串形式的坐标对应电网中应有的机械实体
+ * @type {{[key: string]: com.blocklynukkit.loader.other.Entities.BNModel}}
+ * @todo 此优化方案尚未启用
+ */
+const pos2EntityContains = {}
 
 /**
  * @description 能源输出处理对象
@@ -76,10 +83,62 @@ function PowerOutputProcess(startPos, totalTransfer){
         let start = mills();
         //计算能源通路
         this.transfer(this.startPos);
+        //转换为坐标处理
+        let finalPoses = [];
+        for(let each of this.closed){
+            finalPoses.push(string2pos(each));
+        }
         //显示红石粒子
         if(showParticle){
-            for(let each of this.closed){
-                particle.drawDot(string2pos(each).add(0.5,0.1,0.5), 11);
+            for(let each of finalPoses){
+                particle.drawDot(each.add(0.5,0.1,0.5), 11);
+            }
+        }
+        /**
+         * @description 所有机械实体数组
+         * @type {com.blocklynukkit.loader.other.Entities.BNModel[]}
+         */
+        const inputMachines = [];
+        /**
+         * @description 所有电池实体数组
+         * @type {com.blocklynukkit.loader.other.Entities.BNModel[]}
+         */
+        const storeMachines = [];
+        //计算范围内的所有机械实体
+        for(let i=0;i<finalPoses.length;i++){
+            /** @type {cn.nukkit.entity.Entity[]} */
+            let chunkEntites = Java.from(finalPoses[i].getChunk().getEntities().values());
+            for(let j=0;j<chunkEntites.length;j++){
+                let each = chunkEntites[j];
+                if(each.getName() == "BNModel" && each.dataStorage.getItem("techDawn") && each.getPosition().floor().equals(finalPoses[i])){
+                    if(each.dataStorage.getItem("mode") == "I"){
+                        inputMachines.push(each);
+                    }else if(each.dataStorage.getItem("mode") == "IO"){
+                        storeMachines.push(each);
+                    }
+                }
+            }
+        }
+        //机器排序
+        var s = this.startPos;
+        inputMachines.sort((a, b) => {
+            return s.distance(a) - s.distance(b);
+        });
+        storeMachines.sort((a, b) => {
+            return a.dataStorage.getItem("storage") - b.dataStorage.getItem("storage");
+        });
+        //分配电能
+        for(let each of inputMachines.concat(storeMachines)){
+            let currentTransfer = Math.min(each.dataStorage.getItem("maxAccept"), this.totalTransfer);
+            const storage = each.dataStorage.getItem("storage");
+            const maxStorage = each.dataStorage.getItem("maxStorage");
+            if(storage + currentTransfer > maxStorage){
+                currentTransfer = maxStorage - storage;
+            }
+            this.totalTransfer -= currentTransfer;
+            each.dataStorage.setItem("storage", storage + currentTransfer);
+            if(this.totalTransfer <= 0){
+                return;
             }
         }
         logger.info(mills()-start);

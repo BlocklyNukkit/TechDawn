@@ -32,7 +32,7 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
         return;
     }
     //如果点击红石线放置就不要抬高一格
-    let model = entity.buildModel(event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock(), "fuelgenerator", 1, 1, 1, 1, F(self => {
+    let model = entity.buildModel((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), "fuelgenerator", 1, 1, 1, 1, F(self => {
         let workingTime = self.dataStorage.getItem("workingTime")
         if(workingTime > 0){
             self.dataStorage.setItem("workingTime", workingTime - 1);
@@ -42,7 +42,7 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             }
             //计算能源输出，每16刻输出一次能源，输出20RF
             if(!(workingTime & 15)){
-                TechDawnMachinePower.newPowerOutputProcess(self.getPosition().ceil(), 20).startTransfer(true);
+                TechDawnMachinePower.newPowerOutputProcess(self.getPosition().floor(), 20).startTransfer(false);
             }
             //显示工作粒子，每32刻显示一次
             if(!(workingTime & 31)){
@@ -81,9 +81,11 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     }));
     model.setYaw(player.getYaw());
     model.setPitch(0);
+    model.dataStorage.setItem("techDawn", true);
     model.dataStorage.setItem("name", "fuelGenerator");
     model.dataStorage.setItem("workingTime", 0);
     model.dataStorage.setItem("working", false);
+    model.dataStorage.setItem("mode", "O");
     let tmpitem = event.getItem().clone();
     tmpitem.setCount(1);
     blockitem.removeItemToPlayer(player, tmpitem);
