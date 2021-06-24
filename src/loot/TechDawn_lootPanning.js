@@ -37,15 +37,16 @@ RandomItem.putSelector(new ConstantItemSelector(3508, root_gravelPanning), 0.06)
 RandomItem.putSelector(new ConstantItemSelector(3502, root_gravelPanning), 0.03);//方铅
 RandomItem.putSelector(new ConstantItemSelector(3503, root_gravelPanning), 0.02);//金
 RandomItem.putSelector(new ConstantItemSelector(3504, root_gravelPanning), 0.07);//孔雀石
-RandomItem.putSelector(new ConstantItemSelector(3505, root_gravelPanning), 0.03);//铝
+RandomItem.putSelector(new ConstantItemSelector(3505, root_gravelPanning), 0.015);//铝
 RandomItem.putSelector(new ConstantItemSelector(3507, root_gravelPanning), 0.08);//煤
 RandomItem.putSelector(new ConstantItemSelector(3509, root_gravelPanning), 0.055);//铜
 RandomItem.putSelector(new ConstantItemSelector(3510, root_gravelPanning), 0.06);//锡
 RandomItem.putSelector(new ConstantItemSelector(3511, root_gravelPanning), 0.05);//铅
 RandomItem.putSelector(new ConstantItemSelector(3512, root_gravelPanning), 0.005);//银
 RandomItem.putSelector(new ConstantItemSelector(3513, root_gravelPanning), 0.002);//钻石
-RandomItem.putSelector(new ConstantItemSelector(3515, root_gravelPanning), 0.018);//青金石
-RandomItem.putSelector(new ConstantItemSelector(318, root_gravelPanning), 0.45);//燧石
+RandomItem.putSelector(new ConstantItemSelector(3515, root_gravelPanning), 0.012);//青金石
+RandomItem.putSelector(new ConstantItemSelector(3516, root_gravelPanning), 0.016);//镍
+RandomItem.putSelector(new ConstantItemSelector(318, root_gravelPanning), 0.40);//燧石
 //通过反射api调用选择方法
 const Clazz = java.lang.Class;
 let Rclazz = Clazz.forName("cn.nukkit.item.randomitem.RandomItem");

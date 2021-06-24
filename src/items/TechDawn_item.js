@@ -106,6 +106,7 @@ new ItemInfo(3512, "crushed_silver_ore", "Crushed Silver Ore", "粉碎的银矿"
 new ItemInfo(3513, "crushed_diamond_ore", "Crushed Diamond Ore", "粉碎的钻石矿", "./plugins/TechDawn/textures/粉碎的钻石矿.png", 64, "nature", false, false).register();
 new ItemInfo(3514, "crushed_redstone_ore", "Crushed Redstone Ore", "粉碎的红石矿", "./plugins/TechDawn/textures/粉碎的红石矿.png", 64, "nature", false, false).register();
 new ItemInfo(3515, "crushed_lapis_ore", "Crushed Lapis Ore", "粉碎的青金石矿", "./plugins/TechDawn/textures/粉碎的青金石矿.png", 64, "nature", false, false).register();
+new ItemInfo(3516, "crushed_nickel_ore", "Crushed Nickel Ore", "粉碎的镍矿", "./plugins/TechDawn/textures/粉碎的镍矿.png", 64, "nature", false, false).register();
 //金属锭
 new ItemInfo(3721, "stainless_steel_ingot", "Stainless Steel Ingot", "不锈钢锭", "./plugins/TechDawn/textures/不锈钢锭.png", 64, "items", false, false).register();
 new ItemInfo(3722, "chromium_ingot", "Chromium Ingot", "铬锭", "./plugins/TechDawn/textures/铬锭.png", 64, "items", false, false).register();
@@ -116,6 +117,7 @@ new ItemInfo(3726, "copper_ingot", "Copper Ingot", "铜锭", "./plugins/TechDawn
 new ItemInfo(3727, "tin_ingot", "Tin Ingot", "锡锭", "./plugins/TechDawn/textures/锡锭.png", 64, "items", false, false).register();
 new ItemInfo(3728, "silver_ingot", "Silver Ingot", "银锭", "./plugins/TechDawn/textures/银锭.png", 64, "items", false, false).register();
 new ItemInfo(3729, "clean_coal", "Clean Coal", "精煤", "./plugins/TechDawn/textures/精煤.png", 64, "items", false, false).register();
+new ItemInfo(3730, "nickel_ingot", "Nickel Ingot", "镍锭", "./plugins/TechDawn/textures/镍锭.png", 64, "nature", false, false).register();
 //金属粉
 new ItemInfo(3521, "stainless_steel_dust", "Stainless Steel Dust", "不锈钢粉", "./plugins/TechDawn/textures/不锈钢粉.png", 64, "items", false, false).register();
 new ItemInfo(3522, "chromium_dust", "Chromi Dust", "铬粉", "./plugins/TechDawn/textures/铬粉.png", 64, "items", false, false).register();
@@ -123,7 +125,7 @@ new ItemInfo(3523, "gold_dust", "Gold Dust", "金粉", "./plugins/TechDawn/textu
 new ItemInfo(3524, "sulfur_dust", "Sulfur Dust", "硫粉", "./plugins/TechDawn/textures/硫粉.png", 64, "items", false, false).register();
 new ItemInfo(3525, "coal_dust", "Coal Dust", "煤粉", "./plugins/TechDawn/textures/煤粉.png", 64, "items", false, false).register();
 new ItemInfo(3526, "manganese_dust", "Manganese Dust", "锰粉", "./plugins/TechDawn/textures/锰粉.png", 64, "items", false, false).register();
-new ItemInfo(3527, "nickel_dust", "Nicke Dust", "镍粉", "./plugins/TechDawn/textures/镍粉.png", 64, "items", false, false).register();
+new ItemInfo(3527, "nickel_dust", "Nickel Dust", "镍粉", "./plugins/TechDawn/textures/镍粉.png", 64, "items", false, false).register();
 new ItemInfo(3528, "lead_dust", "Lead Dust", "铅粉", "./plugins/TechDawn/textures/铅粉.png", 64, "items", false, false).register();
 new ItemInfo(3529, "lapis_dust", "Lapis Dust", "青金石粉", "./plugins/TechDawn/textures/青金石粉.png", 64, "items", false, false).register();
 new ItemInfo(3530, "bronze_dust", "Bronze Dust", "青铜粉", "./plugins/TechDawn/textures/青铜粉.png", 64, "items", false, false).register();
@@ -276,6 +278,7 @@ frunace(3512, 3728);
 frunace(3513, 264);
 frunace(3514, 331);
 frunace(3515, 351, 4);
+frunace(3716, 3730);
 
 //金属粉冶炼为锭
 frunace(3521, 3721);
@@ -288,6 +291,7 @@ frunace(3531, 265);
 frunace(3532, 3726);
 frunace(3533, 3727);
 frunace(3534, 3728);
+frunace(3527, 3730);
 
 //小撮金属粉冶炼为粒
 frunace(3581, 3771);
@@ -318,6 +322,7 @@ craft19(264, 3783);
 craft19(263, 3774);
 craft19(351, 3778, 4);
 craft19(3729, 3784);
+craft19(3730, 3776);
 
 //金属粉合成小撮金属粉
 craft19(3521, 3581);

@@ -61,6 +61,7 @@ const textureList = [
     '粉碎的锌矿.png',
     '粉碎的锡矿.png',
     '粉碎的青金石矿.png',
+    '粉碎的镍矿.png',
     '装水木桶.png',
     '金板.png',
     '金粉.png',
