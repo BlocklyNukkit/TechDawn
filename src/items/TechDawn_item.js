@@ -107,6 +107,7 @@ new ItemInfo(3513, "crushed_diamond_ore", "Crushed Diamond Ore", "粉碎的钻�
 new ItemInfo(3514, "crushed_redstone_ore", "Crushed Redstone Ore", "粉碎的红石矿", "./plugins/TechDawn/textures/粉碎的红石矿.png", 64, "nature", false, false).register();
 new ItemInfo(3515, "crushed_lapis_ore", "Crushed Lapis Ore", "粉碎的青金石矿", "./plugins/TechDawn/textures/粉碎的青金石矿.png", 64, "nature", false, false).register();
 new ItemInfo(3516, "crushed_nickel_ore", "Crushed Nickel Ore", "粉碎的镍矿", "./plugins/TechDawn/textures/粉碎的镍矿.png", 64, "nature", false, false).register();
+new ItemInfo(3517, "crushed_nickel_ore", "Crushed Nickel Ore", "粉碎的铬矿", "./plugins/TechDawn/textures/粉碎的铬矿.png", 64, "nature", false, false).register();
 //金属锭
 new ItemInfo(3721, "stainless_steel_ingot", "Stainless Steel Ingot", "不锈钢锭", "./plugins/TechDawn/textures/不锈钢锭.png", 64, "items", false, false).register();
 new ItemInfo(3722, "chromium_ingot", "Chromium Ingot", "铬锭", "./plugins/TechDawn/textures/铬锭.png", 64, "items", false, false).register();
@@ -278,7 +279,8 @@ frunace(3512, 3728);
 frunace(3513, 264);
 frunace(3514, 331);
 frunace(3515, 351, 4);
-frunace(3716, 3730);
+frunace(3516, 3730);
+frunace(3517, 3722);
 
 //金属粉冶炼为锭
 frunace(3521, 3721);

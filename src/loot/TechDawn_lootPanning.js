@@ -32,7 +32,7 @@ RandomItem.putSelector(new ConstantItemSelector(3508, root_sandPanning), 0.04);/
 RandomItem.putSelector(new ConstantItemSelector(3501, root_sandPanning), 0.055);//磁铁
 RandomItem.putSelector(new ConstantItemSelector(3503, root_sandPanning), 0.02);//金
 //添加沙砾淘金概率
-RandomItem.putSelector(new ConstantItemSelector(3501, root_gravelPanning), 0.08);//磁铁
+RandomItem.putSelector(new ConstantItemSelector(3501, root_gravelPanning), 0.07);//磁铁
 RandomItem.putSelector(new ConstantItemSelector(3508, root_gravelPanning), 0.06);//铁
 RandomItem.putSelector(new ConstantItemSelector(3502, root_gravelPanning), 0.03);//方铅
 RandomItem.putSelector(new ConstantItemSelector(3503, root_gravelPanning), 0.02);//金
@@ -46,6 +46,7 @@ RandomItem.putSelector(new ConstantItemSelector(3512, root_gravelPanning), 0.005
 RandomItem.putSelector(new ConstantItemSelector(3513, root_gravelPanning), 0.002);//钻石
 RandomItem.putSelector(new ConstantItemSelector(3515, root_gravelPanning), 0.012);//青金石
 RandomItem.putSelector(new ConstantItemSelector(3516, root_gravelPanning), 0.016);//镍
+RandomItem.putSelector(new ConstantItemSelector(3517, root_gravelPanning), 0.01);//铬
 RandomItem.putSelector(new ConstantItemSelector(318, root_gravelPanning), 0.40);//燧石
 //通过反射api调用选择方法
 const Clazz = java.lang.Class;
