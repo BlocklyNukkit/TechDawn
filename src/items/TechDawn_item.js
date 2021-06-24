@@ -385,7 +385,7 @@ blockitem.addShapelessCraft(Java.to([
     blockitem.buildItem(3533, 0, 1)
 ], "cn.nukkit.item.Item[]"), blockitem.buildItem(3530, 0, 4));
 //1*铬粉 + 1*锰粉 + 1*镍粉 + 6*铁粉 = 6*不锈钢粉
-blockitem.addShapelessCraft(Java.from([
+blockitem.addShapelessCraft(Java.to([
     blockitem.buildItem(3522, 0, 1),
     blockitem.buildItem(3526, 0, 1),
     blockitem.buildItem(3527, 0, 1),
