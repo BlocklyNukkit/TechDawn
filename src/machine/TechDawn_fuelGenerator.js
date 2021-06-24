@@ -31,7 +31,8 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     if(event.getItem().getId() != 3351){
         return;
     }
-    let model = entity.buildModel(event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock(), "fuelgenerator", 1, 1, 1, 1, F(self => {
+    //如果点击红石线放置就不要抬高一格
+    let model = entity.buildModel(event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock(), "fuelgenerator", 1, 1, 1, 1, F(self => {
         let workingTime = self.dataStorage.getItem("workingTime")
         if(workingTime > 0){
             self.dataStorage.setItem("workingTime", workingTime - 1);
