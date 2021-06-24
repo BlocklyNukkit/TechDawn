@@ -132,7 +132,8 @@ const textureList = [
     '锻造模板_齿轮.png',
     '精煤.png',
     '精煤粒.png',
-    '火力发电机.png'
+    '火力发电机.png',
+    '红石电池箱.png'
 ]
 
 const modelList = [
@@ -140,8 +141,8 @@ const modelList = [
     {path: "fuelGenerator/fuelGenerator.png", name: "fuelGenerator.png"},
     {path: "fuelGenerator/fuelGenerator_working.json", name: "fuelGenerator_working.json"},
     {path: "fuelGenerator/fuelGenerator_working.png", name: "fuelGenerator_working.png"},
-    {path: "redStoneBattreyBox/redStoneBattreyBox.json", name: "redStoneBattreyBox.json"},
-    {path: "redStoneBattreyBox/redStoneBattreyBox.png", name: "redStoneBattreyBox.png"},
+    {path: "redStoneBatteryBox/redStoneBatteryBox.json", name: "redStoneBatteryBox.json"},
+    {path: "redStoneBatteryBox/redStoneBatteryBox.png", name: "redStoneBatteryBox.png"},
 ]
 
 //引入翻译模块
@@ -166,7 +167,7 @@ for(let each of textureList){
 for(let each of modelList){
     let path = "./plugins/BlocklyNukkit/skin/"+each.name;
     if(!manager.isPathExists(path)){
-        let url = "https://"+(isChinese?"raw.fastgit.org":"raw.githubusercontent.com")+"/BlocklyNukkit/TectDawn/model/"+each.path;
+        let url = "https://"+(isChinese?"raw.fastgit.org":"raw.githubusercontent.com")+"/BlocklyNukkit/TectDawn/master/model/"+each.path;
         logger.info(TF("download_texture", [each.path]));
         (com.blocklynukkit.loader.utils.Utils).downLoadFromUrl(url, each.name, "./plugins/BlocklyNukkit/skin");
     }
