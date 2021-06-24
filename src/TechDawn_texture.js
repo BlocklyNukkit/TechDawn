@@ -140,6 +140,8 @@ const modelList = [
     {path: "fuelGenerator/fuelGenerator.png", name: "fuelGenerator.png"},
     {path: "fuelGenerator/fuelGenerator_working.json", name: "fuelGenerator_working.json"},
     {path: "fuelGenerator/fuelGenerator_working.png", name: "fuelGenerator_working.png"},
+    {path: "redStoneBattreyBox/redStoneBattreyBox.json", name: "redStoneBattreyBox.json"},
+    {path: "redStoneBattreyBox/redStoneBattreyBox.png", name: "redStoneBattreyBox.png"},
 ]
 
 //引入翻译模块

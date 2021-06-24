@@ -84,8 +84,14 @@ function ItemInfo(id, name, eng, chn, texturePath, stackSize, type, isDisplayAsT
  */
 //注册火力发电机及其合成表
 new ItemInfo(3351, "fuel_generator", "Fuel Generator", "火力发电机", "./plugins/TechDawn/textures/火力发电机.png", 64, "construction", false, false).register();
-/// 合成火力发电机
 /// |   铁板   |   铁板   |   铁板   |
 /// |   铁板   |不锈钢齿轮|   铁板   |
 /// |   铁板   |   熔炉   |   铁板   |
 blockitem.addShapedCraft("AAA|ABA|ACA|", blockitem.buildItem(3351, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(3641, 0, 1), "C", blockitem.buildItem(61, 0, 1));
+
+//注册红石电池箱及其合成表
+new ItemInfo(3352, "redstone_battery_box", "Redstone Battery Box", "红石电池箱", "./plugins/TechDawn/textures/红石电池箱.png", 64, "construction", false, false).register();
+/// |   铁板   |   铁板   |   铁板   |
+/// |不锈钢齿轮|   红石块  |不锈钢齿轮|
+/// |   铁板   |   铁板   |   铁板   |
+blockitem.addShapedCraft("AAA|BCB|AAA", blockitem.buildItem(3352, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(3641, 0, 1), "C", blockitem.buildItem(152, 0, 1));

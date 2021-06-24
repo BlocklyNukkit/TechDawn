@@ -1,0 +1,15 @@
+{
+    "geometry.redstonebattreybox": {
+        "bones": [
+            {
+                "name": "head",
+                "pivot": [0.0, 0.0, 0.0],
+                "cubes": [{
+                    "origin": [-8.0, 0.0, -8.0],
+                    "size": [16, 16, 16],
+                    "uv": [0, 0]
+                }]
+            }
+        ]
+    }
+}
