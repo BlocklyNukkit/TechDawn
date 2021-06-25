@@ -23,6 +23,21 @@ const TechDawnMachinePower = require("TechDawnMachinePower");
  */
 const playerTouchedTime = {};
 
+/**
+ * @description 添加火力发电机工作时间
+ * @param {com.blocklynukkit.loader.other.Entities.BNModel} self
+ * @param {int} time 时间(刻)
+ */
+function addWorkingTime(self, time){
+    //添加燃烧时间
+    self.dataStorage.setItem("workingTime", self.dataStorage.getItem("workingTime") + time);
+    //如果之前没有工作就换成工作皮肤
+    if(!self.dataStorage.getItem("working")){
+        self.dataStorage.setItem("working", true);
+        self.resetModelSkin("fuelgenerator_working");
+    }
+}
+
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
     //玩家操作间隔太小直接忽略
     if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
@@ -70,24 +85,12 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
         }
     }), F((self, player, item, pos) => {
         if(item.getId() == 3729){
-            //是精煤，燃烧10s
-            self.dataStorage.setItem("workingTime", self.dataStorage.getItem("workingTime") + 200);
-            //如果之前没有工作就换成工作皮肤
-            if(!self.dataStorage.getItem("working")){
-                self.dataStorage.setItem("working", true);
-                self.resetModelSkin("fuelgenerator_working");
-            }
+            addWorkingTime(self, 200);
             let tmpitem = item.clone();
             tmpitem.setCount(1);
             blockitem.removeItemToPlayer(player, tmpitem);
         }else if(item.getId() == 263 && item.getDamage() == 1){
-            //是木炭，燃烧6s
-            self.dataStorage.setItem("workingTime", self.dataStorage.getItem("workingTime") + 120);
-            //如果之前没有工作就换成工作皮肤
-            if(!self.dataStorage.getItem("working")){
-                self.dataStorage.setItem("working", true);
-                self.resetModelSkin("fuelgenerator_working");
-            }
+            addWorkingTime(self, 120);
             let tmpitem = item.clone();
             tmpitem.setCount(1);
             blockitem.removeItemToPlayer(player, tmpitem);
@@ -106,4 +109,28 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     blockitem.removeItemToPlayer(player, tmpitem);
     //记录玩家上次操作时间
     playerTouchedTime[event.getPlayer().getName()] = mills();
+}
+
+/**
+ * @description 处理投掷器/发射器发出燃料自动加注
+ */
+function ItemSpawnEvent(/**@type {cn.nukkit.event.entity.ItemSpawnEvent}*/event){
+    let itemEntity = event.getEntity();
+    let item = itemEntity.getItem();
+    if(!(item.getId() == 3729 || item.getId() == 263)){
+        return;
+    }
+    for(let each of itemEntity.getChunk().getEntities()){
+        if(each.getName() == "BNModel" && each.dataStorage.getItem("techDawn") && each.dataStorage.getItem("name") == "fuelGenerator" && each.getPosition().floor().equals(itemEntity.getPosition().floor())){
+            if(item.getId() == 3729){
+                addWorkingTime(each, 200);
+                itemEntity.close();
+                break;
+            }else if(item.getId() == 263 && item.getDamage() == 1){
+                addWorkingTime(each, 120);
+                itemEntity.close();
+                break;
+            }
+        }
+    }
 }
