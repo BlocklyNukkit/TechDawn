@@ -139,7 +139,7 @@ function PowerOutputProcess(startPos, totalTransfer){
             this.totalTransfer -= currentTransfer;
             each.dataStorage.setItem("storage", storage + currentTransfer);
             if(this.totalTransfer <= 0){
-                return;
+                break;
             }
         }
         logger.info(mills()-start);
