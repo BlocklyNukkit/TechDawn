@@ -18,6 +18,11 @@ const mills = java.lang.System.currentTimeMillis;
 const TechDawnMachinePower = require("TechDawnMachinePower");
 
 /**
+ * @description 翻译模块
+ */
+const TechDawnTranslate = require("TechDawnTranslate");
+
+/**
  * @description 记录玩家触摸时间，防止刷物品
  * @type {{[key: string]: long}}
  */
@@ -33,16 +38,19 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     }
     //如果点击红石线放置就不要抬高一格
     let model = entity.buildModel((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), "redStoneBatteryBox", 1, 1, 0.1, 1, F((self, tick) => {
-        self.setNameTag(self.dataStorage.getItem("storage")+" RF");
         //每15刻输出电力
         if(!(tick & 15) && self.dataStorage.getItem("storage") >= 60){
             self.dataStorage.setItem("storage", self.dataStorage.getItem("storage") - 60);
             TechDawnMachinePower.newPowerOutputProcess(self.getPosition().floor(), 60).startTransfer(false);
+            cn.nukkit.level.Position
         }
     }), 1, F((self, damageEvent) => {
 
     }), F((self, player, item, pos) => {
-
+        window.getSimpleWindowBuilder("","")
+            .setTitle(TechDawnTranslate.translate("redstone_battery_box_title"))
+            .setContext(TechDawnTranslate.translateFormat("battery_box_content",[self.dataStorage.getItem("storage"), self.dataStorage.getItem("maxStorage")]))
+            .show(player);
     }));
     let yaw = player.getYaw() + 180;
     model.setYaw(yaw > 360 ? yaw - 360 : yaw);
@@ -53,8 +61,6 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     model.dataStorage.setItem("maxStorage", 8000);
     model.dataStorage.setItem("mode", "IO");
     model.dataStorage.setItem("maxAccept", 60);
-    model.setNameTagVisible();
-    model.setNameTagAlwaysVisible();
     let tmpitem = event.getItem().clone();
     tmpitem.setCount(1);
     blockitem.removeItemToPlayer(player, tmpitem);

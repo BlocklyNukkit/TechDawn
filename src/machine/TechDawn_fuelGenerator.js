@@ -79,7 +79,8 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             blockitem.removeItemToPlayer(player, tmpitem);
         }
     }));
-    model.setYaw(player.getYaw());
+    let yaw = player.getYaw() + 180;
+    model.setYaw(yaw > 360 ? yaw - 360 : yaw);
     model.setPitch(0);
     model.dataStorage.setItem("techDawn", true);
     model.dataStorage.setItem("name", "fuelGenerator");

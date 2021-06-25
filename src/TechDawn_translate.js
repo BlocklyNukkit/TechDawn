@@ -14,11 +14,15 @@ const chinese = {
     "init": "§e科技黎明插件正在加载中...",
     "download_texture": "§b正在下载材质 §e{} §b中...",
     "register_items": "§e正在注册物品中...",
+    "redstone_battery_box_title": "红石电池箱",
+    "battery_box_content": "存储： §e{} / {} §c RF",
 }
 const english = {
     "init": "§eTechDawn plugin loading...",
     "download_texture": "§bDownloading texture §e{} §b...",
-    "register_items": "§eRegistering items..."
+    "register_items": "§eRegistering items...",
+    "redstone_battery_box_title": "Redstone Battery Box",
+    "battery_box_content": "Storage: §e{} / {} §c RF",
 }
 const isChinese = (server.getLanguage().getLang() == "chs");
 
