@@ -53,7 +53,21 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             self.resetModelSkin("fuelgenerator");
         }
     }), 1, F((self, damageEvent) => {
-
+        let tmpItem = inventory.getEntityItemInHand(damageEvent.getEntity());
+        //检测手里是不是锤子
+        if(tmpItem.getId() >= 3404 && tmpItem.getId() <= 3408){
+            blockitem.makeDropItem(self, blockitem.buildItem(3551, 0, 1));
+            self.close();
+            //锤子掉耐久
+            let hammer = tmpItem;
+            hammer.setDamage(hammer.getDamage() + 2);
+            if(hammer.getDamage() > hammer.getMaxDurability()){
+                inventory.setEntityItemInHand(damageEvent.getEntity(), blockitem.buildItem(0,0,1));
+                blockitem.makeSound(self, "USE_STONE");
+            }else{
+                inventory.setEntityItemInHand(damageEvent.getEntity(), hammer);
+            }
+        }
     }), F((self, player, item, pos) => {
         if(item.getId() == 3729){
             //是精煤，燃烧10s

@@ -428,8 +428,8 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
      */
     const anvilGear = TechDawnMachineAnvil.addAnvilGearCraft;
     //金属锭砸板
-    anvil(3271, 3681, 15);
-    anvil(3272, 3682, 15);
+    anvil(3721, 3681, 15);
+    anvil(3722, 3682, 15);
     anvil(266, 3683, 15);
     anvil(3723, 3686, 15);
     anvil(263, 3685, 15);
