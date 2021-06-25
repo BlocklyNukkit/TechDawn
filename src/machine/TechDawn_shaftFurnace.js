@@ -58,7 +58,9 @@ export function placeShaftFurnace(pos, player, data){
             let tmpitem = item.clone();
             tmpitem.setCount(1);
             blockitem.removeItemToPlayer(player, tmpitem);
-            blockitem.makeDropItem(self.add(0.5,0,0.5), recipe.getResult());
+            blockitem.makeDropItem(self.add(0, 1, 0), recipe.getResult());
+            particle.drawDot(self.add(0,1,0), 6);
+            blockitem.makeSound(self, "MOB_ENDERDRAGON_FLAP");
             self.dataStorage.setItem("storage", storage - 160);
         }
     }));
@@ -96,8 +98,10 @@ export function placeShaftFurnace(pos, player, data){
             let recipe = server.getCraftingManager().matchFurnaceRecipe(item);
             if(recipe != null){
                 itemEntity.close();
-                blockitem.makeDropItem(each.add(0.5,0,0.5), recipe.getResult());
-                self.dataStorage.setItem("storage", storage - 160);
+                blockitem.makeDropItem(each.add(0,1,0), recipe.getResult());
+                particle.drawDot(each.add(0,1,0), 6);
+                blockitem.makeSound(each, "MOB_ENDERDRAGON_FLAP");
+                each.dataStorage.setItem("storage", storage - 160);
                 break;
             }
         }
