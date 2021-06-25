@@ -80,7 +80,6 @@ function PowerOutputProcess(startPos, totalTransfer){
      * @param {boolean} showParticle 是否显示红石粒子
      */
     this.startTransfer = function(showParticle){
-        let start = mills();
         //计算能源通路
         this.transfer(this.startPos);
         //转换为坐标处理
@@ -141,7 +140,6 @@ function PowerOutputProcess(startPos, totalTransfer){
                 break;
             }
         }
-        logger.info(mills()-start);
     }
 }
 
@@ -216,9 +214,9 @@ function canTransferTo(from, to){
 }
 
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/e){
-    if(e.getBlock().getId() == 55){
-        e.getPlayer().sendMessage(e.getBlock().getDamage());
-        let process = new PowerOutputProcess(e.getBlock(), 20);
-        process.startTransfer(true);
-    }
+    // if(e.getBlock().getId() == 55){
+    //     e.getPlayer().sendMessage(e.getBlock().getDamage());
+    //     let process = new PowerOutputProcess(e.getBlock(), 20);
+    //     process.startTransfer(true);
+    // }
 }
