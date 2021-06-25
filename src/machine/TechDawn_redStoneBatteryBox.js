@@ -28,16 +28,15 @@ const TechDawnTranslate = require("TechDawnTranslate");
  */
 const playerTouchedTime = {};
 
-function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
-    //玩家操作间隔太小直接忽略
-    if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
-    //放置红石电池箱
-    let player = event.getPlayer();
-    if(event.getItem().getId() != 3352){
-        return;
-    }
+/**
+ * @description 放置红石电池箱
+ * @param {cn.nukkit.level.Position} pos
+ * @param {cn.nukkit.Player} player 放置的玩家，如果非玩家放置传入null
+ * @param {{x: number,y: number,z: number,level: string,yaw: number,pitch: number, dataStroage: Object}} data 非玩家放置时传入的还原信息
+ */
+ export function placeRedStoneBatteryBox(pos, player, data){
     //如果点击红石线放置就不要抬高一格
-    let model = entity.buildModel((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), "redStoneBatteryBox", 1, 1, 0.1, 1, F((self, tick) => {
+    let model = entity.buildModel(pos, "redStoneBatteryBox", 1, 1, 0.1, 1, F((self, tick) => {
         //每15刻输出电力
         if(!(tick & 15) && self.dataStorage.getItem("storage") >= 60){
             self.dataStorage.setItem("storage", self.dataStorage.getItem("storage") - 60);
@@ -66,15 +65,36 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             .setContext(TechDawnTranslate.translateFormat("battery_box_content",[self.dataStorage.getItem("storage"), self.dataStorage.getItem("maxStorage")]))
             .show(player);
     }));
-    let yaw = player.getYaw() + 180;
-    model.setYaw(yaw > 360 ? yaw - 360 : yaw);
-    model.setPitch(0);
-    model.dataStorage.setItem("techDawn", true);
-    model.dataStorage.setItem("name", "redStoneBatteryBox");
-    model.dataStorage.setItem("storage", 0);
-    model.dataStorage.setItem("maxStorage", 8000);
-    model.dataStorage.setItem("mode", "IO");
-    model.dataStorage.setItem("maxAccept", 60);
+    if(data){
+        model.setYaw(data.yaw);
+        model.setPitch(data.pitch);
+        for(let key in data.dataStorage){
+            model.dataStorage.setItem(key, data.dataStorage[key]);
+        }
+    }else{
+        let yaw = player.getYaw() + 180;
+        model.setYaw(yaw > 360 ? yaw - 360 : yaw);
+        model.setPitch(0);
+        model.dataStorage.setItem("techDawn", true);
+        model.dataStorage.setItem("name", "redStoneBatteryBox");
+        model.dataStorage.setItem("storage", 0);
+        model.dataStorage.setItem("maxStorage", 8000);
+        model.dataStorage.setItem("mode", "IO");
+        model.dataStorage.setItem("maxAccept", 60);
+    }
+ }
+
+function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
+    //玩家操作间隔太小直接忽略
+    if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
+    //放置红石电池箱
+    let player = event.getPlayer();
+    if(event.getItem().getId() != 3352){
+        return;
+    }
+    //放置红石电池箱
+    placeRedStoneBatteryBox((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), player);
+    //去掉玩家的一个红石电池箱物品
     let tmpitem = event.getItem().clone();
     tmpitem.setCount(1);
     blockitem.removeItemToPlayer(player, tmpitem);

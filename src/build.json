@@ -14,6 +14,7 @@
         "./src/machine/mutiBlock/TechDawn_coalStack.js",
         "./src/machine/power/TechDawn_power.js",
         "./src/machine/TechDawn_fuelGenerator.js",
-        "./src/machine/TechDawn_redStoneBatteryBox.js"
+        "./src/machine/TechDawn_redStoneBatteryBox.js",
+        "./src/TechDawn_saver.js"
     ]
 }

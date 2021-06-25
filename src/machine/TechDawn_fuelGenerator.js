@@ -38,16 +38,14 @@ function addWorkingTime(self, time){
     }
 }
 
-function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
-    //玩家操作间隔太小直接忽略
-    if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
-    //放置火力发电机
-    let player = event.getPlayer();
-    if(event.getItem().getId() != 3351){
-        return;
-    }
-    //如果点击红石线放置就不要抬高一格
-    let model = entity.buildModel((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), "fuelgenerator", 1, 1, 1, 1, F(self => {
+/**
+ * @description 放置火力发电机
+ * @param {cn.nukkit.level.Position} pos
+ * @param {cn.nukkit.Player} player 放置的玩家，如果非玩家放置传入null
+ * @param {{x: number,y: number,z: number,level: string,yaw: number,pitch: number, dataStroage: Object}} data 非玩家放置时传入的还原信息
+ */
+export function placeFuelGenerator(pos, player, data){
+    let model = entity.buildModel(pos, "fuelgenerator", 1, 1, 1, 1, F(self => {
         let workingTime = self.dataStorage.getItem("workingTime")
         if(workingTime > 0){
             self.dataStorage.setItem("workingTime", workingTime - 1);
@@ -96,14 +94,38 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             blockitem.removeItemToPlayer(player, tmpitem);
         }
     }));
-    let yaw = player.getYaw() + 180;
-    model.setYaw(yaw > 360 ? yaw - 360 : yaw);
-    model.setPitch(0);
-    model.dataStorage.setItem("techDawn", true);
-    model.dataStorage.setItem("name", "fuelGenerator");
-    model.dataStorage.setItem("workingTime", 0);
-    model.dataStorage.setItem("working", false);
-    model.dataStorage.setItem("mode", "O");
+    if(data){
+        model.setYaw(data.yaw);
+        model.setPitch(data.pitch);
+        for(let key in data.dataStorage){
+            model.dataStorage.setItem(key, data.dataStorage[key]);
+        }
+        if(model.dataStorage.getItem("working")){
+            self.resetModelSkin("fuelgenerator_working");
+        }
+    }else{
+        let yaw = player.getYaw() + 180;
+        model.setYaw(yaw > 360 ? yaw - 360 : yaw);
+        model.setPitch(0);
+        model.dataStorage.setItem("techDawn", true);
+        model.dataStorage.setItem("name", "fuelGenerator");
+        model.dataStorage.setItem("workingTime", 0);
+        model.dataStorage.setItem("working", false);
+        model.dataStorage.setItem("mode", "O");
+    }
+}
+
+function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
+    //玩家操作间隔太小直接忽略
+    if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
+    //放置火力发电机
+    let player = event.getPlayer();
+    if(event.getItem().getId() != 3351){
+        return;
+    }
+    //如果点击红石线放置就不要抬高一格
+    placeFuelGenerator((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), player);
+    //去掉玩家的一个火力发电机物品
     let tmpitem = event.getItem().clone();
     tmpitem.setCount(1);
     blockitem.removeItemToPlayer(player, tmpitem);
