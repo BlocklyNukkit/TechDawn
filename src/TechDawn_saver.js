@@ -45,6 +45,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     //导入模块
     const TechDawnMachineFuelGenerator = require("TechDawnMachineFuelGenerator");
     const TechDawnMachineRedStoneBatteryBox = require("TechDawnMachineRedStoneBatteryBox");
+    const TechDawnMachineShaftFurnace = require("TechDawnMachineShaftFurnace");
     //解析数据
     var data = manager.readFile("./plugins/TechDawn/machines.json");
     if(data == "FILE NOT FOUND"){
@@ -58,6 +59,8 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
                 TechDawnMachineFuelGenerator.placeFuelGenerator(pos, null, entry);break;
             case "redStoneBatteryBox":
                 TechDawnMachineRedStoneBatteryBox.placeRedStoneBatteryBox(pos, null, entry);break;
+            case "shaftFurnace":
+                TechDawnMachineShaftFurnace.placeShaftFurnace(pos, null, entry);break;
         }
     }
 }
