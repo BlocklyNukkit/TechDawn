@@ -1,5 +1,4 @@
 //pragma js
-//pragma optimistic
 //pragma module TechDawnMachinePower
 
 /**

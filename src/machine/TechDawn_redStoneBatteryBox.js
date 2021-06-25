@@ -45,19 +45,19 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
             cn.nukkit.level.Position
         }
     }), 1, F((self, damageEvent) => {
-        let tmpItem = inventory.getEntityItemInHand(damageEvent.getEntity());
+        let tmpItem = inventory.getEntityItemInHand(damageEvent.getDamager());
         //检测手里是不是锤子
         if(tmpItem.getId() >= 3404 && tmpItem.getId() <= 3408){
-            blockitem.makeDropItem(self, blockitem.buildItem(3552, 0, 1));
+            blockitem.makeDropItem(self, blockitem.buildItem(3352, 0, 1));
             self.close();
             //锤子掉耐久
             let hammer = tmpItem;
             hammer.setDamage(hammer.getDamage() + 2);
             if(hammer.getDamage() > hammer.getMaxDurability()){
-                inventory.setEntityItemInHand(damageEvent.getEntity(), blockitem.buildItem(0,0,1));
+                inventory.setEntityItemInHand(damageEvent.getDamager(), blockitem.buildItem(0,0,1));
                 blockitem.makeSound(self, "USE_STONE");
             }else{
-                inventory.setEntityItemInHand(damageEvent.getEntity(), hammer);
+                inventory.setEntityItemInHand(damageEvent.getDamager(), hammer);
             }
         }
     }), F((self, player, item, pos) => {
