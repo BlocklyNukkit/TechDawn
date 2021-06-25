@@ -133,7 +133,9 @@ const textureList = [
     '精煤.png',
     '精煤粒.png',
     '火力发电机.png',
-    '红石电池箱.png'
+    '红石电池箱.png',
+    '高炉.png',
+    '导热片.png'
 ]
 
 const modelList = [
@@ -143,6 +145,8 @@ const modelList = [
     {path: "fuelGenerator/fuelGenerator_working.png", name: "fuelGenerator_working.png"},
     {path: "redStoneBatteryBox/redStoneBatteryBox.json", name: "redStoneBatteryBox.json"},
     {path: "redStoneBatteryBox/redStoneBatteryBox.png", name: "redStoneBatteryBox.png"},
+    {path: "shaftFurnace/shaftFurnace.json", name: "shaftFurnace.json"},
+    {path: "shaftFurnace/shaftFurnace.png", name: "shaftFurnace.png"},
 ]
 
 //引入翻译模块

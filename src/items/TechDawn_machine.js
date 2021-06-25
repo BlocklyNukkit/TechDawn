@@ -95,3 +95,10 @@ new ItemInfo(3352, "redstone_battery_box", "Redstone Battery Box", "红石电池
 /// |不锈钢齿轮|   红石块  |不锈钢齿轮|
 /// |   铁板   |   铁板   |   铁板   |
 blockitem.addShapedCraft("AAA|BCB|AAA", blockitem.buildItem(3352, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(3641, 0, 1), "C", blockitem.buildItem(152, 0, 1));
+
+//注册高炉及其合成表
+new ItemInfo(3353, "shaft_furnace", "Shaft Furnace", "高炉", "./plugins/TechDawn/textures/高炉.png", 64, "construction", false, false).register();
+/// |   铁板   |  导热片  |   铁板   |
+/// |  导热片  |  红石块  |  导热片  |
+/// |   铁板   |  导热片  |   铁板   |
+blockitem.addShapedCraft("ABA|BCB|ABA", blockitem.buildItem(3353, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(3411, 0, 1), "C", blockitem.buildItem(152, 0, 1));

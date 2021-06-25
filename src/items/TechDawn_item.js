@@ -205,6 +205,9 @@ new ItemInfo(3403, "watered_wood_buckeet", "Watered Wood Bucket", "装水木桶"
 //锻造模板
 new ItemInfo(3409, "forging_template", "Forging Template", "锻造模板", "./plugins/TechDawn/textures/锻造模板.png", 1, "items", false, true).register();
 new ItemInfo(3410, "forging_template_gear", "Forging Template Gear", "齿轮锻造模板", "./plugins/TechDawn/textures/锻造模板_齿轮.png", 1, "items", false, true).register();
+//导热片
+new ItemInfo(3411, "heat_conducting_sheet", "Heat Conducting Sheet", "导热片", "./plugins/TechDawn/textures/导热片.png", 1, "items", false, true).register();
+
 
 /**
  * @description 注册冶炼合成表
@@ -396,6 +399,9 @@ blockitem.addShapelessCraft(Java.to([
     blockitem.buildItem(3531, 0, 1),
     blockitem.buildItem(3531, 0, 1),
 ], "cn.nukkit.item.Item[]"),blockitem.buildItem(3521, 0, 6));
+
+//导热片合成
+blockitem.addShapedCraft("ABA|ABA|ABA", blockitem.buildItem(3411, 0, 1), "A", blockitem.buildItem(3692, 0, 1), "B", blockitem(3691, 0, 1));
 
 /**
  * @description 注册齿轮合成
