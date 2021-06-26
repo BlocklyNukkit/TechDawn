@@ -7,7 +7,14 @@
  * @fileoverview 科技黎明插件木炭堆模块
  */
 
+/**
+ * @description 配置文件模块
+ */
+const TechDawnConfig = require("TechDawnConfig");
+
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())) return;
     var touchblock = event.getBlock();
     var touchpos = algorithm.buildPositionfromBlock(event.getBlock());
     var item = blockitem.getItemInHand(event.getPlayer());

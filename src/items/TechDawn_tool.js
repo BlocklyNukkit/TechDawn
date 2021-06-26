@@ -8,6 +8,11 @@
  */
 
 /**
+ * @description 配置文件模块
+ */
+const TechDawnConfig = require("TechDawnConfig");
+
+/**
  * @description 所有注册过的工具
  * @type {{[key: string]: ToolInfo}}
  */
@@ -141,6 +146,8 @@ function BlockBreakEvent(/**@type {cn.nukkit.event.block.BlockBreakEvent}*/event
  * @description 玩家右键事件
  */
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())) return;
     const iid = event.getItem().getId();
     //玩家使用空木桶装水
     if(iid == 3402){

@@ -18,6 +18,11 @@ const mills = java.lang.System.currentTimeMillis;
 const TechDawnMachinePower = require("TechDawnMachinePower");
 
 /**
+ * @description 配置文件模块
+ */
+const TechDawnConfig = require("TechDawnConfig");
+
+/**
  * @description 记录玩家触摸时间，防止刷物品
  * @type {{[key: string]: long}}
  */
@@ -86,7 +91,9 @@ export function placeShaftFurnace(pos, player, data){
 /**
  * @description 处理投掷器/发射器自动冶炼
  */
- function ItemSpawnEvent(/**@type {cn.nukkit.event.entity.ItemSpawnEvent}*/event){
+function ItemSpawnEvent(/**@type {cn.nukkit.event.entity.ItemSpawnEvent}*/event){
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getEntity().getLevel().getName())) return;
     let itemEntity = event.getEntity();
     let item = itemEntity.getItem();
     for(let each of itemEntity.getChunk().getEntities()){
@@ -111,6 +118,8 @@ export function placeShaftFurnace(pos, player, data){
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
     //玩家操作间隔太小直接忽略
     if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())) return;
     //放置高炉
     let player = event.getPlayer();
     if(event.getItem().getId() != 3353){

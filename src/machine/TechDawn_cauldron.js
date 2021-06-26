@@ -8,6 +8,11 @@
  */
 
 /**
+ * @description 配置文件模块
+ */
+ const TechDawnConfig = require("TechDawnConfig");
+
+/**
  * @description 炼药锅洗练合成表
  * @type {{[key: string]: {output: int, needWater: boolean}}}
  */
@@ -26,6 +31,8 @@ export function addCauldronCraft(input, output){
  * @description 处理炼药锅洗练合成
  */
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())) return;
     if(event.getBlock().getId() != 118){
         return;
     }

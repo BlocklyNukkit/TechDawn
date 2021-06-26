@@ -8,6 +8,11 @@
  */
 
 /**
+ * @description 配置文件模块
+ */
+const TechDawnConfig = require("TechDawnConfig");
+
+/**
  * @description 获取时间函数
  */
 const mills = java.lang.System.currentTimeMillis;
@@ -55,6 +60,8 @@ export function addAnvilGearCraft(input, output, damage){
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
     //玩家操作间隔太小直接忽略
     if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())) return;
     //玩家不潜行直接不处理
     if(!event.getPlayer().isSneaking()) return;
     //处理铁砧放置物品

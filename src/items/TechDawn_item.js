@@ -8,6 +8,11 @@
  */
 
 /**
+ * @description 配置文件模块
+ */
+const TechDawnConfig = require("TechDawnConfig");
+
+/**
  * @description 所有注册过的物品
  * @type {{[key: string]: ItemInfo}}
  */
@@ -491,4 +496,17 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     const cauldron = TechDawnMachineCauldron.addCauldronCraft;
     //煤粒洗练为精煤粒
     cauldron(3774, 3784);
+}
+
+/**
+ * @description 监听是否在没有启用黎明科技的世界中合成黎明科技物品
+ */
+function CraftItemEvent(/**@type {cn.nukkit.event.inventory.CraftItemEvent}*/event){
+    //该世界没有开启科技黎明取消合成
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())){
+        let id = event.getRecipe().getResult().getId();
+        if(id > 3350 && id < 3831){
+            event.setCancelled();
+        }
+    }
 }

@@ -57,3 +57,23 @@ function loadConfig(){
         config = JSON.parse(manager.YAMLtoJSON(content));
     }
 }
+
+/**
+ * @description 检查世界是否允许执行科技
+ * @param {string} levelName 世界名
+ * @returns {boolean}
+ */
+export function isLevelEnabled(levelName){
+    if(config.enableLevel.length == 0){
+        return true;
+    }
+    return config.enableLevel.indexOf(levelName) != -1;
+}
+
+/**
+ * @description 获取最大电网递归次数
+ * @returns {int}
+ */
+export function getMaxPowerConductLength(){
+    return config.maxPowerConductLength;
+}

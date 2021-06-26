@@ -18,6 +18,11 @@ const mills = java.lang.System.currentTimeMillis;
 const TechDawnMachinePower = require("TechDawnMachinePower");
 
 /**
+ * @description 配置文件模块
+ */
+const TechDawnConfig = require("TechDawnConfig");
+
+/**
  * @description 翻译模块
  */
 const TechDawnTranslate = require("TechDawnTranslate");
@@ -87,6 +92,8 @@ const playerTouchedTime = {};
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
     //玩家操作间隔太小直接忽略
     if(playerTouchedTime[event.getPlayer().getName()] != null &&  mills() - playerTouchedTime[event.getPlayer().getName()] < 200) return;
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())) return;
     //放置红石电池箱
     let player = event.getPlayer();
     if(event.getItem().getId() != 3352){

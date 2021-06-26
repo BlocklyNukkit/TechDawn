@@ -8,6 +8,11 @@
  */
 
 /**
+ * @description 配置文件模块
+ */
+const TechDawnConfig = require("TechDawnConfig");
+
+/**
  * @description 获取时间函数
  */
 const mills = java.lang.System.currentTimeMillis;
@@ -150,6 +155,8 @@ function PowerOutputProcess(startPos, totalTransfer){
  * @returns {PowerOutputProcess}
  */
 export function newPowerOutputProcess(startPos, totalTransfer){
+    //该世界没有开启科技黎明直接忽略
+    if(startPos.getLevel() != null && !TechDawnConfig.isLevelEnabled(startPos.getLevel().getName())) return;
     return new PowerOutputProcess(startPos, totalTransfer);
 }
 
