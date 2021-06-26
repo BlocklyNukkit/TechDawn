@@ -126,6 +126,7 @@ new ItemInfo(3728, "silver_ingot", "Silver Ingot", "银锭", "./plugins/TechDawn
 new ItemInfo(3729, "clean_coal", "Clean Coal", "精煤", "./plugins/TechDawn/textures/精煤.png", 64, "items", false, false).register();
 new ItemInfo(3730, "nickel_ingot", "Nickel Ingot", "镍锭", "./plugins/TechDawn/textures/镍锭.png", 64, "nature", false, false).register();
 new ItemInfo(3731, "magnetized_stainless_steel_ingot", "Magnetized Stainless Steel Ingot", "磁化不锈钢锭", "./plugins/TechDawn/textures/磁化不锈钢锭.png", 64, "nature", false, false).register();
+new ItemInfo(3732, "permalloy_ingot", "Permalloy Ingot", "坡莫合金锭", "./plugins/TechDawn/textures/坡莫合金锭.png", 64, "nature", false, false).register();
 //金属粉
 new ItemInfo(3521, "stainless_steel_dust", "Stainless Steel Dust", "不锈钢粉", "./plugins/TechDawn/textures/不锈钢粉.png", 64, "items", false, false).register();
 new ItemInfo(3522, "chromium_dust", "Chromi Dust", "铬粉", "./plugins/TechDawn/textures/铬粉.png", 64, "items", false, false).register();
@@ -142,6 +143,7 @@ new ItemInfo(3532, "copper_dust", "Copper Dust", "铜粉", "./plugins/TechDawn/t
 new ItemInfo(3533, "tin_dust", "Tin Dust", "锡粉", "./plugins/TechDawn/textures/锡粉.png", 64, "items", false, false).register();
 new ItemInfo(3534, "silver_dust", "Silver Dust", "银粉", "./plugins/TechDawn/textures/银粉.png", 64, "items", false, false).register();
 new ItemInfo(3535, "diamond_dust", "Diamond Dust", "钻石粉", "./plugins/TechDawn/textures/钻石粉.png", 64, "items", false, false).register();
+new ItemInfo(3536, "permalloy_dust", "Permalloy Dust", "坡莫合金粉", "./plugins/TechDawn/textures/坡莫合金粉.png", 64, "items", false, false).register();
 //小撮金属粉
 new ItemInfo(3581, "tiny_stainless_steel_dust", "Tiny Stainl Steel Dust", "小撮不锈钢粉", "./plugins/TechDawn/textures/小撮不锈钢粉.png", 64, "items", false, false).register();
 new ItemInfo(3582, "tiny_chromium_dust", "Tiny Chromium Dust", "小撮铬粉", "./plugins/TechDawn/textures/小撮铬粉.png", 64, "items", false, false).register();
@@ -158,6 +160,7 @@ new ItemInfo(3592, "tiny_copper_dust", "Tiny Copper Dust", "小撮铜粉", "./pl
 new ItemInfo(3593, "tiny_tin_dust", "Tiny Tin Dust", "小撮锡粉", "./plugins/TechDawn/textures/小撮锡粉.png", 64, "items", false, false).register();
 new ItemInfo(3594, "tiny_silver_dust", "Tiny Silver Dust", "小撮银粉", "./plugins/TechDawn/textures/小撮银粉.png", 64, "items", false, false).register();
 new ItemInfo(3595, "tiny_diamond_dust", "Tiny Diamond Dust", "小撮钻石粉", "./plugins/TechDawn/textures/小撮钻石粉.png", 64, "items", false, false).register();
+new ItemInfo(3596, "tiny_permalloy_dust", "Tiny Permalloy Dust", "小撮坡莫合金粉", "./plugins/TechDawn/textures/小撮坡莫合金粉.png", 64, "items", false, false).register();
 //金属粒
 new ItemInfo(3771, "stainless_steel_nugget", "Stainless Steel Nugget", "不锈钢粒", "./plugins/TechDawn/textures/不锈钢粒.png", 64, "items", false, false).register();
 new ItemInfo(3772, "chromium_nugget", "Chromium Nugget", "铬粒", "./plugins/TechDawn/textures/铬粒.png", 64, "items", false, false).register();
@@ -173,6 +176,7 @@ new ItemInfo(3781, "tin_nugget", "Tin Nugget", "锡粒", "./plugins/TechDawn/tex
 new ItemInfo(3782, "silver_nugget", "Silver Nugget", "银粒", "./plugins/TechDawn/textures/银粒.png", 64, "items", false, false).register();
 new ItemInfo(3783, "diamond_nugget", "Diamond Nugget", "钻石粒", "./plugins/TechDawn/textures/钻石粒.png", 64, "items", false, false).register();
 new ItemInfo(3784, "clean_coal_nugget", "Clean Coal Nugget", "精煤粒", "./plugins/TechDawn/textures/精煤粒.png", 64, "items", false, false).register();
+new ItemInfo(3784, "permalloy_nugget", "Permalloy Nugget", "坡莫合金粒", "./plugins/TechDawn/textures/坡莫合金粒.png", 64, "items", false, false).register();
 //金属板
 new ItemInfo(3681, "stainless_steel_plate", "Stainless Steel Plate", "不锈钢板", "./plugins/TechDawn/textures/不锈钢板.png", 64, "items", false, false).register();
 new ItemInfo(3682, "chromium_plate", "Chromium Plate", "铬板", "./plugins/TechDawn/textures/铬板.png", 64, "items", false, false).register();
@@ -189,6 +193,7 @@ new ItemInfo(3692, "copper_plate", "Copper Plate", "铜板", "./plugins/TechDawn
 new ItemInfo(3693, "tin_plate", "Tin Plate", "锡板", "./plugins/TechDawn/textures/锡板.png", 64, "items", false, false).register();
 new ItemInfo(3694, "silver_plate", "Silver Plate", "银板", "./plugins/TechDawn/textures/银板.png", 64, "items", false, false).register();
 new ItemInfo(3695, "diamond_plate", "Diamond Plate", "钻石板", "./plugins/TechDawn/textures/钻石板.png", 64, "items", false, false).register();
+new ItemInfo(3696, "permalloy_plate", "Permalloy Plate", "坡莫合金板", "./plugins/TechDawn/textures/坡莫合金板.png", 64, "items", false, false).register();
 //齿轮
 new ItemInfo(3641, "stainless_steel_gear", "Stainless Steel Gear", "不锈钢齿轮", "./plugins/TechDawn/textures/不锈钢齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3642, "chromium_gear", "Chromium Gear", "铬齿轮", "./plugins/TechDawn/textures/铬齿轮.png", 64, "items", false, false).register();
@@ -205,6 +210,7 @@ new ItemInfo(3653, "copper_gear", "Copper Gear", "铜齿轮", "./plugins/TechDaw
 new ItemInfo(3654, "tin_gear", "Tin Gear", "锡齿轮", "./plugins/TechDawn/textures/锡齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3655, "silver_gear", "Silver Gear", "银齿轮", "./plugins/TechDawn/textures/银齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3656, "diamond_gear", "Diamond Gear", "钻石齿轮", "./plugins/TechDawn/textures/钻石齿轮.png", 64, "items", false, false).register();
+new ItemInfo(3657, "permallo_gear", "Permallo Gear", "坡莫合金齿轮", "./plugins/TechDawn/textures/坡莫合金齿轮.png", 64, "items", false, false).register();
 //木桶
 new ItemInfo(3402, "empty_wood_bucket", "Empty Wood Bucket", "空木桶", "./plugins/TechDawn/textures/空木桶.png", 64, "items", true, true).register();
 new ItemInfo(3403, "watered_wood_buckeet", "Watered Wood Bucket", "装水木桶", "./plugins/TechDawn/textures/装水木桶.png", 16, "items", true, true).register();

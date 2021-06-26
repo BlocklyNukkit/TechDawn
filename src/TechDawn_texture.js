@@ -135,7 +135,14 @@ const textureList = [
     '火力发电机.png',
     '红石电池箱.png',
     '高炉.png',
-    '导热片.png'
+    '导热片.png',
+    '磁化不锈钢锭.png',
+    '坡莫合金锭.png',
+    '坡莫合金粉.png',
+    '坡莫合金粒.png',
+    '坡莫合金齿轮.png',
+    '坡莫合金板.png',
+    '小撮坡莫合金粉.png'
 ]
 
 const modelList = [
