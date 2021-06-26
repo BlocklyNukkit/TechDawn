@@ -176,7 +176,7 @@ new ItemInfo(3781, "tin_nugget", "Tin Nugget", "锡粒", "./plugins/TechDawn/tex
 new ItemInfo(3782, "silver_nugget", "Silver Nugget", "银粒", "./plugins/TechDawn/textures/银粒.png", 64, "items", false, false).register();
 new ItemInfo(3783, "diamond_nugget", "Diamond Nugget", "钻石粒", "./plugins/TechDawn/textures/钻石粒.png", 64, "items", false, false).register();
 new ItemInfo(3784, "clean_coal_nugget", "Clean Coal Nugget", "精煤粒", "./plugins/TechDawn/textures/精煤粒.png", 64, "items", false, false).register();
-new ItemInfo(3784, "permalloy_nugget", "Permalloy Nugget", "坡莫合金粒", "./plugins/TechDawn/textures/坡莫合金粒.png", 64, "items", false, false).register();
+new ItemInfo(3785, "permalloy_nugget", "Permalloy Nugget", "坡莫合金粒", "./plugins/TechDawn/textures/坡莫合金粒.png", 64, "items", false, false).register();
 //金属板
 new ItemInfo(3681, "stainless_steel_plate", "Stainless Steel Plate", "不锈钢板", "./plugins/TechDawn/textures/不锈钢板.png", 64, "items", false, false).register();
 new ItemInfo(3682, "chromium_plate", "Chromium Plate", "铬板", "./plugins/TechDawn/textures/铬板.png", 64, "items", false, false).register();
@@ -328,7 +328,7 @@ frunace(3592, 3780);
 frunace(3593, 3781);
 frunace(3594, 3782);
 frunace(3595, 3783);
-frunace(3596, 3784);
+frunace(3596, 3785);
 
 //金属锭变成金属粒
 craft19(3721, 3771);
@@ -344,7 +344,7 @@ craft19(263, 3774);
 craft19(351, 3778, 4);
 craft19(3729, 3784);
 craft19(3730, 3776);
-craft19(3732, 3784);
+craft19(3732, 3785);
 
 //金属粉合成小撮金属粉
 craft19(3521, 3581);
@@ -377,7 +377,7 @@ craft91(3783, 264);
 craft91(3774, 263);
 craft91(3778, 351, 0, 4);
 craft91(3784, 3729);
-craft91(3784, 3732);
+craft91(3785, 3732);
 
 //小撮金属粉合成金属粉
 craft91(3581, 3521);
@@ -496,7 +496,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     anvil(3781 ,3593 , 1);
     anvil(3782 ,3594 , 1);
     anvil(3783 ,3595 , 1);
-    anvil(3784, 3596, 1);
+    anvil(3785, 3596, 1);
     //锻造模板转化
     anvil(3409, 3410, 24);
     anvil(3410, 3409, 24);
