@@ -211,7 +211,7 @@ new ItemInfo(3403, "watered_wood_buckeet", "Watered Wood Bucket", "装水木桶"
 new ItemInfo(3409, "forging_template", "Forging Template", "锻造模板", "./plugins/TechDawn/textures/锻造模板.png", 1, "items", false, true).register();
 new ItemInfo(3410, "forging_template_gear", "Forging Template Gear", "齿轮锻造模板", "./plugins/TechDawn/textures/锻造模板_齿轮.png", 1, "items", false, true).register();
 //导热片
-new ItemInfo(3411, "heat_conducting_sheet", "Heat Conducting Sheet", "导热片", "./plugins/TechDawn/textures/导热片.png", 1, "items", false, true).register();
+new ItemInfo(3411, "heat_conducting_sheet", "Heat Conducting Sheet", "导热片", "./plugins/TechDawn/textures/导热片.png", 64, "items", false, true).register();
 
 
 /**
