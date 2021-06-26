@@ -16,6 +16,10 @@ const chinese = {
     "register_items": "§e正在注册物品中...",
     "redstone_battery_box_title": "红石电池箱",
     "battery_box_content": "存储： §e{} / {} §c RF",
+    "permission_reload_config": "科技黎明插件重载配置权限",
+    "reload_techdawn_config_command": "重载科技黎明配置文件命令",
+    "reload_techdawn_config_command_finish": "科技黎明配置文件重载完成",
+    "no_permission_for_command": "§c你没有权限使用此命令",
 }
 const english = {
     "init": "§eTechDawn plugin loading...",
@@ -23,6 +27,10 @@ const english = {
     "register_items": "§eRegistering items...",
     "redstone_battery_box_title": "Redstone Battery Box",
     "battery_box_content": "Storage: §e{} / {} §c RF",
+    "permission_reload_config": "The permission to reload configs of techDawn",
+    "reload_techdawn_config_command": "Reload configs of TechDawn",
+    "reload_techdawn_config_command_finish": "TechDawn configs reloaded",
+    "no_permission_for_command": "§cYou DONOT have the permission to access the command",
 }
 const isChinese = (server.getLanguage().getLang() == "chs");
 
