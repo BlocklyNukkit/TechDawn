@@ -40,6 +40,7 @@ const playerTouchedTime = {};
  * @param {{x: number,y: number,z: number,level: string,yaw: number,pitch: number, dataStroage: Object}} data 非玩家放置时传入的还原信息
  */
  export function placeRedStoneBatteryBox(pos, player, data){
+    pos.getLevel().loadChunk(pos.getChunkX(), pos.getChunkZ());
     //如果点击红石线放置就不要抬高一格
     let model = entity.buildModel(pos, "redStoneBatteryBox", 1, 1, 0.1, 1, F((self, tick) => {
         //每15刻输出电力

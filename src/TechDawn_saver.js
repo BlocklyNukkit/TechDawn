@@ -67,6 +67,29 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
      * @description 定时保存机器数据
      */
     manager.createLoopTask(F((tick) => {
-        BNClosedEvent();
+        var mainDatas = [];
+        for(let level of server.getLevels().values()){
+            for(let each of level.getEntities()){
+                if(each.getName() == "BNModel" && each.dataStorage.getItem("techDawn")){
+                    /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
+                    let model = each;
+                    let data = {};
+                    data["x"] = model.getX();
+                    data["y"] = model.getY();
+                    data["z"] = model.getZ();
+                    data["level"] = model.getLevel().getName();
+                    data["yaw"] = model.getYaw();
+                    data["pitch"] = model.getPitch();
+                    data["type"] = model.dataStorage.getItem("name");
+                    let tmpStorage = {};
+                    for(let key of model.dataStorage.getKeys()){
+                        tmpStorage[key] = model.dataStorage.getItem(key);
+                    }
+                    data["dataStorage"] = tmpStorage;
+                    mainDatas.push(data);
+                }
+            }
+        }
+        manager.writeFile("./plugins/TechDawn/machines.json", JSON.stringify(mainDatas));
     }), 20*60*10);
 }

@@ -28,6 +28,7 @@ const TechDawnConfig = require("TechDawnConfig");
  */
 const playerTouchedTime = {};
 
+
 /**
  * @description 添加火力发电机工作时间
  * @param {com.blocklynukkit.loader.other.Entities.BNModel} self
@@ -50,6 +51,7 @@ function addWorkingTime(self, time){
  * @param {{x: number,y: number,z: number,level: string,yaw: number,pitch: number, dataStroage: Object}} data 非玩家放置时传入的还原信息
  */
 export function placeFuelGenerator(pos, player, data){
+    pos.getLevel().loadChunk(pos.getChunkX(), pos.getChunkZ());
     let model = entity.buildModel(pos, "fuelgenerator", 1, 1, 1, 1, F(self => {
         let workingTime = self.dataStorage.getItem("workingTime")
         if(workingTime > 0){

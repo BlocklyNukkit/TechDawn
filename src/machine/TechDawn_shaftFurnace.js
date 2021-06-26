@@ -35,6 +35,7 @@ const playerTouchedTime = {};
  * @param {{x: number,y: number,z: number,level: string,yaw: number,pitch: number, dataStroage: Object}} data 非玩家放置时传入的还原信息
  */
 export function placeShaftFurnace(pos, player, data){
+    pos.getLevel().loadChunk(pos.getChunkX(), pos.getChunkZ());
     let model = entity.buildModel(pos, "shaftFurnace", 1, 1, 1, 1, F(self => {
 
     }), 1, F((self, damageEvent) => {
