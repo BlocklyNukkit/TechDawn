@@ -311,6 +311,7 @@ frunace(3532, 3726);
 frunace(3533, 3727);
 frunace(3534, 3728);
 frunace(3527, 3730);
+frunace(3536, 3732);
 
 //小撮金属粉冶炼为粒
 frunace(3581, 3771);
@@ -327,6 +328,7 @@ frunace(3592, 3780);
 frunace(3593, 3781);
 frunace(3594, 3782);
 frunace(3595, 3783);
+frunace(3596, 3784);
 
 //金属锭变成金属粒
 craft19(3721, 3771);
@@ -342,6 +344,7 @@ craft19(263, 3774);
 craft19(351, 3778, 4);
 craft19(3729, 3784);
 craft19(3730, 3776);
+craft19(3732, 3784);
 
 //金属粉合成小撮金属粉
 craft19(3521, 3581);
@@ -359,6 +362,7 @@ craft19(3532, 3592);
 craft19(3533, 3593);
 craft19(3534, 3594);
 craft19(3535, 3595);
+craft19(3536, 3596);
 
 //金属粒变成金属锭
 craft91(3771, 3721);
@@ -373,6 +377,7 @@ craft91(3783, 264);
 craft91(3774, 263);
 craft91(3778, 351, 0, 4);
 craft91(3784, 3729);
+craft91(3784, 3732);
 
 //小撮金属粉合成金属粉
 craft91(3581, 3521);
@@ -390,9 +395,10 @@ craft91(3592, 3532);
 craft91(3593, 3533);
 craft91(3594, 3534);
 craft91(3595, 3535);
+craft91(3596, 3796);
 
 //合金制造
-//3*铜粉 + 1*锡粉 = 4*铜粉
+//3*铜粉 + 1*锡粉 = 4*青铜粉
 blockitem.addShapelessCraft(Java.to([
     blockitem.buildItem(3532, 0, 1),
     blockitem.buildItem(3532, 0, 1),
@@ -419,6 +425,13 @@ blockitem.addShapelessCraft(Java.to([
     blockitem.buildItem(331, 0, 1),
     blockitem.buildItem(331, 0, 1),
 ], "cn.nukkit.item.Item[]"), blockitem.buildItem(3731, 0, 1));
+//3*镍粉 + 1*铁粉 = 4*坡莫合金粉
+blockitem.addShapelessCraft(Java.to([
+    blockitem.buildItem(3527, 0, 1),
+    blockitem.buildItem(3527, 0, 1),
+    blockitem.buildItem(3527, 0, 1),
+    blockitem.buildItem(3531, 0, 1),
+], "cn.nukkit.item.Item[]"), blockitem.buildItem(3536, 0, 4));
 
 //导热片合成
 blockitem.addShapedCraft("ABA|ABA|ABA", blockitem.buildItem(3411, 0, 1), "A", blockitem.buildItem(3692, 0, 1), "B", blockitem.buildItem(3691, 0, 1));
@@ -466,6 +479,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     anvil(3727, 3693, 15);
     anvil(3728, 3694, 15);
     anvil(264, 3695, 15);
+    anvil(3732, 3696, 15);
     //金属粒砸粉
     anvil(3771, 3581, 1);
     anvil(3772, 3582, 1);
@@ -482,6 +496,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     anvil(3781 ,3593 , 1);
     anvil(3782 ,3594 , 1);
     anvil(3783 ,3595 , 1);
+    anvil(3784, 3596, 1);
     //锻造模板转化
     anvil(3409, 3410, 24);
     anvil(3410, 3409, 24);
@@ -499,6 +514,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     anvilGear(3693, 3654, 15);
     anvilGear(3694, 3655, 15);
     anvilGear(3695, 3656, 15);
+    anvilGear(3696, 3657 ,15);
 
     /**
      * @description 炼药锅洗练合成模块
