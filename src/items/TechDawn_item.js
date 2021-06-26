@@ -125,6 +125,7 @@ new ItemInfo(3727, "tin_ingot", "Tin Ingot", "锡锭", "./plugins/TechDawn/textu
 new ItemInfo(3728, "silver_ingot", "Silver Ingot", "银锭", "./plugins/TechDawn/textures/银锭.png", 64, "items", false, false).register();
 new ItemInfo(3729, "clean_coal", "Clean Coal", "精煤", "./plugins/TechDawn/textures/精煤.png", 64, "items", false, false).register();
 new ItemInfo(3730, "nickel_ingot", "Nickel Ingot", "镍锭", "./plugins/TechDawn/textures/镍锭.png", 64, "nature", false, false).register();
+new ItemInfo(3731, "magnetized_stainless_steel_ingot", "Magnetized Stainless Steel Ingot", "磁化不锈钢锭", "./plugins/TechDawn/textures/磁化不锈钢锭.png", 64, "nature", false, false).register();
 //金属粉
 new ItemInfo(3521, "stainless_steel_dust", "Stainless Steel Dust", "不锈钢粉", "./plugins/TechDawn/textures/不锈钢粉.png", 64, "items", false, false).register();
 new ItemInfo(3522, "chromium_dust", "Chromi Dust", "铬粉", "./plugins/TechDawn/textures/铬粉.png", 64, "items", false, false).register();
@@ -404,6 +405,14 @@ blockitem.addShapelessCraft(Java.to([
     blockitem.buildItem(3531, 0, 1),
     blockitem.buildItem(3531, 0, 1),
 ], "cn.nukkit.item.Item[]"),blockitem.buildItem(3521, 0, 6));
+//1*不锈钢锭 + 4*红石粉 = 1*磁化不锈钢锭
+blockitem.addShapelessCraft(Java.to([
+    blockitem.buildItem(3721, 0, 1),
+    blockitem.buildItem(331, 0, 1),
+    blockitem.buildItem(331, 0, 1),
+    blockitem.buildItem(331, 0, 1),
+    blockitem.buildItem(331, 0, 1),
+], "cn.nukkit.item.Item[]"), blockitem.buildItem(3731, 0, 1));
 
 //导热片合成
 blockitem.addShapedCraft("ABA|ABA|ABA", blockitem.buildItem(3411, 0, 1), "A", blockitem.buildItem(3692, 0, 1), "B", blockitem.buildItem(3691, 0, 1));
