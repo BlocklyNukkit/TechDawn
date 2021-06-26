@@ -8,6 +8,15 @@
  */
 
 /**
+ * @description 定时保存机器数据
+ */
+{
+    manager.createLoopTask(F((tick) => {
+        BNClosedEvent();
+    }), 20*60*10);
+}
+
+/**
  * @description 保存所有黎明科技机器数据
  */
 function BNClosedEvent(/**@type {com.blocklynukkit.loader.script.event.BNClosedEvent}*/event){
