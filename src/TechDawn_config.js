@@ -1,5 +1,5 @@
 //pragma js
-//pragma module TechDawnMain
+//pragma module TechDawnConfig
 
 /**
  * @author Superice666(超神的冰凉) 
