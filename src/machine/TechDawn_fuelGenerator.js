@@ -40,7 +40,7 @@ function addWorkingTime(self, time){
     //如果之前没有工作就换成工作皮肤
     if(!self.dataStorage.getItem("working")){
         self.dataStorage.setItem("working", true);
-        self.resetModelSkin("fuelgenerator_working");
+        self.resetModelSkin("fuelGenerator_working");
     }
 }
 
@@ -52,7 +52,7 @@ function addWorkingTime(self, time){
  */
 export function placeFuelGenerator(pos, player, data){
     pos.getLevel().loadChunk(pos.getChunkX(), pos.getChunkZ());
-    let model = entity.buildModel(pos, "fuelgenerator", 1, 1, 1, 1, F(self => {
+    let model = entity.buildModel(pos, "fuelGenerator", 1, 1, 1, 1, F(self => {
         let workingTime = self.dataStorage.getItem("workingTime")
         if(workingTime > 0){
             self.dataStorage.setItem("workingTime", workingTime - 1);
@@ -70,7 +70,7 @@ export function placeFuelGenerator(pos, player, data){
             }
         }else if(workingTime == 0 && self.dataStorage.getItem("working") == true){
             self.dataStorage.setItem("working", false);
-            self.resetModelSkin("fuelgenerator");
+            self.resetModelSkin("fuelGenerator");
         }
     }), 1, F((self, damageEvent) => {
         let tmpItem = inventory.getEntityItemInHand(damageEvent.getDamager());
@@ -108,7 +108,7 @@ export function placeFuelGenerator(pos, player, data){
             model.dataStorage.setItem(key, data.dataStorage[key]);
         }
         if(model.dataStorage.getItem("working")){
-            model.resetModelSkin("fuelgenerator_working");
+            model.resetModelSkin("fuelGenerator_working");
         }
     }else{
         let yaw = player.getYaw() + 180;
