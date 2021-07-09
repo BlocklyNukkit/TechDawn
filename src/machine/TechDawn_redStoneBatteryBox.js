@@ -47,7 +47,6 @@ const playerTouchedTime = {};
         if(!(tick & 15) && self.dataStorage.getItem("storage") >= 60){
             self.dataStorage.setItem("storage", self.dataStorage.getItem("storage") - 60);
             TechDawnMachinePower.newPowerOutputProcess(self.getPosition().floor(), 60).startTransfer(false);
-            cn.nukkit.level.Position
         }
     }), 1, F((self, damageEvent) => {
         let tmpItem = inventory.getEntityItemInHand(damageEvent.getDamager());

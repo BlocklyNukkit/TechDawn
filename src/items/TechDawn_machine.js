@@ -108,4 +108,4 @@ new ItemInfo(3354, "miner", "Miner", "挖掘机", "./plugins/TechDawn/textures/�
 /// |   铁板   | 电动马达 |   铁板   |
 /// | 电动马达 |  红石块  | 电动马达 |
 /// |   铁板   |   铁镐   |   铁板   |
-blockitem.addShapedCraft("ABA|BCB|ADA", blockitem.buildItem(3354, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(3412, 0, 1), "C", blockitem.buildItem(152, 0, 1), "D", blockitem.buildItem(257, 1, 0));
+blockitem.addShapedCraft("ABA|BCB|ADA", blockitem.buildItem(3354, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(3412, 0, 1), "C", blockitem.buildItem(152, 0, 1), "D", blockitem.buildItem(257, 0, 1));
