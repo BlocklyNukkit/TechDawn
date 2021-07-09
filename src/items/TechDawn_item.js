@@ -219,6 +219,8 @@ new ItemInfo(3409, "forging_template", "Forging Template", "锻造模板", "./pl
 new ItemInfo(3410, "forging_template_gear", "Forging Template Gear", "齿轮锻造模板", "./plugins/TechDawn/textures/锻造模板_齿轮.png", 1, "items", false, true).register();
 //导热片
 new ItemInfo(3411, "heat_conducting_sheet", "Heat Conducting Sheet", "导热片", "./plugins/TechDawn/textures/导热片.png", 64, "items", false, true).register();
+//电动马达
+new ItemInfo(3412, "motor", "Motor", "电动马达", "./plugins/TechDawn/textures/电动马达.png", 64, "items", false, true).register();
 
 
 /**
@@ -435,6 +437,8 @@ blockitem.addShapelessCraft(Java.to([
 
 //导热片合成
 blockitem.addShapedCraft("ABA|ABA|ABA", blockitem.buildItem(3411, 0, 1), "A", blockitem.buildItem(3692, 0, 1), "B", blockitem.buildItem(3691, 0, 1));
+//电动马达合成
+blockitem.addShapedCraft("AAC|APA|BAA", blockitem.buildItem(3412, 0, 1), "A", blockitem.buildItem(3693, 0, 1), "B", blockitem.buildItem(3641, 0, 1), "C", blockitem.buildItem(3731, 0, 1), "P", blockitem.buildItem(3657, 0, 1));
 
 /**
  * @description 注册齿轮合成

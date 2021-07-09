@@ -142,7 +142,8 @@ const textureList = [
     '坡莫合金粒.png',
     '坡莫合金齿轮.png',
     '坡莫合金板.png',
-    '小撮坡莫合金粉.png'
+    '小撮坡莫合金粉.png',
+    '电动马达.png'
 ]
 
 const modelList = [
