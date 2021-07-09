@@ -39,6 +39,8 @@ export function placeMiner(pos, player, data){
     let model = entity.buildModel(pos, "miner", 1, 1, 1, 1, F((self, tick) => {
         //每32刻检测一次是否可以挖掘方块
         if(!(tick & 31) && self.dataStorage.getItem("storage") >= 20){
+            //该世界没有开启科技黎明直接忽略
+            if(!TechDawnConfig.isLevelEnabled(self.getLevel().getName())) return;
             /** @type {cn.nukkit.level.Position} */
             let dVector = self.getPosition().clone();
             let font = Math.floor((45 + self.getYaw()) / 90);
@@ -99,33 +101,6 @@ export function placeMiner(pos, player, data){
         model.dataStorage.setItem("maxStorage", 120);
         model.dataStorage.setItem("mode", "I");
         model.dataStorage.setItem("maxAccept", 20);
-    }
-}
-
-/**
- * @description 处理投掷器/发射器自动冶炼
- */
-function ItemSpawnEvent(/**@type {cn.nukkit.event.entity.ItemSpawnEvent}*/event){
-    //该世界没有开启科技黎明直接忽略
-    if(!TechDawnConfig.isLevelEnabled(event.getEntity().getLevel().getName())) return;
-    let itemEntity = event.getEntity();
-    let item = itemEntity.getItem();
-    for(let each of itemEntity.getChunk().getEntities()){
-        if(each.getName() == "BNModel" && each.dataStorage.getItem("techDawn") && each.dataStorage.getItem("name") == "miner" && each.getPosition().floor().equals(itemEntity.getPosition().floor())){
-            let storage = each.dataStorage.getItem("storage");
-            if(storage < 160){
-                return;
-            }
-            let recipe = server.getCraftingManager().matchFurnaceRecipe(item);
-            if(recipe != null){
-                itemEntity.close();
-                blockitem.makeDropItem(each.add(0,1,0), recipe.getResult());
-                particle.drawDot(each.add(0,1,0), 6);
-                blockitem.makeSound(each, "MOB_ENDERDRAGON_FLAP");
-                each.dataStorage.setItem("storage", storage - 160);
-                break;
-            }
-        }
     }
 }
 
