@@ -133,7 +133,9 @@ function BlockBreakEvent(/**@type {cn.nukkit.event.block.BlockBreakEvent}*/event
     if(iid == 3401 && (bid == 12 || iid == 13)){
         let item = lootPanning.getPanningResult(event.getBlock().getId() == 12);
         event.setDrops(Java.to([item], "cn.nukkit.item.Item[]"));
-    }else if(iid >= 3404 && iid <= 3408){
+    }
+    //锤子挖石头掉沙砾，挖沙砾掉沙子
+    else if(iid >= 3404 && iid <= 3408){
         if(bid == 4 || bid == 1){
             event.setDrops(Java.to([blockitem.buildItem(13, 0, 1)], "cn.nukkit.item.Item[]"));
         }else if(bid == 13){
