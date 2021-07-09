@@ -143,7 +143,8 @@ const textureList = [
     '坡莫合金齿轮.png',
     '坡莫合金板.png',
     '小撮坡莫合金粉.png',
-    '电动马达.png'
+    '电动马达.png',
+    '挖掘机.png'
 ]
 
 const modelList = [
@@ -155,6 +156,8 @@ const modelList = [
     {path: "redStoneBatteryBox/redStoneBatteryBox.png", name: "redStoneBatteryBox.png"},
     {path: "shaftFurnace/shaftFurnace.json", name: "shaftFurnace.json"},
     {path: "shaftFurnace/shaftFurnace.png", name: "shaftFurnace.png"},
+    {path: "miner/miner.json", name: "miner.json"},
+    {path: "miner/miner.png", name: "miner.png"},
 ]
 
 //引入翻译模块
