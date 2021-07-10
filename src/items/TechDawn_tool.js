@@ -130,7 +130,7 @@ function BlockBreakEvent(/**@type {cn.nukkit.event.block.BlockBreakEvent}*/event
     const iid = event.getItem().getId();
     const bid = event.getBlock().getId();
     //处理淘金碗
-    if(iid == 3401 && (bid == 12 || iid == 13)){
+    if(iid == 3401 && (bid == 12 || bid == 13)){
         let item = lootPanning.getPanningResult(event.getBlock().getId() == 12);
         event.setDrops(Java.to([item], "cn.nukkit.item.Item[]"));
     }

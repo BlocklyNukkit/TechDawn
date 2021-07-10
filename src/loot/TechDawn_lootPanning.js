@@ -48,7 +48,7 @@ RandomItem.putSelector(new ConstantItemSelector(3515, root_gravelPanning), 0.012
 RandomItem.putSelector(new ConstantItemSelector(3516, root_gravelPanning), 0.016);//镍
 RandomItem.putSelector(new ConstantItemSelector(3517, root_gravelPanning), 0.01);//铬
 RandomItem.putSelector(new ConstantItemSelector(3518, root_gravelPanning), 0.015);//锰
-RandomItem.putSelector(new ConstantItemSelector(318, root_gravelPanning), 0.40);//燧石
+RandomItem.putSelector(new ConstantItemSelector(318, root_gravelPanning), 0.445);//燧石
 //通过反射api调用选择方法
 const Clazz = java.lang.Class;
 let Rclazz = Clazz.forName("cn.nukkit.item.randomitem.RandomItem");
