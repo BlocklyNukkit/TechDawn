@@ -42,7 +42,7 @@ export function placeMiner(pos, player, data){
             //该世界没有开启科技黎明直接忽略
             if(!TechDawnConfig.isLevelEnabled(self.getLevel().getName())) return;
             /** @type {cn.nukkit.level.Position} */
-            let dVector = self.getPosition().clone();
+            let dVector = self.getPosition().floor().clone();
             let font = Math.floor((45 + self.getYaw()) / 90);
             switch (font) {
                 case 0:
