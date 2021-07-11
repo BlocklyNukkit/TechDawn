@@ -154,7 +154,7 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
     //玩家使用空木桶装水
     if(iid == 3402){
         let backWardBlock = event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock();
-        if(backWardBlock.getId() == 8 || backWardBlock.getId() == 9){
+        if((backWardBlock.getId() == 8 || backWardBlock.getId() == 9) && backWardBlock.getDamage() == 0){
             blockitem.setBlock(backWardBlock, blockitem.buildBlock(0, 0), false);
             blockitem.blockUpdate(backWardBlock);
             blockitem.makeSound(backWardBlock, "BUCKET_FILL_WATER");
