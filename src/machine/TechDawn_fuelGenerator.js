@@ -66,7 +66,7 @@ export function placeFuelGenerator(pos, player, data){
             }
             //显示工作粒子，每32刻显示一次
             if(!(workingTime & 31)){
-                particle.drawDot(self.add(0, 1, 0), 66);
+                particle.drawDot(self.add(0, 1, 0), 67);
             }
         }else if(workingTime == 0 && self.dataStorage.getItem("working") == true){
             self.dataStorage.setItem("working", false);
