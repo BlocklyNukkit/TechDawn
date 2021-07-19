@@ -290,7 +290,7 @@ frunace(3504, 3726);
 frunace(3506, 388);
 frunace(3507, 263);
 frunace(3508, 265);
-frunace(3509, 3724);
+frunace(3509, 3726);
 frunace(3510, 3727);
 //frunace(3511, null) 锌锭不能熔炉冶炼
 frunace(3512, 3728);
