@@ -39,6 +39,13 @@ export function placeShaftFurnace(pos, player, data){
     let model = entity.buildModel(pos, "shaftFurnace", 1, 1, 1, 1, F(self => {
 
     }), 1, F((self, damageEvent) => {
+        //如果被奇奇怪怪的东西伤害就爆炸
+        if(!damageEvent instanceof cn.nukkit.event.entity.EntityDamageByEntityEvent){
+            particle.drawEmitter(self, "minecraft:huge_explosion_emitter");
+            blockitem.makeSound(self, "RANDOM_EXPLODE");
+            self.close();
+            return;
+        }
         let tmpItem = inventory.getEntityItemInHand(damageEvent.getDamager());
         //检测手里是不是锤子
         if(tmpItem.getId() >= 3404 && tmpItem.getId() <= 3408){
