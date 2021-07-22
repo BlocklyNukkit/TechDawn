@@ -134,6 +134,25 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
 }
 
 /**
+ * @description 铁砧被打掉时掉落物品
+ */
+function BlockBreakEvent(/**@type {cn.nukkit.event.block.BlockBreakEvent}*/event){
+    //该世界没有开启科技黎明直接忽略
+    if(!TechDawnConfig.isLevelEnabled(event.getPlayer().getLevel().getName())) return;
+    //不是铁砧直接忽略
+    if(event.getBlock().getId() == 145){
+        let upPos = event.getBlock().add(0.5, 1, 0.5);
+        let storedItem = anvilItem.getItem(event.getBlock());
+        //如果有储存的物品就掉落物品
+        if(storedItem != null){
+            blockitem.makeDropItem(upPos, storedItem);
+            entity.removeFloatingItem(upPos, storedItem);
+            anvilItem.removeItem(event.getBlock());
+        }
+    }
+}
+
+/**
  * @description 当插件关闭时，铁砧掉落上面的物品
  */
 function BNClosedEvent(/**@type {com.blocklynukkit.loader.script.event.BNClosedEvent}*/event){
