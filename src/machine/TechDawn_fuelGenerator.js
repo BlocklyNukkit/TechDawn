@@ -62,7 +62,9 @@ export function placeFuelGenerator(pos, player, data){
             }
             //计算能源输出，每16刻输出一次能源，输出20RF
             if(!(workingTime & 15)){
-                TechDawnMachinePower.newPowerOutputProcess(self.getPosition().floor(), 20).startTransfer(false);
+                manager.concurrentRun(F(() => {
+                    TechDawnMachinePower.newPowerOutputProcess(self.getPosition().floor(), 20).startTransfer(false);
+                }));
             }
             //显示工作粒子，每32刻显示一次
             if(!(workingTime & 31)){

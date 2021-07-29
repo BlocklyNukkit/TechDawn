@@ -46,7 +46,9 @@ const playerTouchedTime = {};
         //每15刻输出电力
         if(!(tick & 15) && self.dataStorage.getItem("storage") >= 60){
             self.dataStorage.setItem("storage", self.dataStorage.getItem("storage") - 60);
-            TechDawnMachinePower.newPowerOutputProcess(self.getPosition().floor(), 60).startTransfer(false);
+            manager.concurrentRun(F(() => {
+                TechDawnMachinePower.newPowerOutputProcess(self.getPosition().floor(), 60).startTransfer(false);
+            }));
         }
     }), 1, F((self, damageEvent) => {
         //如果被奇奇怪怪的东西伤害就爆炸
