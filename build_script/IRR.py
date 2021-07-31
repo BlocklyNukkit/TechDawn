@@ -49,6 +49,34 @@ for x in itemContent.split("\n"):
         }
         output.append(tmp)
 
+for x in toolContent.split("\n"):
+    if x.startswith("new ToolInfo"):
+        tokens = x.replace("new ToolInfo(","").replace('"',"").replace(")", "").split(", ")
+        print(tokens)
+        ant+=1
+
+        picName = os.path.basename(tokens[4])
+        smIcon = ''
+        lgIcon = ''
+        with open("./32x/"+picName, "rb") as tf:
+            smIcon = base64.b64encode(tf.read())
+        with open("./128x/"+picName, "rb") as tf:
+            lgIcon = base64.b64encode(tf.read())
+
+        tmp = {
+            'name': tokens[3],
+            'englishName': tokens[2],
+            'registerName': 'blocklynukkit:'+tokens[1],
+            'CreativeTabName': '工具',
+            "type": "Item",
+            "maxDurability": int(tokens[7]),
+            'maxStackSize': 1,
+            'smallIcon': str(smIcon).replace('b\'', '').replace("'", ''),
+            'largeIcon': str(lgIcon).replace('b\'', '').replace("'", '')
+        }
+        output.append(tmp)
+
+
 with open('./out/techdawn_items.json', 'w+', encoding="utf-8") as tf:
     itemsjson = ''
     for each in output:
