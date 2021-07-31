@@ -20,6 +20,10 @@
 2. 前往[Action](https://github.com/BlocklyNukkit/TechDawn/actions)下载科技黎明插件最新构建，解压，将压缩包中的`TechDawn.bnpx`放入`plugins`文件夹中  
 3. 重启您的`PowerNukkit`服务器，开始游戏吧  
 
+## 教程  
+
+[McMod](https://www.mcmod.cn/class/4337.html)
+
 ## 物品id
 
 |id|英文名|中文名|
