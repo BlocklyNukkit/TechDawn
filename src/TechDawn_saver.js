@@ -96,3 +96,15 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
         manager.writeFile("./plugins/TechDawn/machines.json", JSON.stringify(mainDatas));
     }), 20*60*10);
 }
+
+function EntityDespawnEvent(/**@type {cn.nukkit.event.entity.EntityDespawnEvent}*/event){
+    if(event.getEntity() instanceof com.blocklynukkit.loader.other.Entities.BNModel){
+        /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
+        let model = event.getEntity();
+        logger.info(
+            model,
+            model.dataStorage.getItem("name"),
+            event.getType()
+        );
+    }
+}
