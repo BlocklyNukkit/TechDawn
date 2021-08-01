@@ -95,7 +95,7 @@ function checkCoalStack(pos,event){
         let dx = (pos1.x+pos2.x)/2;let dz = (pos1.z+pos2.z)/2;
         let d1 = Position.fromObject(manager.buildvec3(pos1.x,pos1.y,pos2.z),pos1.getLevel());
         let d2 = Position.fromObject(manager.buildvec3(pos2.x,pos1.y,pos1.z),pos1.getLevel());
-        particle.drawLine(pos1.add(0.5,0,0.5),pos2.add(0.5,0,0.5),1,66);particle.drawLine(d1.add(0.5,0,0.5),d2.add(0.5,0,0.5),1,66);
+        particle.drawLine(pos1.add(0.5,0,0.5),pos2.add(0.5,0,0.5),1,67);particle.drawLine(d1.add(0.5,0,0.5),d2.add(0.5,0,0.5),1,67);
     },30,Position.fromObject(manager.buildvec3(pos.x-jiao,pos.y+2,pos.z-jiao),pos.getLevel()),Position.fromObject(manager.buildvec3(pos.x+jiao+1,pos.y+2,pos.z+jiao+1),pos.getLevel()));
     manager.setTimeout(function(pos1,pos2,id){
         manager.clearInterval(id);
