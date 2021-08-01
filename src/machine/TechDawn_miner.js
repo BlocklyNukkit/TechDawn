@@ -34,7 +34,7 @@ const playerTouchedTime = {};
  * @param {cn.nukkit.Player} player 放置的玩家，如果非玩家放置传入null
  * @param {{x: number,y: number,z: number,level: string,yaw: number,pitch: number, dataStroage: Object}} data 非玩家放置时传入的还原信息
  */
-export function placeMiner(pos, player, data){
+export function place(pos, player, data){
     pos.getLevel().loadChunk(pos.getChunkX(), pos.getChunkZ());
     let model = entity.buildModel(pos, "miner", 1, 1, 1, 1, F((self, tick) => {
         //每32刻检测一次是否可以挖掘方块
@@ -122,7 +122,7 @@ function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEve
         return;
     }
     //放置挖掘机
-    placeMiner((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), player);
+    place((event.getBlock().getId() == 55 ? event.getBlock() : event.getBlock().add(event.getFace().getUnitVector()).getLevelBlock()).add(0.5, 0, 0.5), player);
     //去掉玩家的一个挖掘机物品
     let tmpitem = event.getItem().clone();
     tmpitem.setCount(1);

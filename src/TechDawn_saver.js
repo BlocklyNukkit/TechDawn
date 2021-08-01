@@ -57,13 +57,13 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
         let pos = algorithm.buildPosition(entry["x"], entry["y"], entry["z"], server.getLevelByName(entry["level"]));
         switch(entry["type"]){
             case "fuelGenerator":
-                TechDawnMachineFuelGenerator.placeFuelGenerator(pos, null, entry);break;
+                TechDawnMachineFuelGenerator.place(pos, null, entry);break;
             case "redStoneBatteryBox":
-                TechDawnMachineRedStoneBatteryBox.placeRedStoneBatteryBox(pos, null, entry);break;
+                TechDawnMachineRedStoneBatteryBox.place(pos, null, entry);break;
             case "shaftFurnace":
-                TechDawnMachineShaftFurnace.placeShaftFurnace(pos, null, entry);break;
+                TechDawnMachineShaftFurnace.place(pos, null, entry);break;
             case "miner":
-                TechDawnMachineMiner.placeMiner(pos, null, entry);break;
+                TechDawnMachineMiner.place(pos, null, entry);break;
         }
     }
     /**
