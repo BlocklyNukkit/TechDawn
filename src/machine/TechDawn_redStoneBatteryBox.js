@@ -55,14 +55,14 @@ const playerTouchedTime = {};
         if(!(damageEvent instanceof cn.nukkit.event.entity.EntityDamageByEntityEvent)){
             particle.drawEmitter(self, "minecraft:huge_explosion_emitter");
             blockitem.makeSound(self, "RANDOM_EXPLODE");
-            self.close();
+            destroy(self);
             return;
         }
         let tmpItem = inventory.getEntityItemInHand(damageEvent.getDamager());
         //检测手里是不是锤子
         if(tmpItem.getId() >= 3404 && tmpItem.getId() <= 3408){
             blockitem.makeDropItem(self, blockitem.buildItem(3352, 0, 1));
-            self.close();
+            destroy(self);
             //锤子掉耐久
             let hammer = tmpItem;
             hammer.setDamage(hammer.getDamage() + 2);
@@ -79,6 +79,7 @@ const playerTouchedTime = {};
             .setContext(TechDawnTranslate.translateFormat("battery_box_content",[self.dataStorage.getItem("storage"), self.dataStorage.getItem("maxStorage")]))
             .show(player);
     }));
+    require("TechDawnSaver").addMachine(model);
     if(data){
         model.setYaw(data.yaw);
         model.setPitch(data.pitch);
@@ -97,6 +98,15 @@ const playerTouchedTime = {};
         model.dataStorage.setItem("maxAccept", 60);
     }
  }
+
+ /**
+ * @description 销毁红石储电箱
+ * @param {com.blocklynukkit.loader.other.Entities.BNModel} model
+ */
+export function destroy(model){
+    require("TechDawnSaver").removeMachine(model);
+    model.close();
+}
 
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
     //玩家操作间隔太小直接忽略

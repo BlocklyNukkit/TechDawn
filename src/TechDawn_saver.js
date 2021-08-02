@@ -8,32 +8,50 @@
  */
 
 /**
+ * @description 科技黎明机器储存
+ */
+const Long2ObjectOpenHashMap = require("it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap");
+const machineData = new Long2ObjectOpenHashMap();
+
+/**
+ * @description 添加机器
+ * @param {com.blocklynukkit.loader.other.Entities.BNModel} model
+ */
+export function addMachine(model){
+    machineData.put(model.getId(), model);
+}
+
+/**
+ * @description 移除机器
+ * @param {com.blocklynukkit.loader.other.Entities.BNModel} model
+ */
+export function removeMachine(model){
+    machineData.remove(model.getId());
+}
+
+/**
  * @description 保存所有黎明科技机器数据
  */
 function BNClosedEvent(/**@type {com.blocklynukkit.loader.script.event.BNClosedEvent}*/event){
     var mainDatas = [];
-    for(let level of server.getLevels().values()){
-        for(let each of level.getEntities()){
-            if(each.getName() == "BNModel" && each.dataStorage.getItem("techDawn")){
-                /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
-                let model = each;
-                let data = {};
-                data["x"] = model.getX();
-                data["y"] = model.getY();
-                data["z"] = model.getZ();
-                data["level"] = model.getLevel().getName();
-                data["yaw"] = model.getYaw();
-                data["pitch"] = model.getPitch();
-                data["type"] = model.dataStorage.getItem("name");
-                let tmpStorage = {};
-                for(let key of model.dataStorage.getKeys()){
-                    tmpStorage[key] = model.dataStorage.getItem(key);
-                }
-                data["dataStorage"] = tmpStorage;
-                mainDatas.push(data);
-                model.close();
-            }
+    for(let each of machineData.values()){
+        /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
+        let model = each;
+        let data = {};
+        data["x"] = model.getX();
+        data["y"] = model.getY();
+        data["z"] = model.getZ();
+        data["level"] = model.getLevel().getName();
+        data["yaw"] = model.getYaw();
+        data["pitch"] = model.getPitch();
+        data["type"] = model.dataStorage.getItem("name");
+        let tmpStorage = {};
+        for(let key of model.dataStorage.getKeys()){
+            tmpStorage[key] = model.dataStorage.getItem(key);
         }
+        data["dataStorage"] = tmpStorage;
+        mainDatas.push(data);
+        model.close();
     }
     manager.writeFile("./plugins/TechDawn/machines.json", JSON.stringify(mainDatas));
 }
@@ -71,40 +89,24 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
      */
     manager.createLoopTask(F((tick) => {
         var mainDatas = [];
-        for(let level of server.getLevels().values()){
-            for(let each of level.getEntities()){
-                if(each.getName() == "BNModel" && each.dataStorage.getItem("techDawn")){
-                    /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
-                    let model = each;
-                    let data = {};
-                    data["x"] = model.getX();
-                    data["y"] = model.getY();
-                    data["z"] = model.getZ();
-                    data["level"] = model.getLevel().getName();
-                    data["yaw"] = model.getYaw();
-                    data["pitch"] = model.getPitch();
-                    data["type"] = model.dataStorage.getItem("name");
-                    let tmpStorage = {};
-                    for(let key of model.dataStorage.getKeys()){
-                        tmpStorage[key] = model.dataStorage.getItem(key);
-                    }
-                    data["dataStorage"] = tmpStorage;
-                    mainDatas.push(data);
-                }
+        for(let each of machineData.values()){
+            /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
+            let model = each;
+            let data = {};
+            data["x"] = model.getX();
+            data["y"] = model.getY();
+            data["z"] = model.getZ();
+            data["level"] = model.getLevel().getName();
+            data["yaw"] = model.getYaw();
+            data["pitch"] = model.getPitch();
+            data["type"] = model.dataStorage.getItem("name");
+            let tmpStorage = {};
+            for(let key of model.dataStorage.getKeys()){
+                tmpStorage[key] = model.dataStorage.getItem(key);
             }
+            data["dataStorage"] = tmpStorage;
+            mainDatas.push(data);
         }
         manager.writeFile("./plugins/TechDawn/machines.json", JSON.stringify(mainDatas));
     }), 20*60*10);
-}
-
-function EntityDespawnEvent(/**@type {cn.nukkit.event.entity.EntityDespawnEvent}*/event){
-    if(event.getEntity() instanceof com.blocklynukkit.loader.other.Entities.BNModel){
-        /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
-        let model = event.getEntity();
-        logger.info(
-            model,
-            model.dataStorage.getItem("name"),
-            event.getType()
-        );
-    }
 }

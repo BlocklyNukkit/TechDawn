@@ -43,14 +43,14 @@ export function place(pos, player, data){
         if(!(damageEvent instanceof cn.nukkit.event.entity.EntityDamageByEntityEvent)){
             particle.drawEmitter(self, "minecraft:huge_explosion_emitter");
             blockitem.makeSound(self, "RANDOM_EXPLODE");
-            self.close();
+            destroy(self);
             return;
         }
         let tmpItem = inventory.getEntityItemInHand(damageEvent.getDamager());
         //检测手里是不是锤子
         if(tmpItem.getId() >= 3404 && tmpItem.getId() <= 3408){
             blockitem.makeDropItem(self, blockitem.buildItem(3353, 0, 1));
-            self.close();
+            destroy(self);
             //锤子掉耐久
             let hammer = tmpItem;
             hammer.setDamage(hammer.getDamage() + 2);
@@ -77,6 +77,7 @@ export function place(pos, player, data){
             self.dataStorage.setItem("storage", storage - 160);
         }
     }));
+    require("TechDawnSaver").addMachine(model);
     if(data){
         model.setYaw(data.yaw);
         model.setPitch(data.pitch);
@@ -121,6 +122,15 @@ function ItemSpawnEvent(/**@type {cn.nukkit.event.entity.ItemSpawnEvent}*/event)
             }
         }
     }
+}
+
+/**
+ * @description 销毁高炉
+ * @param {com.blocklynukkit.loader.other.Entities.BNModel} model
+ */
+ export function destroy(model){
+    require("TechDawnSaver").removeMachine(model);
+    model.close();
 }
 
 function RightClickBlockEvent(/**@type {cn.nukkit.event.player.PlayerInteractEvent}*/event){
