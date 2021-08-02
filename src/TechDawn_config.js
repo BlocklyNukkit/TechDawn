@@ -13,20 +13,28 @@
 const configPath = "./plugins/TechDawn/config.yml";
 
 /**
- * @description 配置文件对象
+ * @description 默认配置文件对象
  */
-var config = {
+ const defaultConfig = {
     /** @type {string[]} */
     enableLevel: [],
     /** @type {int} */
-    maxPowerConductLength: 256
+    maxPowerConductLength: 256,
+    /** @type {int} */
+    machineCheckTime: 60
 };
+
+/**
+ * @description 配置文件对象
+ */
+var config = defaultConfig;
 
 /**
  * @description 启动时执行的内容
  */
 {
     loadConfig();
+    checkConfig();
     //导入翻译模块
     const TechDawnTranslate = require("TechDawnTranslate");
     //创建权限节点
@@ -59,6 +67,24 @@ function loadConfig(){
 }
 
 /**
+ * @description 检查配置文件是否完整
+ */
+function checkConfig(){
+    let full = true;
+    for (let key in defaultConfig) {
+        if (Object.hasOwnProperty.call(defaultConfig, key)) {
+            if(!(config[key])){
+                config[key] = defaultConfig[key];
+                full = false;
+            }
+        }
+    }
+    if(!full){
+        manager.writeFile(configPath, manager.JSONtoYAML(JSON.stringify(config)));
+    }
+}
+
+/**
  * @description 检查世界是否允许执行科技
  * @param {string} levelName 世界名
  * @returns {boolean}
@@ -76,4 +102,12 @@ export function isLevelEnabled(levelName){
  */
 export function getMaxPowerConductLength(){
     return config.maxPowerConductLength;
+}
+
+/**
+ * @description 获取机器状态检查间隔时间
+ * @returns {int}
+ */
+export function getMachineCheckTime(){
+    return config.machineCheckTime;
 }

@@ -65,6 +65,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     const TechDawnMachineRedStoneBatteryBox = require("TechDawnMachineRedStoneBatteryBox");
     const TechDawnMachineShaftFurnace = require("TechDawnMachineShaftFurnace");
     const TechDawnMachineMiner = require("TechDawnMachineMiner");
+    const TechDawnConfig = require("TechDawnConfig");
     //解析数据
     var data = manager.readFile("./plugins/TechDawn/machines.json");
     if(data == "FILE NOT FOUND"){
@@ -109,4 +110,16 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
         }
         manager.writeFile("./plugins/TechDawn/machines.json", JSON.stringify(mainDatas));
     }), 20*60*10);
+    /**
+     * @description 定时检查机器状态，消失了重新启动
+     */
+    manager.createLoopTask(F(tick => {
+        for(let each of machineData.values()){
+            /** @type {com.blocklynukkit.loader.other.Entities.BNModel} */
+            let model = each;
+            if(model.isClosed()){
+                model.spawnToAll();
+            }
+        }
+    }), 20*TechDawnConfig.getMachineCheckTime());
 }
