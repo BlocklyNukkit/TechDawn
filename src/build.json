@@ -18,6 +18,7 @@
         "./src/machine/TechDawn_redStoneBatteryBox.js",
         "./src/machine/TechDawn_shaftFurnace.js",
         "./src/machine/TechDawn_miner.js",
+        "./src/machine/TechDawn_farmManager.js",
         "./src/TechDawn_saver.js"
     ]
 }

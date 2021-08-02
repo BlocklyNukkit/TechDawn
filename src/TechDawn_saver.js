@@ -65,6 +65,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     const TechDawnMachineRedStoneBatteryBox = require("TechDawnMachineRedStoneBatteryBox");
     const TechDawnMachineShaftFurnace = require("TechDawnMachineShaftFurnace");
     const TechDawnMachineMiner = require("TechDawnMachineMiner");
+    const TechDawnMachineFarmManager = require("TechDawnMachineFarmManager");
     const TechDawnConfig = require("TechDawnConfig");
     //解析数据
     var data = manager.readFile("./plugins/TechDawn/machines.json");
@@ -83,6 +84,8 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
                 TechDawnMachineShaftFurnace.place(pos, null, entry);break;
             case "miner":
                 TechDawnMachineMiner.place(pos, null, entry);break;
+            case "farmManager":
+                TechDawnMachineFarmManager.place(pos, null, entry);break;
         }
     }
     /**

@@ -109,3 +109,10 @@ new ItemInfo(3354, "miner", "Miner", "挖掘机", "./plugins/TechDawn/textures/�
 /// | 电动马达 |  红石块  | 电动马达 |
 /// |   铁板   |   铁镐   |   铁板   |
 blockitem.addShapedCraft("ABA|BCB|ADA", blockitem.buildItem(3354, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(3412, 0, 1), "C", blockitem.buildItem(152, 0, 1), "D", blockitem.buildItem(257, 0, 1));
+
+//注册农场管理机及其合成表
+new ItemInfo(3355, "farm_manager", "Farm Manager", "农场管理机", "./plugins/TechDawn/textures/农场管理机.png", 64, "construction", false, false).register();
+/// |   铁板   |   铁锄   |   铁板   |
+/// |   铁板   |  红石块  |   铁板   |
+/// |   铁板   | 电动马达 |   铁板   |
+blockitem.addShapedCraft("ABA|ACA|ADA|", blockitem.buildItem(3355, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "B", blockitem.buildItem(292, 0, 1), "C", blockitem.buildItem(152, 0, 1), "D", blockitem.buildItem(3412, 0, 1));

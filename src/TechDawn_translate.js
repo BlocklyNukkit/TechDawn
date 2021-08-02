@@ -20,6 +20,8 @@ const chinese = {
     "reload_techdawn_config_command": "重载科技黎明配置文件命令",
     "reload_techdawn_config_command_finish": "科技黎明配置文件重载完成",
     "no_permission_for_command": "§c你没有权限使用此命令",
+    "farm_manager_title": "农场管理机",
+    "farm_manager_slider_title": "模式",
 }
 const english = {
     "init": "§eTechDawn plugin loading...",
@@ -31,6 +33,8 @@ const english = {
     "reload_techdawn_config_command": "Reload configs of TechDawn",
     "reload_techdawn_config_command_finish": "TechDawn configs reloaded",
     "no_permission_for_command": "§cYou DONOT have the permission to access the command",
+    "farm_manager_title": "Farm Manager",
+    "farm_manager_slider_title": "Mode",
 }
 const isChinese = (server.getLanguage().getLang() == "chs");
 
