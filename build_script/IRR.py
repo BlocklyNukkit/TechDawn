@@ -45,7 +45,7 @@ for x in itemContent.split("\n"):
             "maxDurability": 1,
             'maxStackSize': int(tokens[5]),
             'smallIcon': str(smIcon).replace('b\'', '').replace("'", ''),
-            'largeIcon': str(lgIcon)
+            'largeIcon': str(lgIcon).replace('b\'', '').replace("'", '')
         }
         output.append(tmp)
 
