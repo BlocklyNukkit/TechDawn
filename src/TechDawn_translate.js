@@ -22,6 +22,8 @@ const chinese = {
     "no_permission_for_command": "§c你没有权限使用此命令",
     "farm_manager_title": "农场管理机",
     "farm_manager_slider_title": "模式",
+    "electromagnet_title": "电磁铁",
+    "electromagnet_slider_title": "工作范围",
 }
 const english = {
     "init": "§eTechDawn plugin loading...",
@@ -35,6 +37,8 @@ const english = {
     "no_permission_for_command": "§cYou DONOT have the permission to access the command",
     "farm_manager_title": "Farm Manager",
     "farm_manager_slider_title": "Mode",
+    "electromagnet_title": "Electromagnet",
+    "electromagnet_slider_title": "Working Radius",
 }
 const isChinese = (server.getLanguage().getLang() == "chs");
 
