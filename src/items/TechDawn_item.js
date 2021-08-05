@@ -221,6 +221,8 @@ new ItemInfo(3410, "forging_template_gear", "Forging Template Gear", "齿轮锻�
 new ItemInfo(3411, "heat_conducting_sheet", "Heat Conducting Sheet", "导热片", "./plugins/TechDawn/textures/导热片.png", 64, "items", false, true).register();
 //电动马达
 new ItemInfo(3412, "motor", "Motor", "电动马达", "./plugins/TechDawn/textures/电动马达.png", 64, "items", false, true).register();
+//铜线圈
+new ItemInfo(3413, "copper_coil", "Copper Coil", "铜线圈", "./plugins/TechDawn/textures/铜线圈.png", 64, "items", false, true).register();
 
 
 /**
@@ -439,6 +441,8 @@ blockitem.addShapelessCraft(Java.to([
 blockitem.addShapedCraft("ABA|ABA|ABA", blockitem.buildItem(3411, 0, 1), "A", blockitem.buildItem(3692, 0, 1), "B", blockitem.buildItem(3691, 0, 1));
 //电动马达合成
 blockitem.addShapedCraft("AAC|APA|BAA", blockitem.buildItem(3412, 0, 1), "A", blockitem.buildItem(3693, 0, 1), "B", blockitem.buildItem(3641, 0, 1), "C", blockitem.buildItem(3731, 0, 1), "P", blockitem.buildItem(3657, 0, 1));
+//铜线圈合成
+blockitem.addShapedCraft("AAA|ABA|AAA", blockitem.buildItem(3413, 0, 1), "A", blockitem.buildItem(3726, 0 ,1), "B", blockitem.buildItem(3731, 0, 1));
 
 /**
  * @description 注册齿轮合成
