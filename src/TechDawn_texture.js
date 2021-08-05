@@ -149,6 +149,7 @@ const textureList = [
     '铜线圈.png',
     '电磁铁.png',
     '光电板.png',
+    '太阳能发电机.png',
 ]
 
 const modelList = [
@@ -166,6 +167,8 @@ const modelList = [
     {path: "farmManager/farmManager.png", name: "farmManager.png"},
     {path: "electromagnet/electromagnet.json", name: "electromagnet.json"},
     {path: "electromagnet/electromagnet.png", name: "electromagnet.png"},
+    {path: "solarGenerator/solarGenerator.json", name: "solarGenerator.json"},
+    {path: "solarGenerator/solarGenerator.png", name: "solarGenerator.png"},
 ]
 
 //引入翻译模块
