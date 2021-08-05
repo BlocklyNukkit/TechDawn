@@ -148,6 +148,7 @@ const textureList = [
     '农场管理机.png',
     '铜线圈.png',
     '电磁铁.png',
+    '光电板.png',
 ]
 
 const modelList = [

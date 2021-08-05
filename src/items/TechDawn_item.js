@@ -194,6 +194,7 @@ new ItemInfo(3693, "tin_plate", "Tin Plate", "锡板", "./plugins/TechDawn/textu
 new ItemInfo(3694, "silver_plate", "Silver Plate", "银板", "./plugins/TechDawn/textures/银板.png", 64, "items", false, false).register();
 new ItemInfo(3695, "diamond_plate", "Diamond Plate", "钻石板", "./plugins/TechDawn/textures/钻石板.png", 64, "items", false, false).register();
 new ItemInfo(3696, "permalloy_plate", "Permalloy Plate", "坡莫合金板", "./plugins/TechDawn/textures/坡莫合金板.png", 64, "items", false, false).register();
+new ItemInfo(3697, "photoelectric_plate", "Photoelectric Plate", "光电板", "./plugins/TechDawn/textures/光电板.png", 64, "items", false, false).register();
 //齿轮
 new ItemInfo(3641, "stainless_steel_gear", "Stainless Steel Gear", "不锈钢齿轮", "./plugins/TechDawn/textures/不锈钢齿轮.png", 64, "items", false, false).register();
 new ItemInfo(3642, "chromium_gear", "Chromium Gear", "铬齿轮", "./plugins/TechDawn/textures/铬齿轮.png", 64, "items", false, false).register();
@@ -443,6 +444,8 @@ blockitem.addShapedCraft("ABA|ABA|ABA", blockitem.buildItem(3411, 0, 1), "A", bl
 blockitem.addShapedCraft("AAC|APA|BAA", blockitem.buildItem(3412, 0, 1), "A", blockitem.buildItem(3693, 0, 1), "B", blockitem.buildItem(3641, 0, 1), "C", blockitem.buildItem(3731, 0, 1), "P", blockitem.buildItem(3657, 0, 1));
 //铜线圈合成
 blockitem.addShapedCraft("AAA|ABA|AAA", blockitem.buildItem(3413, 0, 1), "A", blockitem.buildItem(3726, 0 ,1), "B", blockitem.buildItem(3731, 0, 1));
+//光电板3697合成
+blockitem.addShapedCraft("AAA|BBB|CCC", blockitem.buildItem(3697, 0 ,1), "A", blockitem.buildItem(102, 0, 1), "B", blockitem.buildItem(3685, 0, 1), "C", blockitem.buildItem(3689, 0, 1));
 
 /**
  * @description 注册齿轮合成
