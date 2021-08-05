@@ -147,6 +147,7 @@ const textureList = [
     '挖掘机.png',
     '农场管理机.png',
     '铜线圈.png',
+    '电磁铁.png',
 ]
 
 const modelList = [
@@ -162,6 +163,8 @@ const modelList = [
     {path: "miner/miner.png", name: "miner.png"},
     {path: "farmManager/farmManager.json", name: "farmManager.json"},
     {path: "farmManager/farmManager.png", name: "farmManager.png"},
+    {path: "electromagnet/electromagnet.json", name: "electromagnet.json"},
+    {path: "electromagnet/electromagnet.png", name: "electromagnet.png"},
 ]
 
 //引入翻译模块
