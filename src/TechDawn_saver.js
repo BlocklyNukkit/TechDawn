@@ -67,6 +67,7 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
     const TechDawnMachineMiner = require("TechDawnMachineMiner");
     const TechDawnMachineFarmManager = require("TechDawnMachineFarmManager");
     const TechDawnElectromagnet = require("TechDawnElectromagnet");
+    const TechDawnMachineSolarGenerator = require("TechDawnMachineSolarGenerator");
     const TechDawnConfig = require("TechDawnConfig");
     //解析数据
     var data = manager.readFile("./plugins/TechDawn/machines.json");
@@ -89,6 +90,8 @@ function BNInitializedEvent(/**@type {com.blocklynukkit.loader.script.event.BNIn
                 TechDawnMachineFarmManager.place(pos, null, entry); break;
             case "electromagnet":
                 TechDawnElectromagnet.place(pos, null, entry); break;
+            case "solarGenerator":
+                TechDawnMachineSolarGenerator.place(pos, null, entry); break;
         }
     }
     /**

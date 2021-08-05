@@ -24,6 +24,8 @@ const chinese = {
     "farm_manager_slider_title": "模式",
     "electromagnet_title": "电磁铁",
     "electromagnet_slider_title": "工作范围",
+    "solar_generator_working": "太阳能发电机正在工作...",
+    "solar_generator_not_working": "太阳能发电机未在工作",
 }
 const english = {
     "init": "§eTechDawn plugin loading...",
@@ -39,6 +41,8 @@ const english = {
     "farm_manager_slider_title": "Mode",
     "electromagnet_title": "Electromagnet",
     "electromagnet_slider_title": "Working Radius",
+    "solar_generator_working": "Solar generator is working...",
+    "solar_generator_not_working": "Solar generator is NOT working.",
 }
 const isChinese = (server.getLanguage().getLang() == "chs");
 

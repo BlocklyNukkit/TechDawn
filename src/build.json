@@ -20,6 +20,7 @@
         "./src/machine/TechDawn_miner.js",
         "./src/machine/TechDawn_farmManager.js",
         "./src/machine/TechDawn_electromagnet.js",
+        "./src/machine/TechDawn_solarGenerator.js",
         "./src/TechDawn_saver.js"
     ]
 }
