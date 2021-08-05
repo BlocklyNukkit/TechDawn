@@ -56,7 +56,7 @@ export function place(pos, player, data) {
         }
         //每64tick计算一次是否能够工作
         if(!(tick & 63)){
-            self.dataStorage.setItem("working", blockitem.isDay(self) && (self.getChunk().getHighestBlockAt(self.x, self.z, false) < self.y));
+            self.dataStorage.setItem("working", blockitem.isDay(self) && (getHeighestBlockAt(self.level, self.x, self.z) <= self.y));
         }
     }), 1, F((self, damageEvent) => {
         //如果被奇奇怪怪的东西伤害就爆炸
@@ -104,6 +104,21 @@ export function place(pos, player, data) {
         model.dataStorage.setItem("working", false);
         model.dataStorage.setItem("mode", "O");
     }
+}
+
+/**
+ * @description 检测指定位置最高方块
+ * @param {cn.nukkit.level.Level} level
+ * @param {int} x
+ * @param {int} z
+ */
+function getHeighestBlockAt(level, x, z){
+    for(let i=255; i>=0; i--){
+        if(level.getBlockIdAt(x, i, z) != 0){
+            return i;
+        }
+    }
+    return 0;
 }
 
 /**
