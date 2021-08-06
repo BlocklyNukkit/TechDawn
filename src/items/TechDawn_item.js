@@ -438,6 +438,8 @@ blockitem.addShapelessCraft(Java.to([
     blockitem.buildItem(3531, 0, 1),
 ], "cn.nukkit.item.Item[]"), blockitem.buildItem(3536, 0, 4));
 
+//青金石板合成
+blockitem.addShapedCraft("AAA", blockitem.buildItem(3689, 0, 1), "A", blockitem.buildItem(351, 4, 1));
 //导热片合成
 blockitem.addShapedCraft("ABA|ABA|ABA", blockitem.buildItem(3411, 0, 1), "A", blockitem.buildItem(3692, 0, 1), "B", blockitem.buildItem(3691, 0, 1));
 //电动马达合成

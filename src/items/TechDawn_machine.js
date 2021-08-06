@@ -129,5 +129,5 @@ new ItemInfo(3357, "solar_generator", "Solar Generator", "太阳能发电机", "
 /// |  光电板  |  光电板  |  光电板  |
 /// |   铁板   |  红石块  |   铁板   |
 /// |   铁板   |   铁板   |   铁板   |
-blockitem.addShapedCraft("GGG|ACA|AAA", blockitem.buildItem(3356, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "G", blockitem.buildItem(3697, 0, 1), "C", blockitem.buildItem(152, 0, 1));
+blockitem.addShapedCraft("GGG|ACA|AAA", blockitem.buildItem(3357, 0, 1), "A", blockitem.buildItem(3691, 0, 1), "G", blockitem.buildItem(3697, 0, 1), "C", blockitem.buildItem(152, 0, 1));
 
