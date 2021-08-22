@@ -94,7 +94,7 @@ export function place(pos, player, data) {
         }
     }), 1, F((self, damageEvent) => {
         //如果被奇奇怪怪的东西伤害就爆炸
-        if (!(damageEvent instanceof cn.nukkit.event.entity.EntityDamageByEntityEvent)) {
+        if (!(damageEvent instanceof cn.nukkit.event.entity.EntityDamageByEntityEvent) || !entity.isPlayer(damageEvent.getDamager())) {
             particle.drawEmitter(self, "minecraft:huge_explosion_emitter");
             blockitem.makeSound(self, "RANDOM_EXPLODE");
             destroy(self);
